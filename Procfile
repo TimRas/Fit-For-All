@@ -1,1 +1,1 @@
-web: gunicorn fit_for_all.wsgi
+web: gunicorn fit_for_all.wsgi:application
