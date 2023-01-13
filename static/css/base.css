@@ -1,5 +1,8 @@
-html{
+
+body {
+    font-family: 'Raleway', sans-serif;
     height: 100%;
+    height: calc(100vh - 80px);
 }
 
 .dropdown-btn {
@@ -14,4 +17,43 @@ html{
 
 .dropdown-toggle::after {
     content: none;
+}
+
+hr {
+    background-color: white;
+    width: 25vw;
+}
+
+/*------------------------------ Allauth */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.inner-content-allauth {
+    background-color: rgba(19, 80, 142, 0.986);
+    color: white;
+    height: 50vh;
+    width: 50vw;
+    border-radius: 0.5em;
+    font-family: 'Roboto', sans-serif;
+    padding: 1em;
+    text-align: center;
+}
+
+#form-sign-up {
+    margin-top: 3em;
+}
+
+#button-sign-up {
+    margin-bottom: 2em;
+    margin-top: 1em;
+    border: none;
+}
+
+#link-sign-up {
+    margin-top: 1.75em;
 }
