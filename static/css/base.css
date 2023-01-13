@@ -36,24 +36,28 @@ hr {
 .inner-content-allauth {
     background-color: rgba(19, 80, 142, 0.986);
     color: white;
-    height: 50vh;
     width: 50vw;
     border-radius: 0.5em;
     font-family: 'Roboto', sans-serif;
     padding: 1em;
     text-align: center;
+    position: relative;
 }
 
-#form-sign-up {
+.form-allauth {
     margin-top: 3em;
 }
 
-#button-sign-up {
+.button-allauth {
     margin-bottom: 2em;
     margin-top: 1em;
     border: none;
 }
 
-#link-sign-up {
+.link-allauth {
+    margin-top: 1.75em;
+}
+
+#sign-out-text {
     margin-top: 1.75em;
 }
