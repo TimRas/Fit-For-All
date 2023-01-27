@@ -22,7 +22,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     description = models.TextField()
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
-    image = models.ImageField()
+    image = models.ImageField(blank=True)
 
     def __str__(self):
         return self.name
