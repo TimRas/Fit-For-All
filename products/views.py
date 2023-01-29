@@ -2,8 +2,6 @@ from django.shortcuts import render
 from .models import Product
 
 
-
-
 def all_products(request):
     """ Renders a page to show all products """
 

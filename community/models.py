@@ -10,32 +10,30 @@ class Post (models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
-    updated_on = models.DateTimeField(auto_now=0)
-    content = models.TextField()
-    excerp = models.TextField(blank=True)
+    content = models.TextField(max_length=400, blank=False)
+    excerpt = models.TextField(blank=True) 
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(User, blank=True, related_name='post_likes')
+    updated_on = models.DateTimeField(auto_now=0)
+    likes_post = models.ManyToManyField(User, blank=True, related_name='post_likes')
 
     def __str__(self):
         return self.title
 
     def number_of_likes(self):
-        return self.likes.count()
+        return self.likes_post.count()
 
 
-class Comment(models.Model):
+class Comment (models.Model):
 
     class Meta:
         ordering = ['-created_on']
 
-    post = models.ForeignKey(Post, on_delete=CASCADE,)
-    name = models.CharField(max_length=80)
-    email = models.EmailField()
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    name = models.CharField(max_length=40)
     body = models.TextField(max_length=888)
     created_on = models.DateTimeField(auto_now=True)
-    approved = models.BooleanField(default=False)
+    likes_comment = models.ManyToManyField(User, blank=True, related_name='comment_likes')
 
     def __str__(self):
-            return f"Comment {self.name} by {self.name}" 
+      return f"Comment on {self.post} by {self.name}" 
 

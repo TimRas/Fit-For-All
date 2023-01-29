@@ -1,6 +1,15 @@
+from django.shortcuts import render
+from .models import Category, Challenge
 
 
-def all_challenges(request):
+def all_plans(request):
     """ Renders a page to show all workout plans """
 
-    return render(request, 'plans/challenges.html')
+    categories = Category.objects.all()
+
+    context = {
+        'categories': categories,
+    }
+
+    return render(request, 'plans/workout_plans.html', context)
+

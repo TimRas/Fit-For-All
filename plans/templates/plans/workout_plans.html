@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+<div class="products-header">
+    <h2>Workout Plans</h2>
+    <hr class="mx-auto">
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="main-content">
+    <div class="row">
+        {% for category in categories %}
+        <div class="row">
+            <h2>{{ category.title }}</h2>    
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ category.content }}
+            </div>
+            <div class="col">
+                {% if category.image %}
+                <a href="">
+                    <img class="img-fluid" src="{{ category.image.url }}" alt="{{ category.title }}">
+                </a>
+                {% else %}
+                <a href="">
+                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.title }}">
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}
