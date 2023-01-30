@@ -17,8 +17,6 @@ body {
     margin: 0 auto;
     background-color: #5057AF;
     position: relative;
-    padding-bottom: 78.4px;
-    min-height: 100vh;
 }
 
 .row {
@@ -90,7 +88,7 @@ hr {
     height: 80%;
     width: 45%;
     margin: auto;
-    border-radius:0.8em;
+    border-radius: 0.8em;
     border: 5px dotted white;
 }
 
@@ -126,7 +124,7 @@ hr {
     border-radius: 0.5em;
     height: 5em;
     margin-bottom: 1em;
-    position: absolute;
+    position: relative;
     bottom: 0;
 }
 
@@ -148,6 +146,57 @@ hr {
 .card-body {
     height: 4em;
     margin-bottom: 2em;
+}
+
+/*------------------------------ Workouts Plans Page */
+
+.workout-categories {
+    width: 80%;
+    margin: auto;
+    background-color: #AFA850;
+    border-radius: 0.5em;
+}
+
+.content-containers-plans {
+    background-color: #AFA850;
+    width: 80%;
+    margin: auto;
+    border-radius: 0.8em;
+
+}
+
+.home-inner-content-plans {
+    height: 90%;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: white;
+    text-align: left;
+    position: relative
+}
+
+.content-containers {
+    background-color: #AFA850;
+    height: 80%;
+    width: 45%;
+    margin: auto;
+    border-radius: 0.8em;
+    border: 5px dotted white;
+}
+
+.button-links-plans {
+    background-color: #5057AF;
+    border-radius: 0.5em;
+    display: flex;
+    margin: auto;
+}
+
+.button-space {
+    height: 3em
+}
+
+.workout-content {
+    height: 180px;
 }
 
 /*------------------------------ Allauth */
@@ -204,5 +253,3 @@ hr {
     border-radius: 0.5em;
     margin-bottom: 3em;
 } */
-
-

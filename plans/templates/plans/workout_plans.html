@@ -10,29 +10,37 @@
 
 {% block content %}
 <section class="main-content">
-    <div class="row">
-        {% for category in categories %}
-        <div class="row">
-            <h2>{{ category.title }}</h2>    
-        </div>
-        <div class="row">
-            <div class="col">
-                {{ category.content }}
+    {% for category in categories %}
+    <div class="content-containers-plans">       
+        <div class="home-inner-content-plans">
+            <h2 class="pl-3 pt-3">{{ category.title }}</h2>
+            <hr class="ml-3">
+            <div class="row workout-content">
+                <div class="col-8">
+                    <p class="home-intro-text border border-light">{{ category.excerpt }}</p>
+                </div>
+                <div class="col-4 pr-3 mb-5">
+                    {% if category.image %}
+                    <a href="">
+                        <img class="img-fluid rounded float-right" src="{{ category.image.url }}"
+                            alt="{{ category.title }}">
+                    </a>
+                    {% else %}
+                    <a href="">
+                        <img class="img-fluid rounded float-right" src="{{ MEDIA_URL }}noimage.png"
+                            alt="{{ category.title }}">
+                    </a>
+                    {% endif %}
+                </div>
             </div>
-            <div class="col">
-                {% if category.image %}
-                <a href="">
-                    <img class="img-fluid" src="{{ category.image.url }}" alt="{{ category.title }}">
-                </a>
-                {% else %}
-                <a href="">
-                    <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.title }}">
-                </a>
-                {% endif %}
+            <div class="row-12 button-space">
+                <button class="btn button-links-plans">
+                    <a href="#" class="anchor-links"><strong>To plan details</strong></a>
+                </button>
             </div>
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
 </section>
 
 {% endblock %}
