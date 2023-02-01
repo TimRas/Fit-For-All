@@ -17,6 +17,7 @@ Here is a checklist of what I  still have to do with the 2nd resubmition:
         <li> 404 Page</li>
         <li> personalize user profile</li>
         <li> sorting of products</li>
+        <li> cvs for credentials to connect buckets</li>
         <li> readme</li>
     </ul>
 
