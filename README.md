@@ -1,5 +1,32 @@
-For the use of allauth, i've copied the use for the authentication backends and some of the required apps from the allauth documentation (https://django-allauth.readthedocs.io/en/latest/installation.html)
+<h1>Disclaimer</h1>
 
-I sticked to the same bootstrap starter template version as the boutique ado project. I don't  want to stray away too far from the boutique ado project. This so I can use the example of this project for my own project. It gives me guidance for my own project. (https://getbootstrap.com/docs/4.6/getting-started/introduction/#starter-template)
+Through time inconvenience I haven't been able to finish my fifth milestone project.  
+
+Here is a checklist of what I  still have to do with the 2nd resubmition:
+    <ul>
+        <li> functional posts and comments</li>
+        <li> CRUD functionality</li>
+        <li> individual products details</li>
+        <li> individual workout plans details</li>
+        <li> e-commerce funtionality to through subscription</li>
+        <li> e-commerce functionality to products</li>
+        <li> order information</li>
+        <li> order confirmation</li>
+        <li> messages</li>
+        <li> testing</li>
+        <li> 404 Page</li>
+        <li> personalize user profile</li>
+        <li> sorting of products</li>
+        <li> readme</li>
+    </ul>
+
+There is alot that still has to be down but I am sure I will be able to finish it with the resubmission. Thank you for your time. 
+
+Kind regards,
+
+Tim Ras
+
+
+
 
 

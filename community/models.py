@@ -2,11 +2,27 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+class PostCategory(models.Model):
+    class Meta:
+        verbose_name_plural = 'Post categories'
+
+    name = models.CharField(max_length=120)
+    friendly_name = models.CharField(max_length=120)
+
+    def __str__(self):
+        return self.name
+        
+    def get_friendly_name(self):
+        return self.friendly_name
+
+
+
 class Post (models.Model):
 
     class Meta:
         ordering = ['-created_on']
 
+    post_category = models.ForeignKey(PostCategory, on_delete=models.CASCADE, related_name='post_categories')
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')

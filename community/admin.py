@@ -1,5 +1,12 @@
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Post, Comment, PostCategory
+
+
+class PostCategoryAdmin(admin.ModelAdmin):
+    list_display = (
+        'friendly_name',
+        'name',
+    )
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -25,6 +32,7 @@ class CommentAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(PostCategory, PostCategoryAdmin)
 
 
 
