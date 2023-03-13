@@ -12,24 +12,30 @@
 <section class="main-content">
     {% for category in categories %}
     <div class="content-containers-category">
-        <div class="home-inner-content-category">
-            <h2 class="pl-3 pt-3">{{ category.title }}</h2>
-            <hr class="ml-3">
+        <div class="workout-categories mb-3">
+            <h2 class="pl-3 pt-3 text-white">{{ category.title }}</h2>
+            <hr class="mx-auto w-100">
             <div class="row workout-content">
-                <div class="col-8">
-                    <p class="home-intro-text border border-light">{{ category.excerpt }}</p>
+                <div class="col-9">
+                    <div class="text-container">
+                        <p class="home-intro-text text-white pl-3 pt-3">{{ category.excerpt }}</p>
+                    </div>
                 </div>
-                <div class="col-4 pr-3 mb-5">
+                <div class="col-3 pr-3 mb-5">
                     {% if category.image %}
-                    <a href="">
-                        <img class="img-fluid rounded float-right" src="{{ category.image.url }}"
-                            alt="{{ category.title }}">
-                    </a>
+                    <div class="img-stretch">
+                        <a href="">
+                            <img class="img-fluid rounded float-right" src="{{ category.image.url }}"
+                                alt="{{ category.title }}">
+                        </a>
+                    </div>
                     {% else %}
-                    <a href="">
-                        <img class="img-fluid rounded float-right" src="{{ MEDIA_URL }}noimage.png"
-                            alt="{{ category.title }}">
-                    </a>
+                    <div class="img-stretch">
+                        <a href="">
+                            <img class="img-fluid rounded float-right" src="{{ MEDIA_URL }}noimage.png"
+                                alt="{{ category.title }}">
+                        </a>
+                    </div>
                     {% endif %}
                 </div>
             </div>

@@ -4,10 +4,45 @@
 
 
 {% block content %}
-<section class="main-content container-fluid">
+
+<div class="container">
+    <div class="row row-cols-3">
     {% for category in postcategories %}
     {% for post in posts %}
-    <div class="community-posts-categories">
+        <div class="card col">
+            <div class="card-header">
+                Featured
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">{{ post.excerpt }}</p>
+                <a href="#" class="btn btn-primary">Read More!</a>
+            </div>
+        </div>
+    {% endfor %}
+    {% endfor %}
+    </div>
+</div>
+<!-- 
+<section class="main-content container-fluid">
+    <div class="container">
+        <div class="row row-cols-3">
+        {% for category in postcategories %}
+        {% for post in posts %}
+            <div class="col">
+                <div class="card-header">
+                    Featured
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ category.title }}</h5>
+                    <p class="card-text">{{ category.excerpt }}</p>
+                    <a href="#" class="btn btn-primary">Read More!</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="community-posts-categories">
         <div class="home-inner-content-row">
             <h2 class="pl-3 pt-3">{{ category.title }}</h2>
             <hr class="ml-3">
@@ -23,23 +58,23 @@
                     </a>
                     {% else %}
                     <a href="">
-                            <img class="img-fluid rounded float-right" src="{{ MEDIA_URL }}noimage.png"
-                                alt="{{ category.title }}">
-                        </a>
+                        <img class="img-fluid rounded float-right" src="{{ MEDIA_URL }}noimage.png"
+                            alt="{{ category.title }}">
+                    </a>
                     {% endif %}
-                    </div>
-                </div>
-                <div class="row-12 button-space">
-                    <button class="btn button-links-plans">
-                        <a href="#" class="anchor-links"><strong>To plan details</strong></a>
-                    </button>
                 </div>
             </div>
+            <div class="row-12 button-space">
+                <button class="btn button-links-plans">
+                    <a href="#" class="anchor-links"><strong>To plan details</strong></a>
+                </button>
+            </div>
         </div>
-    {% endfor %}
-    {% endfor %}
-    </div>
-</section>
+    </div> -->
+    <!-- {% endfor %}
+    {% endfor %} -->
+    <!-- </div> -->
+<!-- </section> -->
 {% endblock %}
 
 
