@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="card mt-3 row mx-auto">
+        <div class="row no-gutters">
+          
+          <div class="col-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ post.title }}</h5>
+              <p class="card-text">{{ post.content }}</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+          <div class="col-4">
+            <img src="..." class="card-img" alt="...">
+          </div>
+        </div>
+      </div>
+
+
+    <div class="row">
+        {% for comment in comments %}
+        <div class="card mt-3 row mx-auto">
+            <div class="row no-gutters">
+              
+              <div class="col">
+                <div class="card-body">
+                  <p class="card-text">{{ comment.body }}</p>
+                  <p class="card-text"><small class="text-muted">{{ comment.name }}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

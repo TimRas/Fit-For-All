@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 # from django.views import generic
-from .models import Post, PostCategory
+from .models import Post, PostCategory, Comment
 
 
 # class PostCategories(generic.ListView):
@@ -30,3 +30,22 @@ def all_posts(request):
     }
 
     return render(request, 'community/blogs.html', context)
+
+
+def check_post_id(post, comment):
+    return str(comment.post) == str(post.title)
+
+  
+def post_detail(request, post_id):
+        
+    """ Renders a page to show all community posts and categories """
+
+    post = get_object_or_404(Post, pk=post_id)
+    comments = [x for x in Comment.objects.all() if check_post_id(post, x)]
+
+    context = {
+        'post': post,
+        'comments': comments,
+    }
+
+    return render(request, 'community/blog_details.html', context)

@@ -16,7 +16,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{ post.title }}</h5>
                 <p class="card-text max-lines-3">{{ post.excerpt }}</p>
-                <a href="#" class="btn btn-primary">Read More!</a>
+                <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">Read More!</a>
             </div>
         </div>
     {% endfor %}
