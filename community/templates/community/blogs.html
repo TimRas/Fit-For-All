@@ -23,58 +23,6 @@
     {% endfor %}
     </div>
 </div>
-<!-- 
-<section class="main-content container-fluid">
-    <div class="container">
-        <div class="row row-cols-3">
-        {% for category in postcategories %}
-        {% for post in posts %}
-            <div class="col">
-                <div class="card-header">
-                    Featured
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">{{ category.title }}</h5>
-                    <p class="card-text">{{ category.excerpt }}</p>
-                    <a href="#" class="btn btn-primary">Read More!</a>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- <div class="community-posts-categories">
-        <div class="home-inner-content-row">
-            <h2 class="pl-3 pt-3">{{ category.title }}</h2>
-            <hr class="ml-3">
-            <div class="col workout-content">
-                <div class="col-8">
-                    <p class="home-intro-text border border-light">{{ category.excerpt }}</p>
-                </div>
-                <div class="col-4 pr-3 mb-5">
-                    {% if category.image %}
-                    <a href="">
-                        <img class="img-fluid rounded float-right" src="{{ category.image.url }}"
-                            alt="{{ category.title }}">
-                    </a>
-                    {% else %}
-                    <a href="">
-                        <img class="img-fluid rounded float-right" src="{{ MEDIA_URL }}noimage.png"
-                            alt="{{ category.title }}">
-                    </a>
-                    {% endif %}
-                </div>
-            </div>
-            <div class="row-12 button-space">
-                <button class="btn button-links-plans">
-                    <a href="#" class="anchor-links"><strong>To plan details</strong></a>
-                </button>
-            </div>
-        </div>
-    </div> -->
-    <!-- {% endfor %}
-    {% endfor %} -->
-    <!-- </div> -->
-<!-- </section> -->
 {% endblock %}
 
 
