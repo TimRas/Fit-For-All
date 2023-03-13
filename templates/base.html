@@ -46,147 +46,150 @@
 </head>
 
 <body>
-    <header class="header-container">
-        <div class="row">
-            <nav class="navbar navbar-expand-lg navbar-light mx-auto">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link main-logo-link" href="{% url 'home' %}">
-                                <h2 class="text-black my-0" id="main-logo-text"><strong>Fit For All</strong></h2>
-                            </a>
-                        </li>
+    <div class="page-container">
+        <header class="header-container">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-light mx-auto">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link main-logo-link" href="{% url 'home' %}">
+                                    <h2 class="text-black my-0" id="main-logo-text"><strong>Fit For All</strong></h2>
+                                </a>
+                            </li>
 
-                        <li class="nav-item dropdown mr-2 my-auto">
-                            <button class="btn btn-secondary dropdown-toggle navbar-buttons" type="button" data-toggle="dropdown"
-                                aria-expanded="false">
-                                <h2 class="my-0 txt-btn"><strong>Plans</strong></h2>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Workouts</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Nutrition</a>
-                            </div>
-                        </li>
-
-                        <li class="nav-item dropdown mr-2 my-auto">
-                            <button class="btn btn-secondary dropdown-toggle navbar-buttons" type="button" data-toggle="dropdown"
-                                aria-expanded="false">
-                                <h2 class="my-0 txt-btn"><strong>Products</strong></h2>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">All Products</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Food</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Workout Gear</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Supplements</a>
-                            </div>
-                        </li>
-
-                        <li class="nav-item dropdown mr-5 my-auto">
-                            <button class="btn btn-secondary dropdown-toggle navbar-buttons" type="button" data-toggle="dropdown"
-                                aria-expanded="false">
-                                <h2 class="my-0 txt-btn"><strong>Community</strong></h2>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Gain Muscle</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Lose Weight</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Running</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Food</a>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <form class="form mr-5" method="GET" action="">
-                        <div class="input-group w-100">
-                            <input class="form-control border border-black rounded-0" type="text" name="q"
-                                placeholder="Search our site">
-                            <div class="input-group-append">
-                                <button class="btn btn-black border border-black rounded-0" type="submit">
-                                    <span class="icon">
-                                        <i class="fas fa-search"></i>
-                                    </span>
+                            <li class="nav-item dropdown mr-2 my-auto">
+                                <button class="btn btn-secondary dropdown-toggle navbar-buttons" type="button" data-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <h2 class="my-0 txt-btn"><strong>Plans</strong></h2>
                                 </button>
-                            </div>
-                        </div>
-                    </form>
-
-                    <ul class="navbar-nav" id="account-management">
-                        <li class="dropdown nav-item mr-2">
-                            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <div class="text-center">
-                                    <div><i class="fas fa-user fa-lg"></i></div>
-                                    <p class="my-0">My Account</p>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Workouts</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Nutrition</a>
                                 </div>
-                            </a>
-                            <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                                {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                <a href="" class="dropdown-item">Product Management</a>
-                                {% endif %}
-                                <a href="" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                                {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                                {% endif %}
-                            </div>
-                        </li>
+                            </li>
 
-                        <li>
-                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-                                href="">
-                                <div class="text-center">
-                                    <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                    <p class="my-0">
-                                        {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
-                                        {% else %}
-                                        $0.00
-                                        {% endif %}
-                                    </p>
+                            <li class="nav-item dropdown mr-2 my-auto">
+                                <button class="btn btn-secondary dropdown-toggle navbar-buttons" type="button" data-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <h2 class="my-0 txt-btn"><strong>Products</strong></h2>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">All Products</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Food</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Workout Gear</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Supplements</a>
                                 </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
+                            </li>
 
-    {% if messages %}
-    <div class="message-container"></div>
-    {% endif %}
+                            <li class="nav-item dropdown mr-5 my-auto">
+                                <button class="btn btn-secondary dropdown-toggle navbar-buttons" type="button" data-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <h2 class="my-0 txt-btn"><strong>Community</strong></h2>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Gain Muscle</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Lose Weight</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Running</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Food</a>
+                                </div>
+                            </li>
+                        </ul>
 
-    {% block page_header %}
-    {% endblock %}
+                        <form class="form mr-5" method="GET" action="">
+                            <div class="input-group w-100">
+                                <input class="form-control border border-black rounded-0" type="text" name="q"
+                                    placeholder="Search our site">
+                                <div class="input-group-append">
+                                    <button class="btn btn-black border border-black rounded-0" type="submit">
+                                        <span class="icon">
+                                            <i class="fas fa-search"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
 
-    {% block content %}
-    {% endblock %}
+                        <ul class="navbar-nav" id="account-management">
+                            <li class="dropdown nav-item mr-2">
+                                <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <div class="text-center">
+                                        <div><i class="fas fa-user fa-lg"></i></div>
+                                        <p class="my-0">My Account</p>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                                    {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}
+                                    <a href="" class="dropdown-item">Product Management</a>
+                                    {% endif %}
+                                    <a href="" class="dropdown-item">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                    {% else %}
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                    {% endif %}
+                                </div>
+                            </li>
 
-    {% block postloadjs %}
-    {% endblock %}
-
-
-    <footer class="footer-container row">
-        <div class="col">
-            <div>
-                <h2>
-                    <p>Social:</p>
-                </h2>
+                            <li>
+                                <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                                    href="">
+                                    <div class="text-center">
+                                        <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                        <p class="my-0">
+                                            {% if grand_total %}
+                                            ${{ grand_total|floatformat:2 }}
+                                            {% else %}
+                                            $0.00
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
+        </header>
+
+        {% if messages %}
+        <div class="message-container"></div>
+        {% endif %}
+
+        <div class="main-content">
+            {% block page_header %}
+            {% endblock %}
+
+            {% block content %}
+            {% endblock %}
+
+            {% block postloadjs %}
+            {% endblock %}
+        </div>
+
+        <footer class="footer-container row">
             <div class="col">
-                <a href="https://www.facebook.com/TimFitForAll" target="_blank"><i
-                        class="fab fa-facebook-square"></i>Follow us on Facebook!</a>
+                <div>
+                    <h2>
+                        <p>Social:</p>
+                    </h2>
+                </div>
+                <div class="col">
+                    <a href="https://www.facebook.com/TimFitForAll" target="_blank"><i
+                            class="fab fa-facebook-square"></i>Follow us on Facebook!</a>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 
 <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
