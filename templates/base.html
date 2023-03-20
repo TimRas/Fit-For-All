@@ -64,9 +64,9 @@
                                     <h2 class="my-0 txt-btn"><strong>Plans</strong></h2>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Workouts</a>
+                                    <a class="dropdown-item" href="{% url 'workout_plans' %}">Workouts</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Nutrition</a>
+                                    <a class="dropdown-item" href="{% url 'diet_plans' %}">Diet</a>
                                 </div>
                             </li>
 
@@ -92,13 +92,9 @@
                                     <h2 class="my-0 txt-btn"><strong>Community</strong></h2>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Gain Muscle</a>
+                                    <a class="dropdown-item" href="{% url 'muscle_posts' %}">Gain Muscle</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Lose Weight</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Running</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Food</a>
+                                    <a class="dropdown-item" href="{% url 'weight_posts' %}">Lose Weight</a>
                                 </div>
                             </li>
                         </ul>

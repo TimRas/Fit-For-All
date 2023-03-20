@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row row-cols-3">
+    {% for post in posts %}
+        <div class="card col">
+            <div class="card-header">
+                Featured
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text max-lines-3">{{ post.excerpt }}</p>
+                <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">Read More!</a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+
+{% block page_header %}
+<div class="products-header">
+    <h2>Lose Weight Posts</h2>
+    <hr class="mx-auto">
+</div>
+{% endblock %}
