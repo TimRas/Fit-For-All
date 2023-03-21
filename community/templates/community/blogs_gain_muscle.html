@@ -7,7 +7,7 @@
 
 <div class="container">
     <div class="row row-cols-3">
-    {% for post in posts_muscle %}
+        {% for post in posts_muscle %}
         <div class="card col">
             <div class="card-header">
                 Featured
@@ -18,9 +18,12 @@
                 <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">Read More!</a>
             </div>
         </div>
-    {% endfor %}
+        {% endfor %}
     </div>
 </div>
+<button type="button" class="btn btn-primary btn-lg">
+    <a href="{% url 'create_post' %}" class="btn btn-primary"></a>Create Post</button>
+
 {% endblock %}
 
 
