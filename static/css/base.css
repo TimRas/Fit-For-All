@@ -30,6 +30,10 @@ body {
     min-height: 100vh;
 }
 
+.relative-container {
+    position: relative;
+}
+
 /*------------------------------ Navigation bar */
 
 .dropdown-btn {
@@ -51,9 +55,6 @@ hr {
     width: 30vw;
 }
 
-.anchor-links {
-    color: white;
-}
 
 /*------------------------------ Header */
 
@@ -117,6 +118,24 @@ hr {
     background-color: #5057AF;
     border-radius: 0.5em;
     font-family: 'Roboto', sans-serif;
+}
+
+.button-links-green {
+    position: absolute;
+    background-color: #AFA850;
+    color: white;
+    border-radius: 0.5em;
+    font-family: 'Roboto', sans-serif;
+    right: 0em;
+    top: -4em;
+}
+
+.submit-buttons {
+    background-color: #5057AF;
+    color: white;
+    border-radius: 0.5em;
+    font-family: 'Roboto', sans-serif;
+    float: right;
 }
 
 .home-intro-text {
@@ -233,6 +252,9 @@ hr {
     line-height: 1.8em;
   }
 
+  .form-body {
+    padding-top: 0;
+  }
 
 /*------------------------------ Allauth */
 
@@ -264,6 +286,13 @@ hr {
 
 #sign-out-text {
     margin-top: 1.75em;
+}
+
+.content-containers-community {
+    background-color: #AFA850;
+    margin: auto;
+    border-radius: 0.8em;
+    border: 5px;
 }
 
 /*------------------------------ Mailchimp */

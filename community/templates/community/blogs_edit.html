@@ -8,16 +8,16 @@
 
 {% if user.is_authenticated %}
 
-<div class="card">
+<div class="card content-containers-community mt-4 mb-4">
     <div class="card-header">
         <h3>Edit your post!:</h3>
-        <p>Posting as: {{ user.username }}</p>
+        <p class="mb-0">Posting as: {{ user.username }}</p>
     </div>
-    <div class="card-body">
+    <div class="card-body form-body">
         <form method="post" style="margin-top: 1.3em;">
             {{ post_form | crispy }}
             {% csrf_token %}
-            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+            <button type="submit" class="btn submit-buttons">Submit</button>
         </form>
     </div>
 </div>

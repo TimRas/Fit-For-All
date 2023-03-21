@@ -7,7 +7,7 @@
 
 <div class="container">
     <div class="row row-cols-3">
-    {% for post in posts %}
+        {% for post in posts %}
         <div class="card col">
             <div class="card-header">
                 Featured
@@ -18,7 +18,7 @@
                 <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">Read More!</a>
             </div>
         </div>
-    {% endfor %}
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
@@ -26,7 +26,12 @@
 
 {% block page_header %}
 <div class="products-header">
-    <h2>Lose Weight Posts</h2>
-    <hr class="mx-auto">
+    <div>
+        <h2>Lose Weight Posts</h2>
+        <hr class="mx-auto">
+    </div>
+    <div class="relative-container">
+            <a href="{% url 'create_post' %}" class="btn button-links-green anchor-links">Create Post</a>
+    </div>
 </div>
 {% endblock %}
