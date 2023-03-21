@@ -13,6 +13,7 @@
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               {% if request.user == post.author %}
               <a class="button" href="{% url 'post_edit' post.id %}">Edit Post</a>
+              <a class="button" href="{% url 'post_delete' post.id %}">Delete Post</a>
               {% endif %}
             </div>
           </div>

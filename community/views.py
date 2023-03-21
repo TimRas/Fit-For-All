@@ -59,7 +59,7 @@ def create_post(request):
         post_form.instance.email = request.user.email
         post_form.instance.name = request.user.username
         post = post_form.save(commit=True)
-        return redirect("post_detail", post_id=post_id)
+        return redirect("post_detail", post_id=post.id)
     else:
         post_form = PostForm()
 
@@ -89,3 +89,16 @@ def edit_post(request, post_id):
             "post_form": post_form,
         },
     )
+
+
+def delete_post(request, post_id):
+
+    post = get_object_or_404(Post, pk=post_id)
+    post.delete()   
+    if post.post_category.name == 'Lose Weight':
+        return redirect("weight_posts")
+
+    elif post.post_category.name == 'Gain Muscle':
+        return redirect("muscle_posts")
+    else:
+        return redirect('home')
