@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post, PostCategory, Comment
 from .forms import PostForm
 
@@ -54,22 +54,12 @@ def post_detail(request, post_id):
 
 def create_post(request):
 
-    # queryset = Post.objects.all()
-    # post = get_object_or_404(queryset, slug=slug)
-    # comments = post.comments.filter(approved=True).order_by("-created_on")
-    # liked = False
-    # if post.likes.filter(id=self.request.user.id).exists():
-    #     liked = True
-
     post_form = PostForm(data=request.POST)
-    print('hallo')
-    print(post_form)
-
     if post_form.is_valid():
         post_form.instance.email = request.user.email
         post_form.instance.name = request.user.username
         post = post_form.save(commit=True)
-        print('jkpvriend')
+        return redirect("post_detail", post_id=post_id)
     else:
         post_form = PostForm()
 
@@ -81,33 +71,21 @@ def create_post(request):
         },
     )
 
-# def edit_post(self, request, slug, *args, **kwargs):
 
-#     queryset = Post.objects.all()
-#     post = get_object_or_404(queryset, slug=slug)
-#     comments = post.comments.filter(approved=True).order_by("-created_on")
-#     liked = False
-#     if post.likes.filter(id=self.request.user.id).exists():
-#         liked = True
+def edit_post(request, post_id):
 
-#     post_form = PostForm(data=request.POST)
-#     if post_form.is_valid():
-#         post_form.instance.email = request.user.email
-#         post_form.instance.name = request.user.username
-#         post = post_form.save(commit=False)
-#         post.post = post
-#         post.save()
-#     else:
-#         post_form = PostForm()
+    post = get_object_or_404(Post, pk=post_id)      
+    if request.method == "POST":
+        post_form = PostForm(request.POST, instance=post)
+        if post_form.is_valid():
+            post_form.save(commit=True)
+            return redirect("post_detail", post_id=post_id)
+    post_form = PostForm(instance=post)
 
-#     return render(
-#         request,
-#         "blogs_create.html",
-#         {
-#             "post": post,
-#             "posts": posts,
-#             "posted": True,
-#             "post_form": post_form,
-#             "liked": liked
-#         },
-#     )
+    return render(
+        request,
+        "community/blogs_edit.html",
+        {
+            "post_form": post_form,
+        },
+    )
