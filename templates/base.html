@@ -161,16 +161,18 @@
         <div class="message-container"></div>
         {% endif %}
 
-        <div class="main-content">
-            {% block page_header %}
-            {% endblock %}
 
-            {% block content %}
-            {% endblock %}
+        {% block page_header %}
+        {% endblock %}
+        
+        {% block content %}
+        <div class="main-content"></div>
+        {% endblock %}
+        
 
-            {% block postloadjs %}
-            {% endblock %}
-        </div>
+        {% block postloadjs %}
+        {% endblock %}
+
 
         <footer class="footer-container row">
             <div class="col">
