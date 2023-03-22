@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post, PostCategory, Comment
-from .forms import PostForm
+from .forms import PostForm, CommentForm
 
 
 def muscle_posts(request):
@@ -44,12 +44,42 @@ def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     comments = [x for x in Comment.objects.all() if check_post_id(post, x)]
 
+    comment_form = CommentForm(data=request.POST)
+    if comment_form.is_valid():
+        comment_form.instance.email = request.user.email
+        comment_form.instance.name = request.user.username
+        comment = post_form.save(commit=True)
+        return redirect("post_detail", post_id=post.id)
+    else:
+        comment_form = CommentForm()
+
     context = {
         'post': post,
         'comments': comments,
+        "comment_form": comment_form,
     }
 
     return render(request, 'community/blog_details.html', context)
+
+
+# def create_comment(request):
+
+#     comment_form = CommentForm(data=request.POST)
+#     if comment_form.is_valid():
+#         comment_form.instance.email = request.user.email
+#         comment_form.instance.name = request.user.username
+#         pcomment = post_form.save(commit=True)
+#         return redirect("post_detail", post_id=post.id)
+#     else:
+#         comment_form = PostForm()
+
+#     return render(
+#         request,
+#         "community/blogs_create.html",
+#         {
+#             "comment_form": comment_form,
+#         },
+#     )
 
 
 def create_post(request):

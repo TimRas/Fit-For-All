@@ -17,24 +17,20 @@
             <hr class="mx-auto w-100">
             <div class="row workout-content">
                 <div class="col-9">
-                    <div class="text-container">
+                    <div class="text-container ml-3">
                         <p class="home-intro-text text-white pl-3 pt-3">{{ challenge.content }}</p>
                     </div>
                 </div>
-                <div class="col-3 pr-3 mb-5">
+                <div class="col-3 mb-5">
                     {% if challenge.image %}
-                    <div class="img-stretch">
-                        <a href="">
-                            <img class="img-fluid rounded float-right" src="{{ category.image.url }}"
-                                alt="{{ category.title }}">
-                        </a>
+                    <div class="img-container">
+                            <img class="img-fluid rounded" src="{{ challenge.image.url }}"
+                                alt="{{ challenge.title }}">
                     </div>
                     {% else %}
-                    <div class="img-stretch">
-                        <a href="">
-                            <img class="img-fluid rounded float-right" src="{{ MEDIA_URL }}noimage.png"
-                                alt="{{ category.title }}">
-                        </a>
+                    <div class="img-container">
+                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png"
+                                alt="{{ challenge.title }}">
                     </div>
                     {% endif %}
                 </div>

@@ -6,7 +6,7 @@ def workout_plans(request):
     """ Renders a page to show all workout plans """
 
     category_workout = Category.objects.get(title='Workouts')
-    challenges = Challenge.objects.filter(category=category_workout).values()
+    challenges = Challenge.objects.filter(category=category_workout)
 
     context = {
         'challenges': challenges,
@@ -19,7 +19,7 @@ def diet_plans(request):
     """ Renders a page to show all diet plans """
 
     category_diet = Category.objects.get(title='Diet')
-    challenges = Challenge.objects.filter(category=category_diet).values()
+    challenges = Challenge.objects.filter(category=category_diet)
 
     context = {
         'challenges': challenges,

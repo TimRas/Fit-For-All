@@ -19,10 +19,11 @@ body {
     margin: 0 auto;
     background-color: #5057AF;
 }
+
 .page-container {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 .main-content {
@@ -57,7 +58,7 @@ body {
 
 hr {
     background-color: white;
-    width: 30vw;
+    width: 100%;
 }
 
 
@@ -152,8 +153,6 @@ hr {
     border-radius: 0.5em;
     height: 5em;
     margin-bottom: 1em;
-    position: absolute;
-    bottom: 0;
 }
 
 /*------------------------------ Products Page */
@@ -223,16 +222,19 @@ hr {
 }
 
 .text-container {
-    width: 80%;
     height: 70%;
     background-color: #5057AF;
     border-radius: 0.5em;
 }
 
-.img-stretch {
+.img-container {
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 /*------------------------------ Community Page */
 
 .community-posts-categories {
@@ -250,11 +252,79 @@ hr {
     overflow: hidden;
     max-height: 5.4em;
     line-height: 1.8em;
-  }
+}
 
-  .form-body {
+.form-body {
     padding-top: 0;
-  }
+}
+
+.button-links-posts {
+    background-color: #5057AF;
+    border-radius: 0.5em;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+textarea.form-control {
+    height: 5em;
+}
+
+.select.form-control {
+    height: 3em;
+}
+
+.content-containers-community {
+    background-color: #AFA850;
+    margin: auto;
+    border-radius: 0.8em;
+    border: 5px;
+}
+
+.content-containers-community-posts {
+    background-color: #AFA850;
+    border-radius: 0.8em;
+    border: 5px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.content-container-comment-form {
+    background-color: #AFA850;
+    margin: auto;
+    width: 90%;
+    border-radius: 0.8em;
+    border: 5px;
+}
+
+.content-container-comment {
+    background-color: #AFA850;
+    border-radius: 0.8em;
+    border: 5px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    width: 90%;
+}
+
+.content-container-post {
+    background-color: #AFA850;
+    border-radius: 0.8em;
+    border: 5px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    height: 14em;
+}
+
+.crud-buttons {
+    background-color: #5057AF;
+    border-radius: 0.5em;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    float: right;
+    
+}
+
 
 /*------------------------------ Allauth */
 
@@ -288,20 +358,6 @@ hr {
     margin-top: 1.75em;
 }
 
-.content-containers-community {
-    background-color: #AFA850;
-    margin: auto;
-    border-radius: 0.8em;
-    border: 5px;
-}
-
-.content-containers-community-posts {
-    background-color: #AFA850;
-    border-radius: 0.8em;
-    border: 5px;
-    font-family: 'Roboto', sans-serif;
-    color: white;
-}
 
 /*------------------------------ Mailchimp */
 

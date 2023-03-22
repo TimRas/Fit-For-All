@@ -17,7 +17,9 @@
                     <p class="card-text max-lines-3">{{ post.excerpt }}</p>
                 </div>
                 <div class="card-footer">
-                    <a href="{% url 'post_detail' post.id %}" class="btn button-links anchor-links">Read More!</a>
+                    <div class="btn button-links-posts">
+                        <a href="{% url 'post_detail' post.id %}" class="anchor-links">Read More!</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -36,7 +38,7 @@
         <hr class="mx-auto">
     </div>
     <div class="relative-container">
-            <a href="{% url 'create_post' %}" class="btn button-links-green anchor-links">Create Post</a>
+        <a href="{% url 'create_post' %}" class="btn button-links-green anchor-links">Create Post</a>
     </div>
 </div>
 {% endblock %}

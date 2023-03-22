@@ -7,20 +7,27 @@
 
 <div class="container">
     <div class="row row-cols-3">
-        {% for post in posts %}
-        <div class="card col">
-            <div class="card-header">
-                Featured
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">{{ post.title }}</h5>
-                <p class="card-text max-lines-3">{{ post.excerpt }}</p>
-                <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">Read More!</a>
+        {% for post in posts_weight %}
+        <div class="col px-1 py-1">
+            <div class="card content-containers-community-posts">
+                <div class="card-header">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text max-lines-3">{{ post.excerpt }}</p>
+                </div>
+                <div class="card-footer">
+                    <div class="btn button-links-posts">
+                        <a href="{% url 'post_detail' post.id %}" class="anchor-links">Read More!</a>
+                    </div>
+                </div>
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
+
+
 {% endblock %}
 
 
@@ -31,7 +38,7 @@
         <hr class="mx-auto">
     </div>
     <div class="relative-container">
-            <a href="{% url 'create_post' %}" class="btn button-links-plans">Create Post</a>
+        <a href="{% url 'create_post' %}" class="btn button-links-green anchor-links">Create Post</a>
     </div>
 </div>
 {% endblock %}

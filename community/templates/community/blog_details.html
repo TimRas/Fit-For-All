@@ -1,45 +1,60 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container">
-    <div class="card mt-3 row mx-auto">
-        <div class="row no-gutters">
-          
-          <div class="col-8">
-            <div class="card-body">
-              <h5 class="card-title">{{ post.title }}</h5>
-              <p class="card-text">{{ post.content }}</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              {% if request.user == post.author %}
-              <a class="button" href="{% url 'post_edit' post.id %}">Edit Post</a>
-              <a class="button" href="{% url 'post_delete' post.id %}">Delete Post</a>
-              {% endif %}
-            </div>
-          </div>
-          <div class="col-4">
-            <img src="..." class="card-img" alt="...">
-          </div>
+  <div class="card mt-5 row mx-auto content-container-post">
+    <div class="row no-gutters">
+
+      <div class="col">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <hr>
+          <p class="card-text">{{ post.content }}</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          {% if request.user == post.author %}
+          <hr>
+          <a class="btn crud-buttons ml-2" href="{% url 'post_edit' post.id %}">Edit Post</a>
+          <a class="btn crud-buttons" href="{% url 'post_delete' post.id %}">Delete Post</a>
+          {% endif %}
         </div>
       </div>
-
-
-    <div class="row">
-        {% for comment in comments %}
-        <div class="card mt-3 row mx-auto">
-            <div class="row no-gutters">
-              
-              <div class="col">
-                <div class="card-body">
-                  <p class="card-text">{{ comment.body }}</p>
-                  <p class="card-text"><small class="text-muted">{{ comment.name }}</small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
     </div>
+  </div>
+
+
+
+  {% for comment in comments %}
+  <div class="row">
+    <div class="card mt-5 mx-auto content-container-comment">
+      <div class="card-body">
+        <p class="card-text">{{ comment.body }}</p>
+        <p class="card-text"><small class="text-muted">{{ comment.name }}</small></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    {% if user.is_authenticated %}
+
+    <div class="card content-container-comment-form mt-4 mb-4">
+      <div class="card-header">
+        <h3>Leave a comment:</h3>
+        <p>Posting as: {{ user.username }}</p>
+      </div>
+      <div class="card-body">
+        <form method="post" style="margin-top: 1.3em;">
+          {{ comment_form | crispy }}
+          {% csrf_token %}
+          <button type="submit" class="btn submit-buttons">Submit</button>
+        </form>
+      </div>
+    </div>
+    {% endif %}
+  </div>
 </div>
+{% endfor %}
+
 
 
 {% endblock %}
