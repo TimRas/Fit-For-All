@@ -34,9 +34,9 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    {% if user.is_authenticated %}
+  {% endfor %}
 
+  <div class="row">
     <div class="card content-container-comment-form mt-4 mb-4">
       <div class="card-header">
         <h3>Leave a comment:</h3>
@@ -49,12 +49,13 @@
           <button type="submit" class="btn submit-buttons">Submit</button>
         </form>
       </div>
-    </div>
-    {% endif %}
+    </div>   
   </div>
 </div>
-{% endfor %}
 
 
 
 {% endblock %}
+
+<!-- {% if user.is_authenticated %} -->
+<!-- {% endif %} -->

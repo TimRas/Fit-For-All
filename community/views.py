@@ -48,7 +48,7 @@ def post_detail(request, post_id):
     if comment_form.is_valid():
         comment_form.instance.email = request.user.email
         comment_form.instance.name = request.user.username
-        comment = post_form.save(commit=True)
+        comment = comment_form.save(commit=True)
         return redirect("post_detail", post_id=post.id)
     else:
         comment_form = CommentForm()
