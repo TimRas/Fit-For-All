@@ -37,7 +37,7 @@ def check_post_id(post, comment):
     return str(comment.post) == str(post.title)
 
   
-def post_detail(request, post_id):
+def post_detail_create_comment(request, post_id):
         
     """ Renders a page to show all community posts and categories """
 
@@ -132,3 +132,32 @@ def delete_post(request, post_id):
         return redirect("muscle_posts")
     else:
         return redirect('home')
+
+
+def edit_comment(request, comment_id):
+
+    comment = get_object_or_404(Comment, pk=comment_id)
+    if request.method == "POST":
+        comment_form = CommentForm(request.POST, instance=comment)
+        if comment_form.is_valid():
+            comment_form.save(commit=True)
+            post_id = comment.post.id
+            return redirect("post_detail", post_id=post_id)
+    comment_form = CommentForm(instance=comment)
+
+    return render(
+        request,
+        "community/comment_edit.html",
+        {
+            "comment_form": comment_form,
+        },
+    )
+
+
+def delete_comment(request, comment_id):
+
+    comment = get_object_or_404(Comment, pk=comment_id)
+    comment.delete()
+    post_id = comment.post.id
+
+    return redirect("post_detail", post_id=post_id)   
