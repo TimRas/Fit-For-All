@@ -26,7 +26,10 @@ class Challenge(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     content = models.TextField()
     image = models.ImageField(blank=True)
-    likes_challenge = models.ManyToManyField(User, blank=True, related_name='challenge_likes')
+    intro = models.TextField(blank=True)
+    steps = models.TextField(blank=True)
+    outro = models.TextField(blank=True)
+    tips = models.TextField(blank=True)
     
     def __str__(self):
         return self.title

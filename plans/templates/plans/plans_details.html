@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+<div class="products-header">
+    <h2>{{ challenge.title }}</h2>
+    <hr class="mx-auto">
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="main-content">
+    <div class="row">
+        <div class="intro-container mx-auto">
+            <p class="intro-text my-auto">
+                {{ challenge.intro }}
+            </p>
+        </div>
+    </div>
+    <div class="row mx-auto">
+        <div class="col-9">
+            <div class="steps-container">
+                <p class="steps-text my-auto">
+                    {{ challenge.steps|safe }}
+                </p>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="tips-container">
+                <p class="tips-text my-auto">
+                    {{ challenge.tips|safe }}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="outro-container mx-auto">
+            <p class="outro-text my-auto">
+                {{ challenge.outro }}
+            </p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+<!-- <div class="content-containers-category">
+    <div class="workout-categories">
+        <h2 class="pl-3 pt-3 text-white">{{ challenge.intro }}</h2>
+        <hr class="mx-auto w-100">
+        <div class="row workout-content">
+            <div class="col-9 h-75">
+                <div class="text-container ml-3">
+                    <p class="home-intro-text text-white pl-3 pt-3">{{ challenge.steps }}</p>
+                </div>
+            </div>
+            <div class="col-3 mb-5">
+                {{challenge.tips }}
+            </div>
+        </div>
+    </div>
+</div> -->

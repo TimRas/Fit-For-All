@@ -16,7 +16,7 @@
             <h2 class="pl-3 pt-3 text-white">{{ challenge.title }}</h2>
             <hr class="mx-auto w-100">
             <div class="row workout-content">
-                <div class="col-9">
+                <div class="col-9 h-75">
                     <div class="text-container ml-3">
                         <p class="home-intro-text text-white pl-3 pt-3">{{ challenge.content }}</p>
                     </div>
@@ -37,7 +37,7 @@
             </div>
             <div class="row-12 button-space">
                 <button class="btn button-links-plans">
-                    <a href="#" class="anchor-links"><strong>To challenge details</strong></a>
+                    <a href="{% url 'challenges' challenge.id %}" class="anchor-links"><strong>To challenge details</strong></a>
                 </button>
             </div>
         </div>
