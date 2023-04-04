@@ -168,6 +168,44 @@ hr {
     text-align: center;
 }
 
+.product-description {
+    height: 6em;
+    min-height: 6em;
+    background-color: #AFA850;
+    border-radius: 0.5em;
+    padding: 1em;
+}
+
+.desc-text { 
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: large;
+}
+
+.product-text {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: x-large;
+    text-align: center;
+}
+
+.product-buttons {
+    background-color: #AFA850;
+    color: white;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    font-family: 'Raleway', sans-serif;
+    display: block;
+    height: 2.5em;
+}
+/* .product-buttons > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+
 /* .products {
     margin-bottom: 4em;
 } */
@@ -179,6 +217,30 @@ hr {
 .img-fluid {
     height: 12em;
 }
+
+.img-container-detail {
+    /* width: 12em;
+    height: 12em; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+    width: 100%; /* sets the width of the container to 100% of its parent element */
+    height: 0; /* sets the height to 0 so that the image can fill the container */
+    padding-bottom: 75%; /* sets the aspect ratio of the container (height/width) */
+    position: relative; /* sets the container as a relative positioning context for its child element */
+
+}
+
+.img-container-detail img {
+    position: absolute; /* sets the image as an absolute positioning context within the container */
+    top: 0; /* sets the image's top position to the top of the container */
+    left: 0; /* sets the image's left position to the left of the container */
+    width: 100%; /* sets the width of the image to 100% of the container */
+    height: 90%; /* sets the height of the image to 100% of the container */
+    object-fit: cover; /* scales the image to cover the entire container while maintaining its aspect ratio */
+    border-radius: 0.5em;
+  }
 
 
 /*------------------------------ Workouts Plans Page */
