@@ -62,26 +62,6 @@ def post_detail_create_comment(request, post_id):
     return render(request, 'community/blog_details.html', context)
 
 
-# def create_comment(request):
-
-#     comment_form = CommentForm(data=request.POST)
-#     if comment_form.is_valid():
-#         comment_form.instance.email = request.user.email
-#         comment_form.instance.name = request.user.username
-#         pcomment = post_form.save(commit=True)
-#         return redirect("post_detail", post_id=post.id)
-#     else:
-#         comment_form = PostForm()
-
-#     return render(
-#         request,
-#         "community/blogs_create.html",
-#         {
-#             "comment_form": comment_form,
-#         },
-#     )
-
-
 def create_post(request):
 
     post_form = PostForm(data=request.POST)
