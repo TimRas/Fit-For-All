@@ -79,11 +79,11 @@
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Food</a>
+                                    <a class="dropdown-item" href="{% url 'products' %}?category=gear">Gear</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Workout Gear</a>
+                                    <a class="dropdown-item" href="{% url 'products' %}?category=woman">Woman</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Supplements</a>
+                                    <a class="dropdown-item" href="{% url 'products' %}?category=men">Men</a>
                                 </div>
                             </li>
 
@@ -100,7 +100,7 @@
                             </li>
                         </ul>
 
-                        <form class="form mr-5" method="GET" action="">
+                        <form class="form mr-5" method="GET" action="{% url 'products' %}">
                             <div class="input-group w-100">
                                 <input class="form-control border border-black rounded-0" type="text" name="q"
                                     placeholder="Search our site">
