@@ -242,6 +242,29 @@ hr {
     border-radius: 0.5em;
   }
 
+/*------------------------------ Shopping Bag */
+
+.shopping-containers {
+    background-color: #AFA850;
+}
+
+.shopping-containers > td  {
+    color: white;
+}
+
+.shopping-table {
+    height: 95%
+}
+
+.shopping-buttons {
+    background-color: #AFA850;
+    color: white;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    font-family: 'Raleway', sans-serif;
+    display: block;
+    height: 2.5em;
+}
 
 /*------------------------------ Workouts Plans Page */
 
