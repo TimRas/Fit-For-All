@@ -37,7 +37,7 @@
     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
         {% csrf_token %}
         <div class="row">
-            <p class="mt-3 col-6"><strong class="float-right">Quantity:</strong></p>
+            <p class="mt-3 col-6"><strong class="float-right text-white">Quantity:</strong></p>
             <div class="form-group w-50 col-5">
                 <div class="input-group">
                     <div class="input-group">
@@ -60,21 +60,24 @@
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="row">
-                        <div class="col-6">
-                            <a href="{% url 'products' %}" class="anchor-links">
-                                <span class="icon">
-                                    <i class="fas fa-chevron-left"></i>
-                                </span>
-                                <span class="text-uppercase">Keep Shopping</span>
-                            </a>
-                        </div>
-                        <div class="col-6 h-50 mb-1">
-                            <input type="submit" class="product-buttons h-50 mb-5" value="Add to Bag">
-                        </div>
-                    </div>
-                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+        <div class="row">
+            <div class="col-10">
+                <a href="{% url 'products' %}" class="anchor-links">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Keep Shopping</span>
+                </a>
+            </div>
+            <div class="col-2 h-50 mb-1">
+                <input type="submit" class="product-buttons h-50 mb-5" value="Add to Bag">
+            </div>
+        </div>
+        <input type="hidden" name="redirect_url" value="{{ request.path }}">
     </form>
 </section>
 {% endblock %}
