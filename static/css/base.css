@@ -22,7 +22,7 @@ body {
     /* position: relative; */
     width: 100%;
     height: 100%;
-    
+
 }
 
 .main-content {
@@ -176,7 +176,7 @@ hr {
     padding: 1em;
 }
 
-.desc-text { 
+.desc-text {
     color: white;
     font-family: 'Roboto', sans-serif;
     text-align: center;
@@ -199,6 +199,7 @@ hr {
     display: block;
     height: 2.5em;
 }
+
 /* .product-buttons > a {
     display: flex;
     justify-content: center;
@@ -225,22 +226,32 @@ hr {
     justify-content: center;
     align-items: center; */
 
-    width: 100%; /* sets the width of the container to 100% of its parent element */
-    height: 0; /* sets the height to 0 so that the image can fill the container */
-    padding-bottom: 75%; /* sets the aspect ratio of the container (height/width) */
-    position: relative; /* sets the container as a relative positioning context for its child element */
+    width: 100%;
+    /* sets the width of the container to 100% of its parent element */
+    height: 0;
+    /* sets the height to 0 so that the image can fill the container */
+    padding-bottom: 75%;
+    /* sets the aspect ratio of the container (height/width) */
+    position: relative;
+    /* sets the container as a relative positioning context for its child element */
 
 }
 
 .img-container-detail img {
-    position: absolute; /* sets the image as an absolute positioning context within the container */
-    top: 0; /* sets the image's top position to the top of the container */
-    left: 0; /* sets the image's left position to the left of the container */
-    width: 100%; /* sets the width of the image to 100% of the container */
-    height: 90%; /* sets the height of the image to 100% of the container */
-    object-fit: cover; /* scales the image to cover the entire container while maintaining its aspect ratio */
+    position: absolute;
+    /* sets the image as an absolute positioning context within the container */
+    top: 0;
+    /* sets the image's top position to the top of the container */
+    left: 0;
+    /* sets the image's left position to the left of the container */
+    width: 100%;
+    /* sets the width of the image to 100% of the container */
+    height: 90%;
+    /* sets the height of the image to 100% of the container */
+    object-fit: cover;
+    /* scales the image to cover the entire container while maintaining its aspect ratio */
     border-radius: 0.5em;
-  }
+}
 
 /*------------------------------ Shopping Bag */
 
@@ -248,7 +259,7 @@ hr {
     background-color: #AFA850;
 }
 
-.shopping-containers > td  {
+.shopping-containers>td {
     color: white;
 }
 
@@ -334,8 +345,8 @@ hr {
     background-color: #AFA850;
     border-radius: 0.8em;
     padding: 0.3em;
-    margin-bottom: 2em; 
-    width: 75%;   
+    margin-bottom: 2em;
+    width: 75%;
 }
 
 .intro-text {
@@ -348,7 +359,7 @@ hr {
     background-color: #AFA850;
     border-radius: 0.8em;
     padding: 0.3em;
-    width: 75%;  
+    width: 75%;
     margin-top: 4.5em;
 }
 
@@ -357,7 +368,7 @@ hr {
     color: white;
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    
+
 }
 
 .steps-container {
@@ -369,7 +380,7 @@ hr {
     width: 80%;
 }
 
-.steps-container > ul { 
+.steps-container>ul {
     color: white;
     border-radius: 0.5em;
     font-family: 'Roboto', sans-serif;
@@ -383,11 +394,11 @@ hr {
     border-radius: 0.8em;
     padding: 0.3em;
     margin-top: 2em;
-    width: 90%; 
+    width: 90%;
     margin: auto;
 }
 
-.tips-container > ul { 
+.tips-container>ul {
     color: white;
     border-radius: 0.5em;
     font-family: 'Roboto', sans-serif;
@@ -396,7 +407,7 @@ hr {
     font-size: small;
 }
 
-.tips-text { 
+.tips-text {
     color: white;
     border-radius: 0.5em;
     font-family: 'Roboto', sans-serif;
@@ -492,7 +503,7 @@ textarea.form-control {
     font-family: 'Roboto', sans-serif;
     color: white;
     float: right;
-    
+
 }
 
 
@@ -528,6 +539,45 @@ textarea.form-control {
     margin-top: 1.75em;
 }
 
+/*------------------------------ Stripe */
+
+.StripeElement,
+.stripe-style-input {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
+}
+
+.fieldset-label {
+    position: relative;
+    right: .5rem;
+}
+
+#payment-form .form-control,
+#card-element {
+    color: #000;
+    border: 1px solid #000;
+}
 
 /*------------------------------ Mailchimp */
 

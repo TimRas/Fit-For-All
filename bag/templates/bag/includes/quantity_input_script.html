@@ -26,6 +26,7 @@
     $('.increment-qty').click(function(e) {
        e.preventDefault();
        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+       console.log(closestInput);
        var currentValue = parseInt($(closestInput).val());
        console.log(currentValue);
        $(closestInput).val(currentValue + 1);
