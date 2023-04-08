@@ -13,8 +13,8 @@
         <h3>Edit your post!:</h3>
         <p class="mb-0">Posting as: {{ user.username }}</p>
     </div>
-    <div class="card-body form-body">
-        <form method="post" style="margin-top: 1.3em;">
+    <div class="card-body">
+        <form method="post">
             {{ post_form | crispy }}
             {% csrf_token %}
             <button type="submit" class="btn submit-buttons">Submit</button>

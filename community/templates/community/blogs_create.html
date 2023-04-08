@@ -5,19 +5,18 @@
 
 
 {% block content %}
-
 {% if user.is_authenticated %}
 
 <div class="card content-containers-community mt-4 mb-4">
     <div class="card-header">
-        <h3>Leave a comment:</h3>
+        <h3>Create a Post:</h3>
         <p>Posting as: {{ user.username }}</p>
     </div>
     <div class="card-body">
-        <form method="post" style="margin-top: 1.3em;">
+        <form method="post">
             {{ post_form | crispy }}
             {% csrf_token %}
-            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+            <button type="submit" class="btn btn-signup btn-lg submit-buttons">Submit</button>
         </form>
     </div>
 </div>

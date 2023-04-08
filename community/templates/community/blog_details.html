@@ -3,63 +3,55 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container">
-  <div class="card mt-5 row mx-auto content-container-post">
 
-    <div class="col">
-      <div class="card-body">
-        <h5 class="card-title">{{ post.title }}</h5>
-        <hr>
-        <p class="card-text">{{ post.content }}</p>
-        {% if request.user == post.author %}
-        <a class="btn crud-buttons ml-2 mt-5" href="{% url 'post_edit' post.id %}">Edit Post</a>
-        <a class="btn crud-buttons mt-5" href="{% url 'post_delete' post.id %}">Delete Post</a>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-
-
-
-  {% for comment in comments %}
+<div class="container-fluid">
   <div class="row">
-    <div class="card mt-5 mx-auto content-container-comment">
-      <div class="card-body">
-        <p class="card-text">{{ comment.body }}</p>
-        <hr>
-        <p class="card-text"><small class="text-muted">{{ comment.name }}</small></p>
-        {% if request.user == post.author %}
-        <a class="btn crud-buttons ml-2" href="{% url 'comment_edit' comment.id %}">Edit Comment</a>
-        <a class="btn crud-buttons" href="{% url 'comment_delete' comment.id %}">Delete Comment</a>
-        {% endif %}
+    <div class="col-lg-8 col-md-10 mx-auto">
+
+      <div class="card mt-5 content-container-post">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <hr>
+          <p class="card-text">{{ post.content }}</p>
+          {% if request.user == post.author %}
+          <div class="d-flex justify-content-between">
+            <a class="btn crud-buttons mt-3" href="{% url 'post_edit' post.id %}">Edit Post</a>
+            <a class="btn crud-buttons mt-3" href="{% url 'post_delete' post.id %}">Delete Post</a>
+          </div>
+          {% endif %}
+        </div>
       </div>
-    </div>
-  </div>
-  {% endfor %}
 
-
-
-
-  <div class="row">
-    <div class="card content-container-comment-form mt-4 mb-4">
-      <div class="card-header">
-        <h3>Leave a comment:</h3>
-        <p>Posting as: {{ user.username }}</p>
+      {% for comment in comments %}
+      <div class="card mt-5 content-container-comment">
+        <div class="card-body">
+          <p class="card-text">{{ comment.body }}</p>
+          <hr>
+          <p class="card-text"><small class="text-muted">{{ comment.name }}</small></p>
+          {% if request.user == post.author %}
+          <a class="btn crud-buttons ml-2 mt-5" href="{% url 'post_edit' post.id %}">Edit Post</a>
+          <a class="btn crud-buttons mt-5" href="{% url 'post_delete' post.id %}">Delete Post</a>
+          {% endif %}
+        </div>
       </div>
-      <div class="card-body">
-        <form method="post" style="margin-top: 1.3em;">
-          {{ comment_form | crispy }}
-          {% csrf_token %}
-          <button type="submit" class="btn submit-buttons">Submit</button>
-        </form>
+      {% endfor %}
+
+      <div class="card mt-5 content-container-comment-form">
+        <div class="card-header">
+          <h3>Leave a comment:</h3>
+          <p>Posting as: {{ user.username }}</p>
+        </div>
+        <div class="card-body">
+          <form method="post" style="margin-top: 1.3em;">
+            {{ comment_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn submit-buttons">Submit</button>
+          </form>
+        </div>
       </div>
+
     </div>
   </div>
 </div>
 
-
-
 {% endblock %}
-
-<!-- {% if user.is_authenticated %} -->
-<!-- {% endif %} -->

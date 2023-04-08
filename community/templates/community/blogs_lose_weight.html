@@ -1,14 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
-
-
 {% block content %}
 
-<div class="main-content">
-    <div class="row row-cols-3">
+<div class="container">
+    <div class="row">
         {% for post in posts_weight %}
-        <div class="col px-1 py-1">
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
             <div class="card content-containers-community-posts">
                 <div class="card-header">
                     <h5 class="card-title">{{ post.title }}</h5>
@@ -27,9 +25,7 @@
     </div>
 </div>
 
-
 {% endblock %}
-
 
 {% block page_header %}
 <div class="products-header">

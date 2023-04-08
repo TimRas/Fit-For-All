@@ -43,7 +43,7 @@
     {% block extra_js %}
     {% endblock %}
 
-    <title>Fit For All hoi{% block extra_title %}{% endblock %}</title>
+    <title>Fit For All{% block extra_title %}{% endblock %}</title>
 </head>
 
 <body>
@@ -51,7 +51,7 @@
         <header class="header-container">
             <nav class="navbar navbar-expand-lg navbar-light mx-auto">
                 <div class="container">
-                    <div class="collapse navbar-collapse">
+                    <div class="collapse navbar-collapse justify-content-between">
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link main-logo-link" href="{% url 'home' %}">
@@ -65,11 +65,11 @@
                                     data-toggle="dropdown" aria-expanded="false">
                                     <h2 class="my-0 txt-btn"><strong>Plans</strong></h2>
                                 </button>
-                                <div class="dropdown-menu button-links">
-                                    <a class="dropdown-item navbar-buttons"
+                                <div class="dropdown-menu navbar-buttons">
+                                    <a class="dropdown-item text-white"
                                         href="{% url 'workout_plans' %}">Workouts</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item navbar-buttons" href="{% url 'diet_plans' %}">Diet</a>
+                                    <a class="dropdown-item text-white" href="{% url 'diet_plans' %}">Diet</a>
                                 </div>
                             </li>
 
@@ -78,14 +78,14 @@
                                     data-toggle="dropdown" aria-expanded="false">
                                     <h2 class="my-0 txt-btn"><strong>Products</strong></h2>
                                 </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
+                                <div class="dropdown-menu navbar-buttons">
+                                    <a class="dropdown-item text-white" href="{% url 'products' %}">All Products</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{% url 'products' %}?category=gear">Gear</a>
+                                    <a class="dropdown-item text-white" href="{% url 'products' %}?category=gear">Gear</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{% url 'products' %}?category=woman">Woman</a>
+                                    <a class="dropdown-item text-white" href="{% url 'products' %}?category=woman">Woman</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{% url 'products' %}?category=men">Men</a>
+                                    <a class="dropdown-item text-white" href="{% url 'products' %}?category=men">Men</a>
                                 </div>
                             </li>
 
@@ -94,10 +94,10 @@
                                     data-toggle="dropdown" aria-expanded="false">
                                     <h2 class="my-0 txt-btn"><strong>Community</strong></h2>
                                 </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{% url 'muscle_posts' %}">Gain Muscle</a>
+                                <div class="dropdown-menu navbar-buttons">
+                                    <a class="dropdown-item text-white" href="{% url 'muscle_posts' %}">Gain Muscle</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{% url 'weight_posts' %}">Lose Weight</a>
+                                    <a class="dropdown-item text-white" href="{% url 'weight_posts' %}">Lose Weight</a>
                                 </div>
                             </li>
                         </ul>
@@ -116,7 +116,7 @@
                             </div>
                         </form>
 
-                        <ul class="navbar-nav" id="account-management">
+                        <ul class="navbar-nav">
                             <li class="dropdown nav-item mr-2">
                                 <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
@@ -160,7 +160,7 @@
             </nav>
         </header>
 
-        {% if messages %}
+    {% if messages %}
         <div class="message-container">
             {% for message in messages %}
                 {% with message.level as level %}
@@ -173,17 +173,18 @@
                     {% else %}
                         {% include 'includes/toasts/toast_info.html' %}
                     {% endif %}
-                        {% endwith %}
-                {% endfor %}
+                {% endwith %}
+            {% endfor %}
         </div>
-        {% endif %}
-
+    {% endif %}
 
         {% block page_header %}
         {% endblock %}
 
         {% block content %}
-        <div class="main-content"></div>
+        <div class="main-content">
+            
+        </div>
         {% endblock %}
 
 
