@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-<section class="main-content">
+<section class="main-content mb-3">
     <div class="row">
         <div class="col-md-8 mx-auto">
             <div class="intro-container">
@@ -45,5 +45,32 @@
         </div>
     </div>
 </section>
+{% endblock %}
 
+{% block extra_css %}
+<style>
+    /* Extra CSS for responsiveness */
+    @media (max-width: 767.98px) {
+
+        .intro-container,
+        .steps-container,
+        .tips-container,
+        .outro-container {
+            text-align: center;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+
+        .intro-container,
+        .outro-container {
+            text-align: center;
+        }
+
+        .steps-container,
+        .tips-container {
+            margin-top: 20px;
+        }
+    }
+</style>
 {% endblock %}

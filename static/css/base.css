@@ -26,7 +26,7 @@ body {
 
 .main-content {
     position: relative;
-    min-height: calc(100vh - 280px);
+    min-height: calc(100vh - 310px);
     
 }
 
@@ -292,14 +292,12 @@ hr {
     height: 3em
 }
 
-.workout-content {
-    height: 180px;
-}
-
 .text-container {
     height: 100%;
     background-color: #5057AF;
     border-radius: 0.5em;
+    width: 90%;
+    margin: auto;
 }
 
 .img-container {
@@ -446,6 +444,7 @@ textarea.form-control {
     width: 90%;
     border-radius: 0.8em;
     border: 5px;
+    margin-bottom: 2em;
 }
 
 .content-container-comment {

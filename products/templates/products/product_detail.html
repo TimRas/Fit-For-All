@@ -60,9 +60,18 @@
                     </div>
                 </div>
             </div>
+            {% if user.is_authenticated %}
             <div class="col-md-12 col-lg-6 mt-3 mt-lg-0 text-lg-right">
                 <input type="submit" class="product-buttons" value="Add to Bag">
             </div>
+            {% else %}
+            <div class="col-md-12 col-lg-6 mt-3 mt-lg-0 text-lg-right">
+                <P>You need to register in order to purchase products. Sign up here!</P>
+                <button class="btn btn-secondary shopping-buttons float-right">
+                    <a href="{% url 'account_signup' %}" class="text-white">Register</a>
+                </button>
+            </div>
+            {% endif %}
         </div>
 
         <div class="row">
