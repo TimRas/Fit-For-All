@@ -12,22 +12,22 @@ body {
     font-family: 'Raleway', sans-serif;
     display: flex;
     flex-direction: column;
-    height: 100%;
     width: 75%;
     margin: 0 auto;
     background-color: #5057AF;
+    
 }
 
 .page-container {
-    /* position: relative; */
-    width: 100%;
+    position: relative;
     height: 100%;
+    min-height: 100%;
 }
 
 .main-content {
     position: relative;
-    width: 100%;
-    min-height: calc(100% - 240px);
+    min-height: calc(100vh - 280px);
+    
 }
 
 .relative-container {
@@ -89,20 +89,18 @@ hr {
 /*------------------------------ Home Page */
 
 
-.container-home-page {
+/* .container-home-page {
     margin-top: 3.5em;
     margin-bottom: 2.5em;
     width: 100%;
     min-height: calc(100% - 240px);
-}
+} */
 
 .content-containers {
     background-color: #AFA850;
-    margin: auto;
     padding: 1em;
     margin: 1em;
     border-radius: 0.8em;
-    border: 5px;  
 }
 
 .home-inner-content {
@@ -147,12 +145,13 @@ hr {
 /*------------------------------ Footer */
 
 .footer-container {
-    width: 100%;
     background-color: #AFA850;
     border-radius: 0.5em;
-    height: 5em;
-    margin-top: -3em;
-    position: relative;
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
 }
 
 /*------------------------------ Products Page */
@@ -274,13 +273,13 @@ hr {
     position: relative
 }
 
-.content-containers {
+/* .content-containers {
     background-color: #AFA850;
     height: 80%;
     width: 45%;
     margin: auto;
     border-radius: 0.8em;
-}
+} */
 
 .button-links-plans {
     background-color: #5057AF;

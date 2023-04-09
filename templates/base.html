@@ -47,7 +47,7 @@
 </head>
 
 <body>
-    <div class="page-container">
+    <section class="page-container">
         <header class="header-container">
             <nav class="navbar navbar-expand-lg navbar-light mx-auto">
                 <div class="container">
@@ -66,8 +66,7 @@
                                     <h2 class="my-0 txt-btn"><strong>Plans</strong></h2>
                                 </button>
                                 <div class="dropdown-menu navbar-buttons">
-                                    <a class="dropdown-item text-white"
-                                        href="{% url 'workout_plans' %}">Workouts</a>
+                                    <a class="dropdown-item text-white" href="{% url 'workout_plans' %}">Workouts</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item text-white" href="{% url 'diet_plans' %}">Diet</a>
                                 </div>
@@ -81,9 +80,11 @@
                                 <div class="dropdown-menu navbar-buttons">
                                     <a class="dropdown-item text-white" href="{% url 'products' %}">All Products</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item text-white" href="{% url 'products' %}?category=gear">Gear</a>
+                                    <a class="dropdown-item text-white"
+                                        href="{% url 'products' %}?category=gear">Gear</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item text-white" href="{% url 'products' %}?category=woman">Woman</a>
+                                    <a class="dropdown-item text-white"
+                                        href="{% url 'products' %}?category=woman">Woman</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item text-white" href="{% url 'products' %}?category=men">Men</a>
                                 </div>
@@ -120,21 +121,24 @@
                             <li class="dropdown nav-item mr-2">
                                 <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
+                                    {% if request.user.is_authenticated %}
                                     <div class="text-center">
                                         <div><i class="fas fa-user fa-lg"></i></div>
-                                        <p class="my-0">My Account</p>
+                                        <p class="my-0">Logged-In</p>
                                     </div>
-                                </a>
-                                <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                                    {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser %}
-                                    <a href="" class="dropdown-item">Product Management</a>
-                                    {% endif %}
-                                    <a href="" class="dropdown-item">My Profile</a>
-                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                                     {% else %}
-                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                    <div class="text-center">
+                                        <div><i class="fas fa-user fa-lg"></i></div>
+                                        <p class="my-0">Logged-Out</p>
+                                    </div>
+                                    {% endif %}
+                                </a>
+                                <div class="dropdown-menu border-0 navbar-buttons" aria-labelledby="user-options">
+                                    {% if request.user.is_authenticated %}
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item text-white">Logout</a>
+                                    {% else %}
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item text-white">Register</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item text-white">Login</a>
                                     {% endif %}
                                 </div>
                             </li>
@@ -160,42 +164,31 @@
             </nav>
         </header>
 
-    {% if messages %}
-        <div class="message-container">
-            {% for message in messages %}
-                {% with message.level as level %}
-                    {% if level == 40 %}
-                        {% include 'includes/toasts/toast_error.html' %}
-                    {% elif level == 30 %}
-                        {% include 'includes/toasts/toast_warning.html' %}
-                    {% elif level == 25 %}
-                        {% include 'includes/toasts/toast_success.html' %}
-                    {% else %}
-                        {% include 'includes/toasts/toast_info.html' %}
-                    {% endif %}
-                {% endwith %}
-            {% endfor %}
-        </div>
-    {% endif %}
-
         {% block page_header %}
         {% endblock %}
 
-        {% block content %}
-        <div class="main-content">
-            
+        {% if messages %}
+        <div class="message-container">
+            {% for message in messages %}
+            {% with message.level as level %}
+            {% if level == 40 %}
+            {% include 'includes/toasts/toast_error.html' %}
+            {% elif level == 30 %}
+            {% include 'includes/toasts/toast_warning.html' %}
+            {% elif level == 25 %}
+            {% include 'includes/toasts/toast_success.html' %}
+            {% else %}
+            {% include 'includes/toasts/toast_info.html' %}
+            {% endif %}
+            {% endwith %}
+            {% endfor %}
         </div>
+        {% endif %}
+
+        {% block content %}
         {% endblock %}
 
-
-        {% block postloadjs %}
-        <script type="text/javascript">
-            $('.toast').toast('show');
-        </script>
-        {% endblock %}
-
-
-        <footer class="footer-container row">
+        <footer class="footer-container row mb-4">
             <div class="col">
                 <div>
                     <h2>
@@ -208,8 +201,16 @@
                 </div>
             </div>
         </footer>
-    </div>
+
+    </section>
 </body>
+
+{% block postloadjs %}
+<script type="text/javascript">
+    $('.toast').toast('show');
+</script>
+{% endblock %}
+
 
 <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
 <script type='text/javascript'>
@@ -231,5 +232,7 @@
     }(jQuery));
     var $mcj = jQuery.noConflict(true);
 </script>
+
+
 
 </html>

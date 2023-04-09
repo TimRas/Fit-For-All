@@ -3,28 +3,29 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        {% for post in posts_weight %}
-        <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
-            <div class="card content-containers-community-posts">
-                <div class="card-header">
-                    <h5 class="card-title">{{ post.title }}</h5>
-                </div>
-                <div class="card-body">
-                    <p class="card-text max-lines-3">{{ post.excerpt }}</p>
-                </div>
-                <div class="card-footer">
-                    <div class="btn button-links-posts">
-                        <a href="{% url 'post_detail' post.id %}" class="anchor-links">Read More!</a>
+<section class="main-content">
+    <div class="container">
+        <div class="row">
+            {% for post in posts_weight %}
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                <div class="card content-containers-community-posts">
+                    <div class="card-header">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text max-lines-3">{{ post.excerpt }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="btn button-links-posts">
+                            <a href="{% url 'post_detail' post.id %}" class="anchor-links">Read More!</a>
+                        </div>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-</div>
-
+</section>
 {% endblock %}
 
 {% block page_header %}
