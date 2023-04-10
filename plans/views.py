@@ -35,20 +35,4 @@ def view_challenge(request, challenge_id):
     return render(request, 'plans/plans_details.html', context)
 
 
-# def edit_post(request, post_id):
 
-#     post = get_object_or_404(Post, pk=post_id)      
-#     if request.method == "POST":
-#         post_form = PostForm(request.POST, instance=post)
-#         if post_form.is_valid():
-#             post_form.save(commit=True)
-#             return redirect("post_detail", post_id=post_id)
-#     post_form = PostForm(instance=post)
-
-#     return render(
-#         request,
-#         "community/blogs_edit.html",
-#         {
-#             "post_form": post_form,
-#         },
-#     )

@@ -9,7 +9,6 @@ from .models import Product, Category
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
-    print(settings.STRIPE_SECRET_KEY)
     products = Product.objects.all()
     query = None
     categories = None

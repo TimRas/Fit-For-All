@@ -58,7 +58,6 @@ def remove_from_bag(request, item_id):
         messages.success(request, f'Removed {product.name} from your bag')
 
         request.session['bag'] = bag
-        print(bag)
         return HttpResponse(status=200)
 
     except Exception as e:

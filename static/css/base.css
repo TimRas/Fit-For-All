@@ -105,14 +105,6 @@ hr {
 
 /*------------------------------ Home Page */
 
-
-/* .container-home-page {
-    margin-top: 3.5em;
-    margin-bottom: 2.5em;
-    width: 100%;
-    min-height: calc(100% - 240px);
-} */
-
 .content-containers {
     background-color: #AFA850;
     margin: 1em;
@@ -285,14 +277,6 @@ hr {
     text-align: left;
     position: relative
 }
-
-/* .content-containers {
-    background-color: #AFA850;
-    height: 80%;
-    width: 45%;
-    margin: auto;
-    border-radius: 0.8em;
-} */
 
 .button-links-plans {
     background-color: #5057AF;
