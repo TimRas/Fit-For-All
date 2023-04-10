@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://fit-for-all.herokuapp.com/sitemap.xml
