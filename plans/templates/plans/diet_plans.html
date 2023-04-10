@@ -18,14 +18,14 @@
             <hr class="mx-auto w-100">
             <div class="row">
                 <div class="col-lg-9 col-md-8 col-sm-12">
-                    <div class="text-container ml-3">
+                    <div class="text-container">
                         <p class="home-intro-text text-white pl-3 pt-3">{{ challenge.content }}</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12 mb-5">
                     {% if challenge.image %}
-                    <div class="img-container">
-                            <img class="img-fluid rounded" src="{{ challenge.image.url }}"
+                    <div class="img-container pt-5">
+                            <img class="img-fluid rounded mr-1" src="{{ challenge.image.url }}"
                                 alt="{{ challenge.title }}">
                     </div>
                     {% else %}
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="row button-space">
-                <div class="col-12">
+                <div class="col-12 mt-1">
                     <button class="btn button-links-plans">
                         <a href="{% url 'challenges' challenge.id %}" class="anchor-links"><strong>To challenge details</strong></a>
                     </button>

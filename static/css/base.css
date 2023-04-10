@@ -26,7 +26,7 @@ body {
 
 .main-content {
     position: relative;
-    min-height: calc(100vh - 280px);
+    min-height: calc(100vh - 240px);
 
 }
 
@@ -37,6 +37,12 @@ body {
 .anchor-links {
     color: white;
 }
+
+.anchor-links:hover {
+    color: white;
+    text-decoration: none;
+}
+
 
 /*------------------------------ Navigation bar */
 
@@ -64,18 +70,12 @@ hr {
 }
 
 .show {
-    background-color: #AFA850;
+    background-color: #5056af;
     display: flex;
     justify-content: space-between;
-    padding: 1em;
-    margin-top: 2em;
     border-radius: 0.8em;
 }
 
-/* .navbar-index::after {
-    z-index: 9999;
-    background-color: #AFA850;
-} */
 
 /*------------------------------ Header */
 
@@ -115,7 +115,6 @@ hr {
 
 .content-containers {
     background-color: #AFA850;
-    padding: 1em;
     margin: 1em;
     border-radius: 0.8em;
 }
@@ -137,13 +136,10 @@ hr {
 }
 
 .button-links-green {
-    position: absolute;
     background-color: #AFA850;
     color: white;
     border-radius: 0.5em;
     font-family: 'Roboto', sans-serif;
-    right: 0em;
-    top: -4em;
 }
 
 .submit-buttons {
@@ -175,7 +171,6 @@ hr {
 
 .products-header {
     width: 100%;
-    height: 5em;
     margin: auto;
     margin-top: 1em;
     color: white;
@@ -316,6 +311,7 @@ hr {
     border-radius: 0.5em;
     width: 90%;
     margin: auto;
+    padding: 0.5em;
 }
 
 .img-container {
@@ -363,6 +359,7 @@ hr {
     margin-top: 2em;
     margin: auto;
     width: 80%;
+    height: 100%;
 }
 
 .steps-container>ul {
@@ -445,13 +442,11 @@ textarea.form-control {
     background-color: #AFA850;
     margin: auto;
     border-radius: 0.8em;
-    border: 5px;
 }
 
 .content-containers-community-posts {
     background-color: #AFA850;
     border-radius: 0.8em;
-    border: 5px;
     font-family: 'Roboto', sans-serif;
     color: white;
 }
@@ -461,23 +456,21 @@ textarea.form-control {
     margin: auto;
     width: 90%;
     border-radius: 0.8em;
-    border: 5px;
     margin-bottom: 2em;
 }
 
 .content-container-comment {
     background-color: #AFA850;
     border-radius: 0.8em;
-    border: 5px;
     font-family: 'Roboto', sans-serif;
     color: white;
     width: 90%;
+    margin: auto;
 }
 
 .content-container-post {
     background-color: #AFA850;
     border-radius: 0.8em;
-    border: 5px;
     font-family: 'Roboto', sans-serif;
     color: white;
     height: 14em;
@@ -504,7 +497,12 @@ textarea.form-control {
     font-family: 'Roboto', sans-serif;
     padding: 1em;
     text-align: center;
-    position: relative;
+    margin: auto;
+}
+
+.content-container-allauth {
+    height: 100%;
+    margin: auto;
 }
 
 .form-allauth {
@@ -514,7 +512,10 @@ textarea.form-control {
 .button-allauth {
     margin-bottom: 2em;
     margin-top: 1em;
-    border: none;
+    background-color: #5057AF;
+    border-radius: 0.3em;
+    padding: 1em;
+    color: white;
 }
 
 .link-allauth {
@@ -573,25 +574,6 @@ select option {
 select:invalid,
 select option[value=""] {
     color: #aab7c4 !important;
-}
-
-#loading-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(23, 162, 184, .85);
-    z-index: 9999;
-}
-
-.loading-spinner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    height: 100%;
 }
 
 /* ------------------------------- bootstrap toasts */
@@ -666,7 +648,7 @@ select option[value=""] {
 
 /*------------------------------ Media Queries */
 
-/*------------------------------ Heaer Media Queries */
+/*------------------------------ Header Media Queries */
 
 @media only screen and (max-width: 1350px) {
 
@@ -688,8 +670,6 @@ select option[value=""] {
     .navbar {
         height: 70%;
         padding-top: 2.5em;
-        /* justify-content: center;
-        align-items: center; */
     }
 
     .main-logo-text {
@@ -708,3 +688,16 @@ select option[value=""] {
     }
 }
 
+/*------------------------------ Shopping Bag Media Queries */
+
+@media only screen and (max-width: 1100px) {
+    .shopping-text {
+        font-size: small;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .shopping-text {
+        font-size: x-small;
+    }
+}

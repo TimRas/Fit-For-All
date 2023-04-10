@@ -9,36 +9,44 @@
 {% endblock %}
 
 {% block content %}
-<section class="main-content mb-3">
+<section class="main-content mb-3 d-flex flex-column justify-content-between">
     <div class="row">
-        <div class="col-md-8 mx-auto">
-            <div class="intro-container">
-                <p class="intro-text my-auto">
+        <div class="col-12">
+            <div class="intro-container mx-auto">
+                <h2 class="text-white">Intro:</h2>
+                <hr>
+                <p class="intro-text">
                     {{ challenge.intro }}
                 </p>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-9">
+        <div class="col-7">
             <div class="steps-container">
-                <p class="steps-text my-auto">
+                <h3 class="text-white">Steps:</h3>
+                <hr>
+                <p class="steps-text">
                     {{ challenge.steps|safe }}
                 </p>
             </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-5">
             <div class="tips-container">
-                <p class="tips-text my-auto">
+                <h3 class="text-white">Tips:</h3>
+                <hr>
+                <p class="tips-text">
                     {{ challenge.tips|safe }}
                 </p>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 mx-auto">
-            <div class="outro-container">
-                <p class="outro-text my-auto">
+        <div class="col-12">
+            <div class="outro-container mx-auto">
+                <h3 class="text-white">Outro:</h3>
+                <hr>
+                <p class="outro-text">
                     {{ challenge.outro }}
                 </p>
             </div>
@@ -48,8 +56,8 @@
 {% endblock %}
 
 {% block extra_css %}
-<style>
-    /* Extra CSS for responsiveness */
+<!-- <style>
+    Extra CSS for responsiveness
     @media (max-width: 767.98px) {
 
         .intro-container,
@@ -72,5 +80,5 @@
             margin-top: 20px;
         }
     }
-</style>
+</style> -->
 {% endblock %}
