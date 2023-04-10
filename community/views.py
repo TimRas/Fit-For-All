@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post, PostCategory, Comment
+from django.contrib.auth.decorators import login_required
 from .forms import PostForm, CommentForm
 
 
@@ -43,7 +44,7 @@ def post_detail_create_comment(request, post_id):
 
     post = get_object_or_404(Post, pk=post_id)
     comments = [x for x in Comment.objects.all() if check_post_id(post, x)]
-
+    
     comment_form = CommentForm(data=request.POST)
     if comment_form.is_valid():
         comment_form.instance.email = request.user.email
@@ -62,6 +63,7 @@ def post_detail_create_comment(request, post_id):
     return render(request, 'community/blog_details.html', context)
 
 
+@login_required
 def create_post(request):
 
     post_form = PostForm(data=request.POST)
@@ -82,6 +84,7 @@ def create_post(request):
     )
 
 
+@login_required
 def edit_post(request, post_id):
 
     post = get_object_or_404(Post, pk=post_id)      
@@ -101,6 +104,7 @@ def edit_post(request, post_id):
     )
 
 
+@login_required
 def delete_post(request, post_id):
 
     post = get_object_or_404(Post, pk=post_id)
@@ -114,6 +118,7 @@ def delete_post(request, post_id):
         return redirect('home')
 
 
+@login_required
 def edit_comment(request, comment_id):
 
     comment = get_object_or_404(Comment, pk=comment_id)
@@ -134,6 +139,7 @@ def edit_comment(request, comment_id):
     )
 
 
+@login_required
 def delete_comment(request, comment_id):
 
     comment = get_object_or_404(Comment, pk=comment_id)
