@@ -14,8 +14,7 @@ body {
     flex-direction: column;
     width: 75%;
     margin: 0 auto;
-    background-color: #5057AF;
-
+    background-color: #f2f1f1;
 }
 
 .page-container {
@@ -81,7 +80,7 @@ hr {
 
 .header-container {
     width: 100%;
-    background-color: #AFA850;
+    background-color: #f15e5e;
     font-family: 'Roboto', sans-serif;
     border-radius: 0.5em;
     height: 5em;
@@ -106,9 +105,9 @@ hr {
 /*------------------------------ Home Page */
 
 .content-containers {
-    background-color: #AFA850;
-    margin: 1em;
-    border-radius: 0.8em;
+    background-color: #F8F8F8;
+    margin: 2em;
+    box-shadow: 5px 5px 3px lightgray;
 }
 
 .home-inner-content {
@@ -121,10 +120,13 @@ hr {
 }
 
 .button-links-index {
-    background-color: #5057AF;
+    background-image: radial-gradient(#f15e5e, #AFA850);
+    background-image: radial-gradient(farthest-corner at 10px 10px, #e47b4d 0%, #f15e5e 100%);
     border-radius: 0.5em;
     font-family: 'Roboto', sans-serif;
     color: white;
+    height: 3.5em;
+    width: 12em;
 }
 
 .button-links-green {
@@ -145,12 +147,29 @@ hr {
 .home-intro-text {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
+    width: 80%;
 }
+
+.square-image-container {
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+.fit-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 /*------------------------------ Footer */
 
 .footer-container {
-    background-color: #AFA850;
+    background-color: #f15e5e;
     border-radius: 0.5em;
     margin: auto;
     color: white;
