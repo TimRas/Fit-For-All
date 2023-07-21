@@ -18,7 +18,7 @@
             </div>
             <div class="row pt-3 pb-4">
                 <button class="btn button-links-index">
-                    <a href="#" class="anchor-links"><strong>All Products</strong></a>
+                    <a href="{% url 'products' %}" class="anchor-links"><strong>All Products</strong></a>
                 </button>
             </div>
         </div>
@@ -47,7 +47,7 @@
             </div>
             <div class="row justify-content-end pt-3 pb-4">
                 <button class="btn button-links-index">
-                    <a href="#" class="anchor-links"><strong>All Plans</strong></a>
+                    <a href="{% url 'workout_plans' %}" class="anchor-links"><strong>All Plans</strong></a>
                 </button>
             </div>
         </div>      
@@ -65,7 +65,7 @@
             </div>
             <div class="row pt-3 pb-4">
                 <button class="btn button-links-index">
-                    <a href="#" class="anchor-links"><strong>All Topics</strong></a>
+                    <a href="{% url 'muscle_posts' %}" class="anchor-links"><strong>All Topics</strong></a>
                 </button>
             </div>
         </div>
@@ -77,7 +77,7 @@
     </div>
 
     <div class="row">
-        <div class="content-containers w-75 mx-auto">
+        <div class="content-containers w-75 mx-auto mt-0">
             <div id="mc_embed_signup">
                 <form
                     action="https://herokuapp.us12.list-manage.com/subscribe/post?u=9a8574a6613d7ecb604d52c18&amp;id=9bfb1e1c38&amp;f_id=0054b0e0f0"
@@ -101,7 +101,7 @@
                         <div class="optionalParent">
                             <div class="clear foot">
                                 <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"
-                                    class="button">
+                                    class="button button-links-index">
                                 <p class="brandingLogo"><a href="http://eepurl.com/iinFjb"
                                         title="Mailchimp - email marketing made easy and fun"><img
                                             src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a>

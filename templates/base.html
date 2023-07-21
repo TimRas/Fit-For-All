@@ -9,7 +9,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="A community based fitness platform.">
-    <meta name="keywords" content="fitness, workout-plans, diet-plans, fitness-products, community, blogs, sports, workout">
+    <meta name="keywords"
+        content="fitness, workout-plans, diet-plans, fitness-products, community, blogs, sports, workout">
     {% endblock %}
 
     {% block extra_meta %}
@@ -62,11 +63,11 @@
                 <div class="collapse navbar-collapse justify-content-between navbar-index" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown my-auto">
-                            <button class="btn dropdown-toggle navbar-buttons text-white mr-1" type="button"
-                                data-toggle="dropdown" aria-expanded="false">
+                            <button class="btn dropdown-toggle text-white mr-1" type="button" data-toggle="dropdown"
+                                aria-expanded="false">
                                 <h2 class="my-0 txt-btn"><strong>Plans</strong></h2>
                             </button>
-                            <div class="dropdown-menu navbar-buttons">
+                            <div class="dropdown-menu">
                                 <a class="dropdown-item text-white" href="{% url 'workout_plans' %}">Workouts</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-white" href="{% url 'diet_plans' %}">Diet</a>
@@ -74,11 +75,11 @@
                         </li>
 
                         <li class="nav-item dropdown my-auto">
-                            <button class="btn dropdown-toggle navbar-buttons text-white mr-1" type="button"
-                                data-toggle="dropdown" aria-expanded="false">
+                            <button class="btn dropdown-toggle text-white mr-1" type="button" data-toggle="dropdown"
+                                aria-expanded="false">
                                 <h2 class="my-0 txt-btn"><strong>Products</strong></h2>
                             </button>
-                            <div class="dropdown-menu navbar-buttons text-white">
+                            <div class="dropdown-menu text-white">
                                 <a class="dropdown-item text-white" href="{% url 'products' %}">All Products</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-white" href="{% url 'products' %}?category=gear">Gear</a>
@@ -90,11 +91,11 @@
                         </li>
 
                         <li class="nav-item dropdown my-auto">
-                            <button class="btn dropdown-toggle navbar-buttons text-white" type="button"
-                                data-toggle="dropdown" aria-expanded="false">
+                            <button class="btn dropdown-toggle text-white" type="button" data-toggle="dropdown"
+                                aria-expanded="false">
                                 <h2 class="my-0 txt-btn"><strong>Community</strong></h2>
                             </button>
-                            <div class="dropdown-menu navbar-buttons">
+                            <div class="dropdown-menu">
                                 <a class="dropdown-item text-white" href="{% url 'muscle_posts' %}">Gain Muscle</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-white" href="{% url 'weight_posts' %}">Lose Weight</a>
@@ -104,12 +105,11 @@
 
                     <form class="form" method="GET" action="{% url 'products' %}">
                         <div class="input-group w-100">
-                            <input class="form-control border" type="text" name="q"
-                                placeholder="Search">
+                            <input class="form-control border" type="text" name="q" placeholder="Search">
                             <div class="input-group-append">
                                 <button class="btn btn-black border border-black rounded-0" type="submit">
                                     <span class="icon">
-                                        <i class="fas fa-search"></i>
+                                        <i class="fas fa-search text-white"></i>
                                     </span>
                                 </button>
                             </div>
@@ -122,13 +122,13 @@
                                 aria-haspopup="true" aria-expanded="false">
                                 {% if request.user.is_authenticated %}
                                 <div class="text-center">
-                                    <div><i class="fas fa-user fa-lg"></i></div>
-                                    <p class="my-0">Logged-In</p>
+                                    <div><i class="fas fa-user fa-lg text-white"></i></div>
+                                    <p class="my-0 text-white">Logged-In</p>
                                 </div>
                                 {% else %}
                                 <div class="text-center">
-                                    <div><i class="fas fa-user fa-lg"></i></div>
-                                    <p class="my-0">Logged-Out</p>
+                                    <div><i class="fas fa-user fa-lg text-white"></i></div>
+                                    <p class="my-0 text-white">Logged-Out</p>
                                 </div>
                                 {% endif %}
                             </a>
@@ -146,8 +146,8 @@
                             <a class="{% if grand_total %}font-weight-bold{% else %}text-black{% endif %} nav-link"
                                 href="{% url 'show_bag' %}">
                                 <div class="text-center">
-                                    <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                    <p class="my-0">
+                                    <div><i class="fas fa-shopping-bag fa-lg text-white"></i></div>
+                                    <p class="my-0 text-white">
                                         {% if grand_total %}
                                         ${{ grand_total|floatformat:2 }}
                                         {% else %}
@@ -187,16 +187,17 @@
         {% endblock %}
 
         <footer class="footer-container row mb-4">
-            <div class="col">
-                <div>
-                    <h2>
-                        <p>Social:</p>
-                    </h2>
+            <div class="col-6 pt-3">
+                <h4>
+                    <p>Tim Ras 2023 &#8482;</p>
+                </h4>
+            </div>
+            <div class="col-6 pt-3">
+                <div class="row d-flex justify-content-center">Follow us on Facebook!</div>
+                <div class="row d-flex justify-content-center"><a href="https://www.facebook.com/TimFitForAll"
+                        target="_blank" rel="noopener" class="anchor-links"><i class="fab fa-facebook-square"></i></a>
                 </div>
-                <div class="col">
-                    <a href="https://www.facebook.com/TimFitForAll" target="_blank" rel="noopener" class="anchor-links"><i
-                            class="fab fa-facebook-square"></i>Follow us on Facebook!</a>
-                </div>
+
             </div>
         </footer>
     </section>

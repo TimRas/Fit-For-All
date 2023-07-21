@@ -51,6 +51,10 @@ body {
     margin-top: 1em;
 }
 
+.dropdown-item:hover {
+    background-color: inherit;
+}
+
 .txt-btn {
     font-size: large;
 }
@@ -69,12 +73,15 @@ hr {
 }
 
 .show {
-    background-color: #5056af;
+    background-color: #f15e5e;
     display: flex;
     justify-content: space-between;
-    border-radius: 0.8em;
+    border-radius: 5px;
 }
 
+.btn:focus {
+    box-shadow: 0 0 0 5px #f2f1f1 !important;
+}
 
 /*------------------------------ Header */
 
@@ -87,15 +94,15 @@ hr {
     margin-top: 1em;
 }
 
-.navbar-buttons {
-    background-color: #5057AF;
+/* .navbar-buttons {
+    background-color: #5057AF;1
     border-radius: 0.3em;
 }
 
 .navbar-buttons :hover {
     background-color: #5057AF;
 
-}
+} */
 
 .main-logo-text {
     color: white;
@@ -176,6 +183,7 @@ hr {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     width: 100%;
+    height: 5em;
 }
 
 /*------------------------------ Products Page */
