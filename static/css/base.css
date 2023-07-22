@@ -42,6 +42,13 @@ body {
     text-decoration: none;
 }
 
+.coloured-text {
+    background-image: radial-gradient(farthest-corner at 10px 10px, #e47b4d 0%, #f15e5e 100%);
+    background-clip: text;
+    -webkit-background-clip: text; 
+    color: transparent; 
+}
+
 
 /*------------------------------ Navigation bar */
 
@@ -129,7 +136,7 @@ hr {
 .button-links-index {
     background-image: radial-gradient(#f15e5e, #AFA850);
     background-image: radial-gradient(farthest-corner at 10px 10px, #e47b4d 0%, #f15e5e 100%);
-    border-radius: 0.5em;
+    border-radius: 5px;
     font-family: 'Roboto', sans-serif;
     color: white;
     height: 3.5em;
@@ -163,10 +170,13 @@ hr {
     overflow: hidden;
 }
 
+.image-container  {
+    width: 10em;
+    height: 12em;
+    margin: auto;
+}
+
 .fit-img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -283,8 +293,8 @@ hr {
 .workout-categories {
     width: 80%;
     margin: auto;
-    background-color: #AFA850;
-    border-radius: 0.5em;
+    background-color: #f15e5e;
+    border-radius: 5px;
 }
 
 .content-containers-plans {
@@ -306,8 +316,8 @@ hr {
 }
 
 .button-links-plans {
-    background-color: #5057AF;
-    border-radius: 0.5em;
+    background-color: #fff;
+    border-radius: 5px;
     display: flex;
     margin: auto;
 }
@@ -318,8 +328,8 @@ hr {
 
 .text-container {
     height: 100%;
-    background-color: #5057AF;
-    border-radius: 0.5em;
+    background-color: #fff;
+    border-radius: 5px;
     width: 90%;
     margin: auto;
     padding: 0.5em;
@@ -433,7 +443,7 @@ hr {
 }
 
 .button-links-posts {
-    background-color: #5057AF;
+    background-color: #;
     border-radius: 0.5em;
     font-family: 'Roboto', sans-serif;
     color: white;

@@ -3,9 +3,8 @@
 
 {% block page_header %}
 
-<div class="products-header">
-    <h2>Workout Plans</h2>
-    <hr class="mx-auto">
+<div class="products-header pb-3">
+    <h2 class="coloured-text">Workout Plans</h2>
 </div>
 {% endblock %}
 {% block content %}
@@ -14,22 +13,21 @@
     {% for challenge in challenges %}
     <div class="content-containers-category">
         <div class="workout-categories">
-            <h2 class="pl-3 pt-3 text-white">{{ challenge.title }}</h2>
-            <hr class="mx-auto w-100">
+            <h2 class="pl-3 pt-3 pb-3 text-white">{{ challenge.title }}</h2>
             <div class="row">
-                <div class="col-md-9 col-sm-12 mb-4">
-                    <div class="text-container">
-                        <p class="text-white">{{ challenge.content }}</p>
+                <div class="col-md-9 col-sm-12 mb-4 mr-0">
+                    <div class="text-container mr-0">
+                        <p>{{ challenge.content }}</p>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-12 mb-4">
+                <div class="col-3 px-0">
                     {% if challenge.image %}
-                    <div class="img-container">
-                        <img class="img-fluid rounded" src="{{ challenge.image.url }}" alt="{{ challenge.title }}">
+                    <div class="image-container">
+                        <img class="fit-img" src="{{ challenge.image.url }}" alt="{{ challenge.title }}">
                     </div>
                     {% else %}
-                    <div class="img-container">
-                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png"
+                    <div class="image-container">
+                            <img class="fit-img" src="{{ MEDIA_URL }}noimage.png"
                                 alt="{{ challenge.title }}">
                     </div>
                     {% endif %}
@@ -38,7 +36,7 @@
             <div class="row button-space">
                 <div class="col-12">
                     <button class="btn button-links-plans">
-                        <a href="{% url 'challenges' challenge.id %}" class="anchor-links"><strong>To challenge details</strong></a>
+                        <a href="{% url 'challenges' challenge.id %}" class="anchor-links"><strong class="coloured-text">To challenge details</strong></a>
                     </button>
                 </div>
             </div>
