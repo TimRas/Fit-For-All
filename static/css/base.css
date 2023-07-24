@@ -122,6 +122,7 @@ hr {
     background-color: #F8F8F8;
     margin: 2em;
     box-shadow: 5px 5px 3px lightgray;
+    justify-content: space-between;
 }
 
 .home-inner-content {
@@ -171,14 +172,14 @@ hr {
 }
 
 .image-container  {
-    width: 10em;
-    height: 12em;
+    width: 100;
+    height: auto;
     margin: auto;
 }
 
 .fit-img {
-    width: 100%;
     height: 100%;
+    width: 100%;
     object-fit: cover;
 }
 
@@ -328,9 +329,8 @@ hr {
 
 .text-container {
     height: 100%;
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 5px;
-    width: 90%;
     margin: auto;
     padding: 0.5em;
 }
