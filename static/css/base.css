@@ -442,14 +442,14 @@ hr {
     padding-top: 0;
 }
 
-.button-links-posts {
+/* .button-links-posts {
     background-color: #;
     border-radius: 0.5em;
     font-family: 'Roboto', sans-serif;
     color: white;
     display: flex;
     justify-content: center;
-}
+} */
 
 textarea.form-control {
     height: 5em;
@@ -463,13 +463,6 @@ textarea.form-control {
     background-color: #AFA850;
     margin: auto;
     border-radius: 0.8em;
-}
-
-.content-containers-community-posts {
-    background-color: #AFA850;
-    border-radius: 0.8em;
-    font-family: 'Roboto', sans-serif;
-    color: white;
 }
 
 .content-container-comment-form {

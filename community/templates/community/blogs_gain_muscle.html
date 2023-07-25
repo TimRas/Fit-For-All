@@ -6,29 +6,33 @@
 {% block content %}
 
 <div class="main-content">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+    <div class="row">
         {% for post in posts_muscle %}
-        <div class="col px-1 py-1">
-            <div class="card content-containers-community-posts">
-                <div class="card-header">
-                    <h5 class="card-title">{{ post.title }}</h5>
+        <div class="col-5">
+            <div class="col-7 mx-auto mt-3 content-containers">
+                <div class="row ml-0">
+                    <h5 class="card-title pt-4 pb-3">{{ post.title }}</h5>
                 </div>
-                <div class="card-body">
-                    <p class="card-text max-lines-3">{{ post.excerpt }}</p>
+                <div class="row pt-3 pb-3 ml-0">
+                    <p class="card-text max-lines-3 pt-3 pb-3">{{ post.excerpt }}</p>
                 </div>
-                <div class="card-footer">
-                    <div class="btn button-links-posts">
+                <div class="row pt-3 pb-4 ml-0">
+                    <div class="btn button-links-index">
                         <a href="{% url 'post_detail' post.id %}" class="anchor-links">Read More!</a>
                     </div>
+                </div>
+                <div class="row col-6">
+                    <button>hello</button>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
-
-
 {% endblock %}
+
+
+
 
 
 {% block page_header %}
