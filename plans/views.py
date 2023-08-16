@@ -2,31 +2,37 @@ from django.shortcuts import render, get_object_or_404
 from .models import Category, Challenge
 
 
-def workout_plans(request):
-    """ Renders a page to show all workout plans """
+def plans_main(request):
+    """ Renders a page to show all plans """
 
-    category_workout = Category.objects.get(title='Workouts')
-    challenges = Challenge.objects.filter(category=category_workout)
-
-    context = {
-        'challenges': challenges,
-    }
-
-    return render(request, 'plans/workout_plans.html', context)
-
-
-def diet_plans(request):
-    """ Renders a page to show all diet plans """
-
-    category_diet = Category.objects.get(title='Diet')
-    challenges = Challenge.objects.filter(category=category_diet)
+    all_categories = Category.objects.all()
+    
+    all_plans = []
+    for category in all_categories:
+        challenges_in_category = Challenge.objects.filter(category=category)
+        all_plans.extend(challenges_in_category)
 
     context = {
-        'challenges': challenges,
+        'all_categories': all_categories,
+        'all_plans': all_plans,
     }
 
-    return render(request, 'plans/diet_plans.html', context)
+    return render(request, 'plans/plans_main.html', context)
 
+
+def show_plans_category(request, category_title):
+    """ Renders a page to show plans of a specific category """
+
+    category = Category.objects.get(title=category_title)
+    challenges = Challenge.objects.filter(category=category)
+
+    context = {
+            'category': category,
+            'challenges': challenges,
+        }
+
+    return render(request, 'plans/plans_category.html', context)
+    
 
 def view_challenge(request, challenge_id):
 

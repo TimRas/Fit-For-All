@@ -26,7 +26,10 @@ body {
 .main-content {
     position: relative;
     min-height: calc(100vh - 240px);
-
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .relative-container {
@@ -47,6 +50,14 @@ body {
     background-clip: text;
     -webkit-background-clip: text; 
     color: transparent; 
+}
+
+.img-left {
+    justify-content: flex-start;
+}
+
+.img-right {
+    justify-content: flex-end;
 }
 
 
@@ -171,11 +182,21 @@ hr {
     overflow: hidden;
 }
 
-.image-container  {
-    width: 100;
-    height: auto;
-    margin: auto;
+.image-container {
+    position: relative; /* Ensure the container acts as the positioning context */
+    width: 100%; /* Set the container width to 100% */
+    height: 0; /* Height is set to 0, as it will be determined by the padding-bottom percentage */
+    padding-bottom: 100%; /* Maintain a 1:1 aspect ratio (height is 100% of width) */
+    overflow: hidden; /* Hide any overflowing content */
 }
+
+.image-container img {
+    position: absolute; /* Position the image absolutely within the container */
+    width: 100%; /* Make the image width 100% of the container */
+    height: 100%; /* Make the image height 100% of the container */
+    object-fit: cover; /* Maintain the aspect ratio while fully covering the container */
+}
+
 
 .fit-img {
     height: 100%;
@@ -239,13 +260,7 @@ hr {
     height: 2.5em;
 }
 
-
-.img-fluid {
-    height: 12em;
-}
-
 .img-container-detail {
-
     width: 100%;
     height: 0;
     padding-bottom: 75%;
