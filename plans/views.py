@@ -3,10 +3,10 @@ from .models import Category, Challenge
 
 
 def plans_main(request):
-    """ Renders a page to show all plans """
+    """ Renders a page to show all plan categories """
 
     all_categories = Category.objects.all()
-    
+ 
     all_plans = []
     for category in all_categories:
         challenges_in_category = Challenge.objects.filter(category=category)

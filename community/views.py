@@ -4,6 +4,24 @@ from django.contrib.auth.decorators import login_required
 from .forms import PostForm, CommentForm
 
 
+def blogs_main(request): 
+    """ Renders a page to show all blog categories """
+
+    all_categories = PostCategory.objects.all()
+
+    all_blogs = []
+    for category in all_categories:
+        blogs_in_category = Post.objects.filter(post_category=category)
+        all_blogs.extend(blogs_in_category)
+    
+    context = {
+        'all_categories': all_categories,
+        'all_blogs': all_blogs,
+    }
+
+    return render(request, 'community/blogs_main.html', context)
+
+
 def muscle_posts(request):
         
     """ Renders a page to show all gain muscle posts """
