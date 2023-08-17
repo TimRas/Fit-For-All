@@ -18,7 +18,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['fit-for-all.herokuapp.com', 'localhost', '8000-timras-fitforall-uorvs6zqfl4.ws-eu103.gitpod.io']
+ALLOWED_HOSTS = ['fit-for-all.herokuapp.com', 'localhost', '8000-timras-fitforall-uorvs6zqfl4.ws-eu104.gitpod.io']
 
 
 # Application definition

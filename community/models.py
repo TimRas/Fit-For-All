@@ -1,20 +1,25 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 
 
 class PostCategory(models.Model):
+
     class Meta:
         verbose_name_plural = 'Post categories'
 
-    name = models.CharField(max_length=120)
-    friendly_name = models.CharField(max_length=120)
+    title = models.CharField(max_length=200, default='Default Title')
+    slug = models.SlugField(max_length=200, unique=True, default='default-slug')
+    excerpt = models.TextField(max_length=200, blank=True)
+    image = models.ImageField(blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)  
+        super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.name
-        
-    def get_friendly_name(self):
-        return self.friendly_name
-
+        return self.title
 
 
 class Post (models.Model):

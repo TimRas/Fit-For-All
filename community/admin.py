@@ -4,8 +4,10 @@ from .models import Post, Comment, PostCategory
 
 class PostCategoryAdmin(admin.ModelAdmin):
     list_display = (
-        'friendly_name',
-        'name',
+        'title',
+        'slug',
+        'excerpt',
+        'image',
     )
 
 
