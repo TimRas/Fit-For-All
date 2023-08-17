@@ -2,39 +2,37 @@
 {% load static %}
 
 {% block page_header %}
-
 <div class="products-header pb-3">
-    <h2 class="coloured-text">Workout Plans</h2>
+    <h2 class="coloured-text">{{ category }} Plans</h2>
 </div>
 {% endblock %}
-{% block content %}
 
+{% block content %}
 <section class="main-content">
     {% for challenge in challenges %}
-    <div class="row content-containers mx-auto mt-3">
-        <div class="col-8 pl-5 pr-5">
-            <h2 class="pt-4 pb-3">{{ challenge.title }}</h2>
-            <div class="row">
-                <div class="col-md-9 col-sm-12 pt-3 pb-3">
-                    <div class="text-container mr-0">
-                        <p>{{ challenge.content }}</p>
-                    </div>
-                </div>
+    <div class="row content-containers w-75 mx-auto">
+        <div class="col-8 {% cycle 'pl-5 pr-3' 'pr-5 pl-3' %} {% cycle 'order-1' 'order-2' %}">
+            <div class="row {% cycle '' 'justify-content-end' %}">
+                <h2 class="pt-4 pb-3">{{ challenge.title }}</h2>
             </div>
-            <div class="row pt-3 pb-4">
+            <div class="row {% cycle '' 'justify-content-end' %} pt-3 pb-5">
+                <p class="home-intro-text {% cycle '' 'text-right' %}">{{ challenge.content }}</p>
+            </div>
+            <div class="row {% cycle '' 'justify-content-end' %} pt-5">
                 <button class="btn button-links-index">
-                    <a href="{% url 'challenges' challenge_id=challenge.id %}" class="anchor-links"><strong>Details</strong></a>
+                    <a href="{% url 'challenges' challenge_id=challenge.id %}"
+                        class="anchor-links"><strong>Details</strong></a>
                 </button>
             </div>
         </div>
-        <div class="col-3 px-0">
+        <div class="col-4 px-0 py-0  {% cycle 'order-2' 'order-1' %}">
             {% if challenge.image %}
             <div class="image-container">
-                <img class="fit-img" src="{{ challenge.image.url }}" alt="{{ challenge.title }}">
+                <img class="card-img-top" src="{{ challenge.image.url }}" alt="{{ category.name }}">
             </div>
             {% else %}
             <div class="image-container">
-                <img class="fit-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ challenge.title }}">
+                <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.name }}">
             </div>
             {% endif %}
         </div>

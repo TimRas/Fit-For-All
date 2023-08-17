@@ -2,15 +2,13 @@
 {% load static %}
 
 {% block page_header %}
-
 <div class="products-header pb-3">
     <h2 class="coloured-text">All Plans</h2>
 </div>
 {% endblock %}
+
 {% block content %}
-
 <section class="main-content">
-
     {% for category in all_categories %}
     <div class="row content-containers w-75 mx-auto">
         <div class="col-8 {% cycle 'pl-5 pr-3' 'pr-5 pl-3' %} {% cycle 'order-1' 'order-2' %}">
