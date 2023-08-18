@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+<div class="products-header pb-3">
+    <h2 class="coloured-text">{{ category }} Blogs</h2>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="blog-content">
+    <div class="row">
+        <div class="col-12">
+            <div class="row blog-holder">
+                {% for post in posts %}
+                <div class="blog-container col-6 col-md-6 col-lg-4 col-xl-3">
+                    <div class="row">
+                        <h2 class="pt-3 pl-3">{{ post.title }}</h2>
+                    </div>
+                    <hr>
+                    <div class="row pt-2 pl-3">
+                        <p class="blog-excerpt">{{ post.excerpt }}</p>
+                    </div>
+                    <div class="row">
+                        <button class="btn blog-button mx-auto">
+                            <a href="{% url 'post_detail' post_id=post.id %}"
+                                class="anchor-links"><strong>Details</strong></a>
+                        </button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

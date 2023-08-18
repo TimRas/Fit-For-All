@@ -436,6 +436,41 @@ hr {
 
 /*------------------------------ Community Page */
 
+.blog-content {
+    min-height: calc(100vh - 240px);  
+    display: flex;
+    justify-content: center; 
+}
+
+.blog-holder {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.blog-container {
+    background-color: #F8F8F8;
+    min-height: 20em;
+    min-width: 20em;
+    margin: 0.4em;
+    border-radius: 5px;
+}
+
+.blog-excerpt {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        min-height: 7em;
+}
+
+.blog-button {
+    background-image: radial-gradient(farthest-corner at 10px 10px, #e47b4d 0%, #f15e5e 100%);
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    height: 3.5em;
+    width: 12em;
+}
+
 .community-posts-categories {
     display: flex;
     height: 33%;
@@ -472,12 +507,6 @@ textarea.form-control {
 
 .select.form-control {
     height: 3em;
-}
-
-.content-containers-community {
-    background-color: #AFA850;
-    margin: auto;
-    border-radius: 0.8em;
 }
 
 .content-container-comment-form {

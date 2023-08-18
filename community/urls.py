@@ -4,6 +4,7 @@ from .models import PostCategory, Post
 
 urlpatterns = [
     path('blogs_main', views.blogs_main, name='blogs_main'),
+    path('blogs_category/<str:category_title>/', views.show_blogs_category, name='blogs_category'),
     path('gain_muscle', views.muscle_posts, name='muscle_posts'),
     path('lose_weight', views.weight_posts, name='weight_posts'),
     path('create_post', views.create_post, name='create_post'),

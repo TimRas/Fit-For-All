@@ -22,6 +22,20 @@ def blogs_main(request):
     return render(request, 'community/blogs_main.html', context)
 
 
+def show_blogs_category(request, category_title):
+    """ Renders a page to show blogs of a specific category """
+
+    category = PostCategory.objects.get(title=category_title)
+    posts = Post.objects.filter(post_category=category)  
+
+    context = {
+        'category': category,
+        'posts': posts,
+    }
+
+    return render(request, 'community/blogs_category.html', context)
+
+
 def muscle_posts(request):
         
     """ Renders a page to show all gain muscle posts """
