@@ -3,28 +3,40 @@
 
 {% block page_header %}
 <div class="products-header">
-    <h2>{{ challenge.title }}</h2>
-    <hr class="mx-auto">
+    <h2 class="coloured-text">{{ challenge.category }}</h2>
 </div>
 {% endblock %}
 
 {% block content %}
-<section class="main-content mb-3 d-flex flex-column justify-content-between">
-    <div class="row">
-        <div class="col-12">
-            <div class="intro-container mx-auto">
-                <h2 class="text-white">Intro:</h2>
-                <hr>
-                <p class="intro-text">
+<section class="main-content">
+    <div class="row content-containers w-75">
+        <div class="col-8 mx-auto">
+            <div class="row pt-3 pl-2">
+                <h2 class="coloured-text">{{ challenge.title }}</h2>
+            </div>
+            <hr>
+            <div class="row pt-3 pl-2">
+                <p>
                     {{ challenge.intro }}
                 </p>
             </div>
         </div>
+        <div class="col-4 px-0 py-0">
+            {% if challenge.image %}
+            <div class="image-container">
+                <img class="card-img-top" src="{{ challenge.image.url }}" alt="{{ category.name }}">
+            </div>
+            {% else %}
+            <div class="image-container">
+                <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.name }}">
+            </div>
+            {% endif %}
+        </div>
     </div>
     <div class="row">
         <div class="col-7">
-            <div class="steps-container">
-                <h3 class="text-white">Steps:</h3>
+            <div class="content-containers">
+                <h3 class="coloured-text pt-3 pl-2">Steps:</h3>
                 <hr>
                 <p class="steps-text">
                     {{ challenge.steps|safe }}
@@ -32,8 +44,8 @@
             </div>
         </div>
         <div class="col-5">
-            <div class="tips-container">
-                <h3 class="text-white">Tips:</h3>
+            <div class="content-containers">
+                <h3 class="coloured-text pt-3 pl-2">Tips:</h3>
                 <hr>
                 <p class="tips-text">
                     {{ challenge.tips|safe }}
@@ -41,44 +53,20 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row content-containers mx-auto w-75">
         <div class="col-12">
-            <div class="outro-container mx-auto">
-                <h3 class="text-white">Outro:</h3>
+            <div>
+                <div class="row pt-3 pl-2">
+                    <h2 class="coloured-text">Outro:</h2>
+                </div>
                 <hr>
-                <p class="outro-text">
-                    {{ challenge.outro }}
-                </p>
+                <div class="row pt-3 pl-2">
+                    <p>
+                        {{ challenge.outro }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </section>
-{% endblock %}
-
-{% block extra_css %}
-<!-- <style>
-    Extra CSS for responsiveness
-    @media (max-width: 767.98px) {
-
-        .intro-container,
-        .steps-container,
-        .tips-container,
-        .outro-container {
-            text-align: center;
-        }
-    }
-
-    @media (min-width: 768px) and (max-width: 991.98px) {
-
-        .intro-container,
-        .outro-container {
-            text-align: center;
-        }
-
-        .steps-container,
-        .tips-container {
-            margin-top: 20px;
-        }
-    }
-</style> -->
 {% endblock %}

@@ -306,6 +306,10 @@ hr {
 
 /*------------------------------ Workouts Plans Page */
 
+.steps-text {
+    text-decoration: none;
+}
+
 .workout-categories {
     width: 80%;
     margin: auto;
