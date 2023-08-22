@@ -21,6 +21,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
+    <link rel="manifest" href="media/site.webmanifest">
     {% endblock %}
 
     {% block extra_css %}
@@ -51,29 +55,28 @@
 <body>
     <section class="page-container">
         <header class="header-container">
-            <nav class="navbar navbar-expand-lg navbar-light mx-auto">
+            <nav class="navbar navbar-expand-lg mx-auto">
+                <div class="favi-container mb-1">
+                    <img src="/media/android-chrome-512x512.png" alt="Main Logo" class="favi-icon">
+                </div>
                 <a class="nav-link main-logo-link" href="{% url 'home' %}">
                     <h2 class="text-black my-0 mr-2 main-logo-text"><strong>Fit For All</strong>
                     </h2>
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-between navbar-index" id="navbarNav">
+                <div class="collapse navbar-collapse justify-content-between navbar-index" id="navbarNav">                  
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown my-auto">
-                            <a href="{% url 'plans_main' %}"><strong>Plans</strong></a>
+                            <a href="{% url 'plans_main' %}" class="nav-link mr-4">Plans</a>
+                            <div class="dropdown-content">
+                                <a class="dropdown-item text-white" href="{% url 'plans_category' category_title='Diet' %}">Diet</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-white" href="{% url 'plans_category' category_title='Workout' %}">Workout</a>
+                            </div>
                         </li>
 
                         <li class="nav-item dropdown my-auto">
-                            <button class="btn dropdown-toggle text-white mr-1" type="button" data-toggle="dropdown"
-                                aria-expanded="false">
-                                <h2 class="my-0 txt-btn"><strong>Products</strong></h2>
-                            </button>
-                            <div class="dropdown-menu text-white">
-                                <a class="dropdown-item text-white" href="{% url 'products' %}">All Products</a>
-                                <div class="dropdown-divider"></div>
+                            <a href="{% url 'products' %}" class="nav-link mr-4">Products</a>
+                            <div class="dropdown-content">
                                 <a class="dropdown-item text-white" href="{% url 'products' %}?category=gear">Gear</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-white" href="{% url 'products' %}?category=woman">Woman</a>
@@ -83,25 +86,30 @@
                         </li>
 
                         <li class="nav-item dropdown my-auto">
-                            <a href="{% url 'blogs_main' %}"><strong>Blogs</strong></a>
+                            <a href="{% url 'blogs_main' %}" class="nav-link mr-4">Blogs</a>
+                            <div class="dropdown-content">
+                                <a class="dropdown-item text-white" href="{% url 'blogs_category' category_title='Gain Muscle' %}">Gain Muscle</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-white" href="{% url 'blogs_category' category_title='Lose Weight' %}">Lose Weight</a>
+                            </div>
                         </li>
                     </ul>
 
-                    <form class="form" method="GET" action="{% url 'products' %}">
-                        <div class="input-group w-100">
-                            <input class="form-control border" type="text" name="q" placeholder="Search">
-                            <div class="input-group-append">
-                                <button class="btn btn-black border border-black rounded-0" type="submit">
-                                    <span class="icon">
-                                        <i class="fas fa-search text-white"></i>
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
                     <ul class="navbar-nav">
-                        <li class="dropdown nav-item">
+                        <form class="form my-auto" method="GET" action="{% url 'products' %}">
+                            <div class="input-group w-100">
+                                <input class="form-control border" type="text" name="q" placeholder="Search">
+                                <div class="input-group-append mr-5">
+                                    <button class="btn btn-black border border-black rounded-0" type="submit">
+                                        <span class="icon">
+                                            <i class="fas fa-search text-white"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <li class="dropdown nav-item my-auto">
                             <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 {% if request.user.is_authenticated %}
@@ -190,7 +198,6 @@
                 <div class="row d-flex justify-content-center"><a href="https://www.facebook.com/TimFitForAll"
                         target="_blank" rel="noopener"><i class="fab fa-facebook-square gray-fb-icon"></i></a>
                 </div>
-
             </div>
         </footer>
     </section>
