@@ -104,7 +104,7 @@ hr {
 
 .header-container {
     width: 100%;
-    background-color: #f15e5e;
+    background-color: rgba(255, 1, 1, 0.55);
     font-family: 'Roboto', sans-serif;
     border-radius: 0.5em;
     height: 5em;
@@ -206,14 +206,20 @@ hr {
 /*------------------------------ Footer */
 
 .footer-container {
-    background-color: #f15e5e;
-    border-radius: 0.5em;
     margin: auto;
-    color: white;
+    color: rgb(169, 169, 169);
     text-align: center;
     font-family: 'Roboto', sans-serif;
     width: 100%;
     height: 5em;
+}
+
+.gray-hr {
+    background-color: rgba(169, 169, 169, 0.232);
+}
+
+.gray-fb-icon {
+    color: rgb(169, 169, 169);
 }
 
 /*------------------------------ Products Page */
