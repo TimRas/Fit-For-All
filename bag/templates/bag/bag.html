@@ -10,9 +10,9 @@
 {% endblock %}
 
 {% block content %}
-<section class="main-content">
-    <div class="row ">
-        <div class="col">
+<section class="bag-content">
+    <div class="row">
+        <div class="col-12">
             {% if bag_items %}
             <div class="table-responsive shopping-table">
                 <table class="table table-borderless table-striped">
@@ -91,13 +91,19 @@
                 </table>
             </div>
             {% else %}
-            <div class="content-containers w-50 h-100 mx-auto">
-                <p class="mb-5 text-white text-center pt-3">Your bag is empty.</p>
-                <button class="btn button-links-plans w-25">
-                    <a href="{% url 'products' %}">
-                        <p class="text-white mt-2 shopping-text">Go to Products page</p>
-                    </a>
-                </button>
+            <div class="row justify-content-center">
+                <div class="content-containers w-50">
+                    <div class="row justify-content-center">
+                        <p class="mb-5 pt-3">Your bag is empty.</p>
+                    </div>
+                    <div class="row justify-content-center">
+                        <button class="btn blog-button mb-3">
+                            <a href="{% url 'products' %}">
+                                <p class="mt-2 shopping-text text-white">Go to Products page</p>
+                            </a>
+                        </button>
+                    </div>
+                </div>
             </div>
             {% endif %}
         </div>
