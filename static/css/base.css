@@ -59,6 +59,11 @@ body {
     justify-content: flex-end;
 }
 
+.content-containers {
+    background-color: #F8F8F8;
+    margin: 1em;
+    box-shadow: 5px 5px 3px lightgray;
+}
 
 /*------------------------------ Navigation bar */
 
@@ -156,10 +161,27 @@ hr {
 
 /*------------------------------ Home Page */
 
-.content-containers {
+.home-title {
+    display: flex;
+    justify-content: center;
+    color: rgb(219 76 76);
+}
+
+.home-banner {
+    overflow: hidden;
+    height: 28em;
+    background: url("/media/Home\ Landscape.png") no-repeat center center;
+    background-size: cover;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-box {  
     background-color: #F8F8F8;
-    margin: 2em;
-    box-shadow: 5px 5px 3px lightgray;
+    opacity: 0.9;
+    border-radius: 5px;
 }
 
 .home-inner-content {

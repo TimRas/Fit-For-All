@@ -2,14 +2,33 @@
 {% load static %}
 
 {% block content %}
-<section class="main-content mb-4 mt-4">
 
+<div class="row home-title">
+    <h1>Fit For All</h1>
+</div>
+
+<section class="main-content mb-4 mt-4">
+    <div class="home-banner w-100">
+        <div class="row banner-box w-50 mx-auto mt-3">
+            <div class="col-12 pl-5 pr-5 pt-4 pb-3">
+                <p>Welcome to FitForAll – your ultimate destination for a fitter, stronger you! Dive into
+                    tailored workout plans and nourishing diet guides that put your goals front and center.
+                    Explore our virtual shop, where sportswear and cutting-edge fitness gear await to elevate
+                    your performance. Uncover expert blogs packed with tips on conquering weight loss and
+                    sculpting muscle. Join us on this exhilarating journey, where empowerment meets
+                    expertise, and every step you take brings you closer to your fitness zenith. Your
+                    transformation starts here – welcome to FitForAll!
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr class="gray-hr mt-4">
     <div class="row content-containers w-75 mx-auto mt-3">
         <div class="col-8 pl-5 pr-5">
             <div class="row">
-                <h2 class="pt-4 pb-3">Products</h2>
+                <h2 class="pt-4">Products</h2>
             </div>
-            <div class="row pt-3 pb-3">
+            <div class="row pt-3">
                 <p class="home-intro-text">Our Products page is filled with items that will be helpful no matter how far
                     you are in your health and fitness journey. Our workout gear section has a variety of items to help
                     you get started or for you to push to your endgoals. The supplements section contains all the items
@@ -24,20 +43,20 @@
         </div>
         <div class="col-4 px-0 py-0 pl-2">
             <div class="image-container">
-                <img src="/media/10kg-kettlebell.jpg" alt="Black Kettlebell" class="fit-img">
+                <img src="/media/sports_clothing.png" alt="Products" class="fit-img">
             </div>
         </div>
     </div>
 
     <div class="row content-containers w-75 mx-auto">
-        <div class="col-4 px-0 py-0 pl-2">
+        <div class="col-4 px-0 py-0">
             <div class="image-container">
-                <img src="/media/10kg-kettlebell.jpg" alt="Black Kettlebell" class="fit-img">
+                <img src="/media/generic_workout_diet_3.png" alt ="Plans" class="fit-img">
             </div>
         </div>
         <div class="col-8 pl-5 pr-5">
             <div class="row justify-content-end">
-                <h2 class="pt-4 pb-3">Workout Plans</h2>
+                <h2 class="pt-4">Plans</h2>
             </div>
             <div class="row justify-content-end pt-3 pb-3">
                 <p class="home-intro-text text-right">The workout plans page is there for you to help you guide you through the
@@ -65,19 +84,19 @@
             </div>
             <div class="row pt-3 pb-4">
                 <button class="btn button-links-index">
-                    <a href="{% url 'muscle_posts' %}" class="anchor-links"><strong>All Topics</strong></a>
+                    <a href="{% url 'blogs_main' %}" class="anchor-links"><strong>All Topics</strong></a>
                 </button>
             </div>
         </div>
         <div class="col-4 px-0 py-0 pl-2">
             <div class="image-container">
-                <img src="/media/10kg-kettlebell.jpg" alt="Black Kettlebell" class="fit-img">
+                <img src="/media/community_of_people.png" alt="Community" class="fit-img">
             </div>
         </div>
     </div>
-
+    <hr class="gray-hr w-75">
     <div class="row">
-        <div class="content-containers w-75 mx-auto mt-0">
+        <div class="content-containers w-75 mx-auto">
             <div id="mc_embed_signup">
                 <form
                     action="https://herokuapp.us12.list-manage.com/subscribe/post?u=9a8574a6613d7ecb604d52c18&amp;id=9bfb1e1c38&amp;f_id=0054b0e0f0"
