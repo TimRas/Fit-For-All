@@ -22,12 +22,12 @@
 <section class="main-content">
     <div class="row content-containers w-75">
         <div class="col-8 mx-auto">
-            <div class="row pt-3 pl-2">
+            <div class="row pt-2 pl-2">
                 <h2 class="coloured-text">{{ challenge.title }}</h2>
             </div>
-            <hr>
-            <div class="row pt-3 pl-2">
-                <p>
+            <hr class="my-0">
+            <div class="row align-items-center h-75 pl-2">
+                <p class="intro-text">
                     {{ challenge.intro }}
                 </p>
             </div>
@@ -45,36 +45,34 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-7">
+        <div class="col-6">
             <div class="content-containers">
-                <h3 class="coloured-text pt-3 pl-2">Steps:</h3>
-                <hr>
-                <p class="steps-text">
+                <h3 class="coloured-text pt-2 pl-2">Steps:</h3>
+                <hr class="my-0">
+                <ul class="steps-text pt-2 pl-2">
                     {{ challenge.steps|safe }}
-                </p>
+                </ul>
             </div>
         </div>
-        <div class="col-5">
-            <div class="content-containers">
-                <h3 class="coloured-text pt-3 pl-2">Tips:</h3>
-                <hr>
-                <p class="tips-text">
-                    {{ challenge.tips|safe }}
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="row content-containers mx-auto w-75">
-        <div class="col-12">
-            <div>
-                <div class="row pt-3 pl-2">
-                    <h2 class="coloured-text">Outro:</h2>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-12">
+                    <div class="content-containers px-1 py-1">
+                        <h3 class="coloured-text pt-2 pl-2">Tips:</h3>
+                        <hr class="my-0">
+                        <ul class="tips-text pt-2 pl-2">
+                            {{ challenge.tips|safe }}
+                        </ul>
+                    </div>
                 </div>
-                <hr>
-                <div class="row pt-3 pl-2">
-                    <p>
-                        {{ challenge.outro }}
-                    </p>
+                <div class="col-12">
+                    <div class="content-containers px-1 py-1">
+                        <h3 class="coloured-text pt-2 pl-2">Outro:</h3>
+                        <hr class="my-0">
+                        <p class="outro-text pt-2 pl-2">
+                            {{ challenge.outro }}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

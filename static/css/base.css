@@ -368,10 +368,6 @@ hr {
 
 /*------------------------------ Workouts Plans Page */
 
-.steps-text {
-    text-decoration: none;
-}
-
 .workout-categories {
     width: 80%;
     margin: auto;
@@ -410,7 +406,6 @@ hr {
 
 .text-container {
     height: 100%;
-    /* background-color: #fff; */
     border-radius: 5px;
     margin: auto;
     padding: 0.5em;
@@ -424,78 +419,22 @@ hr {
     align-items: center;
 }
 
-.intro-container {
-    background-color: #AFA850;
-    border-radius: 0.8em;
-    padding: 0.3em;
-    margin-bottom: 2em;
-    width: 75%;
-}
-
 .intro-text {
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
+    line-height: 2em;
 }
-
-.outro-container {
-    background-color: #AFA850;
-    border-radius: 0.8em;
-    padding: 0.3em;
-    width: 75%;
-    margin-top: 4.5em;
-}
-
 
 .outro-text {
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-
+    line-height: 2em;
 }
 
-.steps-container {
-    background-color: #AFA850;
-    border-radius: 0.8em;
-    padding: 0.3em;
-    margin-top: 2em;
-    margin: auto;
-    width: 80%;
-    height: 100%;
+.steps-text > ul {
+    list-style-type: none;
+    line-height: 2em;
 }
-
-.steps-container>ul {
-    color: white;
-    border-radius: 0.5em;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    list-style: none;
-    font-size: small;
-}
-
-.tips-container {
-    background-color: #AFA850;
-    border-radius: 0.8em;
-    padding: 0.3em;
-    margin-top: 2em;
-    width: 90%;
-    margin: auto;
-}
-
-.tips-container>ul {
-    color: white;
-    border-radius: 0.5em;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    list-style: none;
-    font-size: small;
-}
-
-.tips-text {
-    color: white;
-    border-radius: 0.5em;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
+ 
+.tips-text > ul {
+    list-style-type: none;
+    line-height: 2em;
 }
 
 
