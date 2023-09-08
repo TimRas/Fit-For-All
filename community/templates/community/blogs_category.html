@@ -2,6 +2,13 @@
 {% load static %}
 
 {% block page_header %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'blogs_main' %}">All Blogs</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'blogs_category' category_title=category.slug %}">{{ category.title }}</a></li>
+    </ol>
+</nav>
 <div class="products-header pb-3">
     <h2 class="coloured-text">{{ category }} Blogs</h2>
 </div>
@@ -13,7 +20,7 @@
         <div class="col-12">
             <div class="row blog-holder">
                 {% for post in posts %}
-                <div class="blog-container col-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="blog-container col-6 col-md-6 col-lg-4 col-xl-2">
                     <div class="row">
                         <h2 class="pt-3 pl-3">{{ post.title }}</h2>
                     </div>

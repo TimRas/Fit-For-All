@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 {% block page_header %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'plans_main' %}">Plans</a></li>
+    </ol>
+</nav>
 <div class="products-header pb-3">
     <h2 class="coloured-text">All Plans</h2>
 </div>

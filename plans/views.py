@@ -37,7 +37,9 @@ def show_plans_category(request, category_title):
 def view_challenge(request, challenge_id):
 
     challenge = get_object_or_404(Challenge, pk=challenge_id)
-    context = {'challenge': challenge}
+    context = {
+            'challenge': challenge,
+        }
     return render(request, 'plans/plans_details.html', context)
 
 
