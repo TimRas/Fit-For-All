@@ -3,6 +3,8 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import Product, Category
 
 
@@ -29,7 +31,7 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-            
+
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
@@ -40,7 +42,7 @@ def all_products(request):
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
+
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
@@ -56,13 +58,30 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
+@login_required
+def auth_check_buy_product(request, product_id):
+    """
+    Redirects to signup page if not logged in,
+    or to the post details page if logged in.
+    """
+
+    if request.user.is_authenticated:
+        return redirect(reverse("product_detail", args=[product_id]))
+    else:
+        messages.error(request, 'You need to be logged in to buy products')
+        return redirect('account_signup')
+
+
 def product_detail(request, product_id):
+    """
+    Grabs product with product_id and
+    renders it on the product_detail page.
+    """
 
     product = get_object_or_404(Product, pk=product_id)
 
     context = {
         'product': product,
         }
-        
-    return render(request, 'products/product_detail.html', context)
 
+    return render(request, 'products/product_detail.html', context)
