@@ -3,26 +3,28 @@
 
 {% block page_header %}
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+    <ol class="breadcrumb breadcrumb-container">
         <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
         <li class="breadcrumb-item"><a href="{% url 'products' %}">Products</a></li>
         <li class="breadcrumb-item"><a href="{% url 'product_detail' product_id=product.id %}">{{ product.name }}</a></li>
     </ol>
 </nav>
 <div class="products-header">
-    <h2>{{ product.category }}</h2>
+    <h2 class="coloured-text">{{ product.category.name|capfirst }}</h2>
     <hr class="mx-auto">
 </div>
 {% endblock %}
 
 {% block content %}
-<section class="product-details-content mt-5">
-    <div class="row">
-        <div class="col-12">
-            <h2 class="float-right ml-2">
-                /{{ product.category }}
-            </h2>
-            <h2 class="float-right">
+<section class="product-details-content mt-4">
+    <div class="row mb-3">
+        <div class="col-6">
+            <button class="btn blog-button">
+                <a href="{% url 'products' %}" class="anchor-links">Back To Products</a>
+            </button>
+        </div>
+        <div class="col-6 pl-0">
+            <h2>
                 {{ product.name }}
             </h2>
         </div>
@@ -69,9 +71,6 @@
                 <div class="row">
                     {% if user.is_authenticated %}
                     <div class="col-12 mt-5 pt-4 pl-0 pr-0">
-                        <button class="btn blog-button">
-                            <a href="{% url 'products' %}" class="anchor-links">All Products</a>
-                        </button>
                         <input type="submit" class="blog-button float-right" value="Add to Bag">
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -81,9 +80,6 @@
                             <p class="text-right">You need to register in order to purchase products. Register here!</p>
                         </div>
                         <div class="col-12 pt-4 pl-0 pr-0">
-                            <button class="btn blog-button">
-                                <a href="{% url 'products' %}" class="anchor-links">All Products</a>
-                            </button>
                             <button class="btn blog-button float-right">
                                 <a href="{% url 'account_signup' %}" class="text-white">Register</a>
                             </button>

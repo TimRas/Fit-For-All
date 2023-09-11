@@ -69,7 +69,7 @@ body {
     box-shadow: 5px 5px 3px lightgray;
 }
 
-/*------------------------------ Navigation bar */
+/*------------------------------ Navigation */
 
 .dropdown-btn {
     padding: 0.1em;
@@ -107,6 +107,14 @@ hr {
 
 .btn:focus {
     box-shadow: 0 0 0 5px #f2f1f1 !important;
+}
+
+.breadcrumb-container {
+    background-color: #F8F8F8;
+}
+
+.breadcrumb-container li a {
+    color: black;
 }
 
 /*------------------------------ Header */
