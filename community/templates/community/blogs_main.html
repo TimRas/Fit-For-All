@@ -8,8 +8,19 @@
         <li class="breadcrumb-item"><a href="{% url 'blogs_main' %}">All Blogs</a></li>
     </ol>
 </nav>
-<div class="products-header pb-3">
-    <h2 class="coloured-text">All Blogs</h2>
+<div class="row products-header">
+    <div class="col-11">
+        <div class="pb-3 pt-3 pl-5">
+            <h2 class="coloured-text text-center pl-5">All Blogs</h2>
+        </div>
+    </div>
+    <div class="col-1">
+        <div class="pb-3 pt-3">           
+            <button class="btn product-buy-button float-right">
+                <a href="{% url 'check_post' %}" class="anchor-links">Create Post</a>
+            </button>        
+        </div>
+    </div>
 </div>
 {% endblock %}
 {% block content %}
