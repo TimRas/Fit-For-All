@@ -37,36 +37,6 @@ def show_blogs_category(request, category_title):
     return render(request, 'community/blogs_category.html', context)
 
 
-def muscle_posts(request):
-        
-    """ Renders a page to show all gain muscle posts """
-
-    category_muscle = PostCategory.objects.get(name='Gain Muscle')
-    posts_muscle = Post.objects.filter(post_category=category_muscle).values()
-
-    context = {
-        'posts_muscle': posts_muscle,
-
-    }
-
-    return render(request, 'community/blogs_gain_muscle.html', context)
-
-
-def weight_posts(request):
-        
-    """ Renders a page to show all lose weight posts """
-
-    category_weight = PostCategory.objects.get(name='Lose Weight')
-    posts_weight = Post.objects.filter(post_category=category_weight).values()
-
-    context = {
-        'posts_weight': posts_weight,
-
-    }
-
-    return render(request, 'community/blogs_lose_weight.html', context)
-
-
 def check_post_id(post, comment):
     return str(comment.post) == str(post.title)
 
@@ -94,6 +64,21 @@ def post_detail_create_comment(request, post_id):
     }
 
     return render(request, 'community/blog_details.html', context)
+
+
+
+@login_required
+def auth_check_create_post(request):
+    """
+    Redirects to signup page if not logged in,
+    or to the create post page if logged in.
+    """
+
+    if request.user.is_authenticated:
+        return redirect(reverse('create_post'))
+    else:
+        messages.error(request, 'You need to be logged in create a post')
+        return redirect('account_signup')
 
 
 @login_required
@@ -147,9 +132,9 @@ def post_delete(request, post_id):
 
     # Determine the URL for the appropriate category
     if category_title == 'Lose Weight':
-        category_url = reverse('blogs_category', args=['lose_weight'])
+        category_url = reverse('blogs_category', args=['Lose Weight'])
     elif category_title == 'Gain Muscle':
-        category_url = reverse('blogs_category', args=['gain_muscle'])
+        category_url = reverse('blogs_category', args=['Gain Muscle'])
     else:
         # If the category is not recognized, you can redirect to the home page
         return redirect('home')
