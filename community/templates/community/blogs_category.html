@@ -20,19 +20,21 @@
         <div class="col-12">
             <div class="row blog-holder">
                 {% for post in posts %}
-                <div class="blog-container col-6 col-md-6 col-lg-4 col-xl-2">
-                    <div class="row">
-                        <h2 class="pt-3 pl-3">{{ post.title }}</h2>
-                    </div>
-                    <hr>
-                    <div class="row pt-2 pl-3">
-                        <p class="blog-excerpt">{{ post.excerpt }}</p>
-                    </div>
-                    <div class="row">
-                        <button class="btn blog-button mx-auto">
-                            <a href="{% url 'post_detail' post_id=post.id %}"
-                                class="anchor-links"><strong>Details</strong></a>
-                        </button>
+                <div class="outer-container col-4">
+                    <div class="blog-container">
+                        <div class="row-12 pt-1 pl-2">
+                            <h2>{{ post.title }}</h2>
+                        </div>
+                        <hr>
+                        <div class="row-12 h-100 pt-1 pl-2">
+                            <p class="blog-excerpt">{{ post.excerpt }}</p>
+                        </div>
+                        <div class="row-12 d-flex justify-content-center">
+                            <button class="btn blog-button">
+                                <a href="{% url 'post_detail' post_id=post.id %}"
+                                    class="anchor-links"><strong>Details</strong></a>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 {% endfor %}

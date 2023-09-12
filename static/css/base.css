@@ -464,6 +464,11 @@ hr {
     flex-wrap: wrap;
 }
 
+.outer-container {
+    max-width: 30em; /* Adjust the maximum width as needed */
+    margin-bottom: 0.5em;
+}
+
 .blog-container {
     background-color: #F8F8F8;
     min-height: 20em;

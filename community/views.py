@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post, PostCategory, Comment
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 from .forms import PostForm, CommentForm
 
 
@@ -137,17 +138,25 @@ def edit_post(request, post_id):
 
 
 @login_required
-def delete_post(request, post_id):
-
+def post_delete(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
-    post.delete()   
-    if post.post_category.name == 'Lose Weight':
-        return redirect("weight_posts")
+    category_title = post.post_category.title
 
-    elif post.post_category.name == 'Gain Muscle':
-        return redirect("muscle_posts")
+    # Delete the post
+    post.delete()
+
+    # Determine the URL for the appropriate category
+    if category_title == 'Lose Weight':
+        category_url = reverse('blogs_category', args=['lose_weight'])
+    elif category_title == 'Gain Muscle':
+        category_url = reverse('blogs_category', args=['gain_muscle'])
     else:
+        # If the category is not recognized, you can redirect to the home page
         return redirect('home')
+
+    # Redirect to the appropriate category page
+    return redirect(category_url)
+
 
 
 @login_required
