@@ -16,7 +16,6 @@ class PostAdmin(admin.ModelAdmin):
         'title',
         'author',
         'created_on',
-        'updated_on',
     )
 
     ordering = ('likes_post',)

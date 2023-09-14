@@ -34,7 +34,6 @@ class Post (models.Model):
     content = models.TextField(max_length=400, blank=False)
     excerpt = models.TextField(blank=True) 
     created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=0)
     likes_post = models.ManyToManyField(User, blank=True, related_name='post_likes')
 
     def __str__(self):
