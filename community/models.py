@@ -31,8 +31,8 @@ class Post (models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
-    content = models.TextField(max_length=400, blank=False)
-    excerpt = models.TextField(blank=True) 
+    content = models.TextField(max_length=1000, blank=False)
+    excerpt = models.TextField(max_length=140, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     likes_post = models.ManyToManyField(User, blank=True, related_name='post_likes')
 

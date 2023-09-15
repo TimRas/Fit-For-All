@@ -73,7 +73,7 @@
         <form method="post">
           {% csrf_token %}
           {{ comment_form | crispy }}
-          <button type="submit" class="btn blog-button mb-3 float-right">Submit</button>
+          <button type="submit" class="btn submit-buttons mb-4 float-right">Submit</button>
         </form>
       </div>
     </div>
@@ -92,8 +92,6 @@
     </div>
   </div>
   {% endif %}
-  </div>
-
   </div>
 </section>
 
