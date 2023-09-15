@@ -8,7 +8,8 @@
     <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
     <li class="breadcrumb-item"><a href="{% url 'blogs_main' %}">All Blogs</a></li>
     <li class="breadcrumb-item"><a
-        href="{% url 'blogs_category' category_title=post.post_category.title %}">{{ post.post_category.title }}</a></li>
+        href="{% url 'blogs_category' category_title=post.post_category.title %}">{{ post.post_category.title }}</a>
+    </li>
     <li class="breadcrumb-item"><a href="{% url 'post_detail' post_id=post.id %}">{{ post.title }}</a></li>
   </ol>
 </nav>
@@ -18,24 +19,43 @@
 {% endblock %}
 
 {% block content %}
+<section class="row blog-content-details">
+  <div class="blog-holder">
+    <div class="row">
+      <div class="outer-container">
+        <div class="blog-container-details">
+          <div class="row mx-auto">
+            <div class="col-6">
+              <h4 class="pt-2"><strong>{{ post.title }}</strong></h4>
+            </div>
+            <div class="col-6">
+              <h6 class="pt-2 float-right"><strong>{{ post.author }}</strong></h6>
+            </div>
+          </div>
+          <hr>
+          <div class="row mx-auto">
+            <div class="col-12 pl-2 blog-excerpt">
+              {{ post.content|safe }}
+            </div>
+          </div>
+          <hr>
+          <div class="row mx-auto">
+            <div class="col-6 pt-2 pl-2 align-self-end">
+              <p class="my-0">{{ post.created_on }}</p>
+              <!-- <p class="card-text pl-3">{{ post.likes_post }} likes</p> -->
+            </div>
 
-<section class="main-content">
-  <div class="row content-containers w-75">
-    <div class="col-12">
-      <div class="row pt-3 pl-2">
-        <h2 class="coloured-text">{{ post.title }}</h2>
-      </div>
-      <hr>
-      <div class="row pt-3 pl-2">
-        <p>
-          {{ post.content }}
-        </p>
-      </div>
-      <div class="row pt-3 pl-2 justify-content-between">
-        {% if request.user == post.author %}
-        <a class="btn blog-button pt-3 pb-2 mb-3 ml-2" href="{% url 'post_edit' post.id %}">Edit Post</a>
-        <a class="btn blog-button pt-3 pb-2 mb-3 mr-3" href="{% url 'post_delete' post_id=post.id %}">Delete Post</a>
-        {% endif %}
+            <div class="col-6 pt-2 pl-2">
+              <button class="btn blog-button float-right mr-3">
+                <a class="pt-3 pb-2 mb-3 ml-2 anchor-links" href="{% url 'post_edit' post.id %}">Edit Post</a>
+              </button>
+              <button class="btn blog-button float-right mr-3">
+                <a class="pt-3 pb-2 mb-3 mr-3 anchor-links" href="{% url 'post_delete' post_id=post.id %}">Delete
+                  Post</a>
+              </button>
+            </div>  
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -92,8 +112,5 @@
     </div>
   </div>
   {% endif %}
-  </div>
 </section>
-
-
 {% endblock %}
