@@ -3,8 +3,8 @@
 {% load crispy_forms_tags %}
 
 {% block page_header %}
-<nav aria-label="breadcrumb breadcrumb-container">
-  <ol class="breadcrumb">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb breadcrumb-container">
     <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
     <li class="breadcrumb-item"><a href="{% url 'blogs_main' %}">All Blogs</a></li>
     <li class="breadcrumb-item"><a
@@ -40,19 +40,21 @@
           </div>
           <hr>
           <div class="row mx-auto">
-            <div class="col-6 pt-2 pl-2 align-self-end">
+            <div class="col-6 pt-2 pl-2 d-flex align-items-end">
               <p class="my-0">{{ post.created_on }}</p>
               <!-- <p class="card-text pl-3">{{ post.likes_post }} likes</p> -->
             </div>
 
             <div class="col-6 pt-2 pl-2">
+              {% if request.user == post.author %}
               <button class="btn blog-button float-right mr-3">
-                <a class="pt-3 pb-2 mb-3 ml-2 anchor-links" href="{% url 'post_edit' post.id %}">Edit Post</a>
+                <a class="pt-3 pb-2 mb-3 ml-2 anchor-links" href="{% url 'post_edit' post_id=post.id %}">Edit Post</a>
               </button>
               <button class="btn blog-button float-right mr-3">
                 <a class="pt-3 pb-2 mb-3 mr-3 anchor-links" href="{% url 'post_delete' post_id=post.id %}">Delete
                   Post</a>
               </button>
+              {% endif %}
             </div>  
           </div>
         </div>
@@ -61,53 +63,67 @@
   </div>
 
   {% for comment in comments %}
-  <div class="row content-containers w-50">
-    <div class="col-12">
-      <div class="row pt-3 pl-2">
-        <p>{{ comment.body }}</p>
-      </div>
-      <hr>
-      <div class="row pl-2">
-        <p>{{ comment.name }}</p>
-      </div>
-      <div class="row pt-3 pl-2 justify-content-between">
-        {% if request.user == comment.author %}
-        <a class="btn blog-button pt-3 pb-2 mb-3 ml-2" href="{% url 'post_edit' post.id %}">Edit Comment</a>
-        <a class="btn blog-button pt-3 pb-2 mb-3 mr-3" href="{% url 'post_delete' post.id %}">Delete Comment</a>
-        {% endif %}
+  <div class="outer-container my-auto w-75">
+    <div class="row comment-container-user">
+      <div class="col-12">
+        <div class="row pt-3 pl-2 pr-2">
+          <p class="comment-excerpt">{{ comment.body }}</p>
+        </div>
+        <hr class="mt-0">
+        <div class="row">
+          <div class="col-4 pl-2 d-flex align-items-end">
+            <p>{{ comment.name }}</p>
+          </div>     
+          <div class="col-8">
+            {% if request.user == comment.post.author %}
+            <a class="btn blog-button float-right pt-3 pb-2 mb-3 ml-2" href="{% url 'comment_edit' comment_id=comment.id %}">Edit Comment</a>
+            <a class="btn blog-button float-right pt-3 pb-2 mb-3 mr-3" href="{% url 'comment_delete' comment_id=comment.id  %}">Delete Comment</a>
+            {% endif %}
+          </div>
+        </div>
       </div>
     </div>
   </div>
   {% endfor %}
 
   {% if user.is_authenticated %}
-  <div class="row content-containers w-75">
-    <div class="col-12">
-      <div class="row pt-3 pl-2">
-        <h3 class="coloured-text">Leave a comment:</h3>
+  <div class="outer-container my-auto">
+    <div class="row post-comment-container">
+      <div class="col-10 mx-auto">
+        <div class="row">
+          <h3 class="coloured-text">Leave a comment:</h3>
+        </div>
       </div>
-      <div class="row pt-3 pl-2">
-        <p>Posting as: {{ user.username }}</p>
+      <div class="col-10 mx-auto">
+        <div class="row">
+          <p>Posting as: {{ user.username }}</p>
+        </div>
       </div>
-      <div>
-        <form method="post">
-          {% csrf_token %}
-          {{ comment_form | crispy }}
-          <button type="submit" class="btn submit-buttons mb-4 float-right">Submit</button>
-        </form>
-      </div>
+        <div class="col-10 mx-auto">
+          <div class="row-12">
+            <form method="post">
+              {% csrf_token %}
+              {{ comment_form | crispy }}
+              <button type="submit" class="btn submit-buttons mb-4 float-right">Submit</button>
+            </form>
+          </div>
+        </div>
     </div>
   </div>
   {% else %}
-  <div class="row content-containers w-75">
-    <div class="col-12">
-      <div class="row pt-3 pl-2">
-        <P>You need to register in order to create your own Comments. Sign up here!</P>
+  <div class="outer-container my-auto">
+    <div class="row post-comment-container">
+      <div class="col-8 mx-auto">
+        <div class="row">
+          <P>You need to register in order to create your own Comments. Sign up here!</P>
+        </div>
       </div>
-      <div class="row pt-3 pl-2 float-right">
-        <button class="btn blog-button mb-3 mr-2">
-          <a href="{% url 'account_signup' %}" class="text-white">Register</a>
-        </button>
+      <div class="col-8 mx-auto">
+        <div class="row justify-content-center">
+          <button class="btn blog-button">
+            <a href="{% url 'account_signup' %}" class="text-white">Register</a>
+          </button>
+        </div>
       </div>
     </div>
   </div>

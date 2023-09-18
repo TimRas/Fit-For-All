@@ -36,6 +36,11 @@ class Post (models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     likes_post = models.ManyToManyField(User, blank=True, related_name='post_likes')
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return self.title
 

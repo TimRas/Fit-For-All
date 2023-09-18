@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post, PostCategory, Comment
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+from urllib.parse import urlencode
 from .forms import PostForm, CommentForm
 
 
@@ -42,56 +43,64 @@ def check_post_id(post, comment):
 
   
 def post_detail_create_comment(request, post_id):
-        
-    """ Renders a page to show all community posts and categories """
-
     post = get_object_or_404(Post, pk=post_id)
-    comments = [x for x in Comment.objects.all() if check_post_id(post, x)]
-    
-    comment_form = CommentForm(data=request.POST)
-    if comment_form.is_valid():
-        comment_form.instance.email = request.user.email
-        comment_form.instance.name = request.user.username
-        comment = comment_form.save(commit=True)
-        return redirect("post_detail", post_id=post.id)
+    comments = Comment.objects.filter(post=post)
+
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)  # Create a comment instance without saving it
+            comment.post = post  # Set the post for the comment
+            comment.email = request.user.email
+            comment.name = request.user.username
+            comment.save()  # Now save the comment with the correct post association
+            return redirect("post_detail", post_id=post.id)
     else:
         comment_form = CommentForm()
 
     context = {
         'post': post,
         'comments': comments,
-        "comment_form": comment_form,
+        'comment_form': comment_form,
     }
 
     return render(request, 'community/blog_details.html', context)
 
 
-
 @login_required
-def auth_check_create_post(request):
+def auth_check_create_post(request, category_title):
     """
     Redirects to signup page if not logged in,
     or to the create post page if logged in.
     """
 
     if request.user.is_authenticated:
-        return redirect(reverse('create_post'))
+        return redirect(reverse('create_post', kwargs={'category_title': category_title}))
     else:
         messages.error(request, 'You need to be logged in create a post')
         return redirect('account_signup')
 
 
-@login_required
-def create_post(request):
 
-    post_form = PostForm(data=request.POST)
-    if post_form.is_valid():
-        post_form.instance.email = request.user.email
-        post_form.instance.name = request.user.username
-        post = post_form.save(commit=True)
-        return redirect("post_detail", post_id=post.id)
+@login_required
+def create_post(request, category_title):
+    # Retrieve the PostCategory based on the category_title
+    post_category = get_object_or_404(PostCategory, title=category_title)
+
+    if request.method == 'POST':
+        post_form = PostForm(request.POST)
+
+        if post_form.is_valid():
+            post = post_form.save(commit=False)
+            post.author = request.user
+            post.post_category = post_category  # Set the post_category field
+            post.save()
+
+            return redirect("post_detail", post_id=post.id)
     else:
-        post_form = PostForm()
+        # Set the initial category value
+        post_form = PostForm(initial={"category": post_category.title})
 
     return render(
         request,
@@ -102,16 +111,19 @@ def create_post(request):
     )
 
 
+
+
 @login_required
 def edit_post(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
 
-    post = get_object_or_404(Post, pk=post_id)      
     if request.method == "POST":
         post_form = PostForm(request.POST, instance=post)
         if post_form.is_valid():
             post_form.save(commit=True)
             return redirect("post_detail", post_id=post_id)
-    post_form = PostForm(instance=post)
+    else:  # Handle the GET request
+        post_form = PostForm(instance=post)
 
     return render(
         request,
@@ -141,7 +153,6 @@ def post_delete(request, post_id):
 
     # Redirect to the appropriate category page
     return redirect(category_url)
-
 
 
 @login_required
