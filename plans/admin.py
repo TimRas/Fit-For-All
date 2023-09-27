@@ -15,7 +15,10 @@ class ChallengeAdmin(admin.ModelAdmin):
         'title',
         'category',
         'content',
-        'image',
+        'image1',
+        'image2',
+        'image3',
+        'image4',
     )
 
     ordering = ('category',)
