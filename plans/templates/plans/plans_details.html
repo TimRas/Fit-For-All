@@ -19,34 +19,51 @@
 {% endblock %}
 
 {% block content %}
-<section class="main-content">
-    <div class="row content-containers w-75">
-        <div class="col-8 mx-auto">
-            <div class="row pt-2 pl-2">
-                <h2 class="coloured-text">{{ challenge.title }}</h2>
-            </div>
-            <hr class="my-0">
-            <div class="row align-items-center h-75 pl-2">
-                <p class="intro-text">
-                    {{ challenge.intro }}
-                </p>
+<section class="main-content mt-4">
+    <div class="row d-flex flex-nowrap align-items-center justify-content-around">
+        <div class="row content-containers w-50">        
+            <div class="col-12">
+                <div class="row pt-2 pl-2">
+                    <h2 class="coloured-text">{{ challenge.title }}</h2>
+                </div>
+                <hr class="my-0">
+                <div class="row align-items-center h-75 pl-2">
+                    <p class="intro-text">
+                        {{ challenge.intro }}
+                    </p>
+                </div>            
             </div>
         </div>
-        <div class="col-4 px-0 py-0">
-            {% if challenge.image %}
-            <div class="image-container">
-                <img class="card-img-top" src="{{ challenge.image.url }}" alt="{{ category.name }}">
+        <div class="row w-50 d-flex justify-content-center">
+            <div class="col-7">
+                {% if challenge.image1 %}
+                <div class="image-container">
+                    <img class="card-img-top" src="{{ challenge.image1.url }}" alt="{{ category.name }}">
+                </div>
+                {% else %}
+                <div class="image-container">
+                    <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.name }}">
+                </div>
+                {% endif %}
             </div>
-            {% else %}
-            <div class="image-container">
-                <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.name }}">
-            </div>
-            {% endif %}
         </div>
     </div>
-    <div class="row">
-        <div class="col-6">
-            <div class="content-containers">
+    <div class="row d-flex flex-nowrap w-100">
+        <div class="row w-50 d-flex align-items-center justify-content-center">
+            <div class="col-7">
+                {% if challenge.image2 %}
+                <div class="image-container">
+                    <img class="card-img-top" src="{{ challenge.image2.url }}" alt="{{ category.name }}">
+                </div>
+                {% else %}
+                <div class="image-container">
+                    <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.name }}">
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row content-containers">
+            <div class="col-12">
                 <h3 class="coloured-text pt-2 pl-2">Steps:</h3>
                 <hr class="my-0">
                 <ul class="steps-text pt-2 pl-2">
@@ -54,28 +71,52 @@
                 </ul>
             </div>
         </div>
-        <div class="col-6">
-            <div class="row">
-                <div class="col-12">
-                    <div class="content-containers px-1 py-1">
-                        <h3 class="coloured-text pt-2 pl-2">Tips:</h3>
-                        <hr class="my-0">
-                        <ul class="tips-text pt-2 pl-2">
-                            {{ challenge.tips|safe }}
-                        </ul>
-                    </div>
+    </div>
+    <div class="row d-flex flex-nowrap align-items-center justify-content-around w-100">
+        <div class="row content-containers">
+            <div class="col-12">
+                <h3 class="coloured-text pt-2 pl-2">Tips:</h3>
+                <hr class="my-0">
+                <ul class="tips-text pt-2 pl-2">
+                    {{ challenge.tips|safe }}
+                </ul>
+            </div>
+        </div>
+
+        <div class="row w-50 d-flex align-items-center justify-content-center">
+            <div class="col-7">
+                {% if challenge.image3 %}
+                <div class="image-container">
+                    <img class="card-img-top" src="{{ challenge.image3.url }}" alt="{{ category.name }}">
                 </div>
-                <div class="col-12">
-                    <div class="content-containers px-1 py-1">
-                        <h3 class="coloured-text pt-2 pl-2">Outro:</h3>
-                        <hr class="my-0">
-                        <p class="outro-text pt-2 pl-2">
-                            {{ challenge.outro }}
-                        </p>
-                    </div>
+                {% else %}
+                <div class="image-container">
+                    <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.name }}">
                 </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex flex-nowrap align-items-center justify-content-around">
+        <div class="row w-50">
+            <div class="col-12 content-containers mx-0">
+                <div class="row">
+                    <h3 class="coloured-text pt-2 pl-2">Outro:</h3>
+                    <hr class="my-0">
+                    <p class="outro-text pt-2 pl-2">
+                        {{ challenge.outro }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">            
+                <button class="btn button-links-index">
+                    <a href="{% url 'plans_main' %}" class="nav-link">All plans</a>
+                </button>
             </div>
         </div>
     </div>
 </section>
 {% endblock %}
+

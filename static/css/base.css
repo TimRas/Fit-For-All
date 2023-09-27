@@ -65,7 +65,7 @@ body {
 
 .content-containers {
     background-color: #F8F8F8;
-    margin: 1em;
+    margin: 3em;
     box-shadow: 5px 5px 3px lightgray;
 }
 
@@ -484,6 +484,13 @@ hr {
     border-radius: 5px;
 }
 
+.comment-container-user {
+    background-color: #F8F8F8;
+    margin: 1em;
+    box-shadow: 5px 5px 3px lightgray;
+    border-radius: 5px;
+}
+
 .blog-container-details {
     background-color: #F8F8F8;
     width: 70em;
@@ -493,14 +500,23 @@ hr {
 }
 
 .blog-excerpt {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500;
-        max-height: 12em;
-        min-height: 4.5em;
-        max-width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    max-height: 12em;
+    min-height: 4.5em;
+    max-width: 100%;
 
-        overflow-wrap: break-word;
-          
+    overflow-wrap: break-word;         
+}
+
+.comment-excerpt {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    max-height: 12em;
+    min-height: 4.5em;
+    max-width: 100%;
+
+    overflow-wrap: break-word;            
 }
 
 .blog-button {
@@ -533,6 +549,15 @@ hr {
     padding-top: 0;
 }
 
+.post-comment-container {
+    min-height: 8em;
+    min-width: 15em;
+    padding: 2em;
+    background-color: #F8F8F8;
+    margin: 1em;
+    box-shadow: 5px 5px 3px lightgray;
+}
+
 /* .button-links-posts {
     background-color: #;
     border-radius: 0.5em;
@@ -543,7 +568,7 @@ hr {
 } */
 
 textarea.form-control {
-    height: 5em;
+    height: 8em;
 }
 
 .select.form-control {
