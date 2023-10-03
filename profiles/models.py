@@ -12,6 +12,7 @@ class UserProfile(models.Model):
     def __str__(self):
         return self.user.username
 
+
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     order_date = models.DateTimeField(auto_now_add=True)
@@ -19,6 +20,7 @@ class Order(models.Model):
 
     def __str__(self):
         return f"Order #{self.id} by {self.user.username}"
+
 
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
@@ -32,6 +34,7 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     else:
         # If an existing user is saved, update their user profile.
         instance.userprofile.save()
+
 
 # Connect the signal to the User model
 post_save.connect(create_or_update_user_profile, sender=User)
