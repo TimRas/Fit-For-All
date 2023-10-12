@@ -55,6 +55,9 @@ def all_products(request):
         'current_sorting': current_sorting,
     }
 
+    if not products:
+        context['no_results'] = True
+
     return render(request, 'products/products.html', context)
 
 
