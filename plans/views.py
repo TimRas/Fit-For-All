@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .models import Category, Challenge
 from .forms import ChallengeForm
 from django.contrib import messages
@@ -68,4 +68,37 @@ def add_challenge(request):
 
     return render(request, template, context)
 
+
+@login_required
+def edit_challenge(request, challenge_id):
+    """ Edit a challenge that is on the plans page """
+    challenge = get_object_or_404(Challenge, pk=challenge_id)
+    if request.method == 'POST':
+        form = ChallengeForm(request.POST, request.FILES, instance=challenge)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated challenge!')
+            return redirect(reverse('challenges', args=[challenge.id]))
+        else:
+            messages.error(request, 'Failed to update challenge. Please ensure the form is valid.')
+    else:
+        form = ChallengeForm(instance=challenge)
+        messages.info(request, f'You are editing {challenge.title}')
+
+    template = 'plans/edit_challenge.html'
+    context = {
+        'form': form,
+        'challenge': challenge,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_challenge(request, challenge_id):
+    """ Delete a product from the store """
+    challenge = get_object_or_404(Challenge, pk=challenge_id)
+    challenge.delete()
+    messages.success(request, 'Challenge deleted!')
+    return redirect(reverse('plans_main'))
 
