@@ -73,6 +73,9 @@
                 <div class="row">
                     {% if user.is_authenticated %}
                     <div class="col-12 mt-5 pt-4 pl-0 pr-0">
+                        {% if request.user.is_superuser %}
+                            <a href="{% url 'edit_product' product.id %}">Edit Product</a>
+                        {% endif %}
                         <input type="submit" class="blog-button float-right" value="Add to Bag">
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -99,3 +102,14 @@
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}
+
+{% if request.user.is_authenticated %}
+    {% if request.user.is_superuser %}
+        <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+    {% endif %}
+    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+{% else %}
+    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+{% endif %}
