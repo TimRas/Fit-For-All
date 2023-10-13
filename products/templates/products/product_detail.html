@@ -75,6 +75,7 @@
                     <div class="col-12 mt-5 pt-4 pl-0 pr-0">
                         {% if request.user.is_superuser %}
                             <a href="{% url 'edit_product' product.id %}">Edit Product</a>
+                            <a href="{% url 'delete_product' product.id %}">Delete Product</a>
                         {% endif %}
                         <input type="submit" class="blog-button float-right" value="Add to Bag">
                     </div>
