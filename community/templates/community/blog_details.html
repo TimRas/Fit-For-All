@@ -75,10 +75,13 @@
             <p>{{ comment.name }}</p>
           </div>     
           <div class="col-8">
-            {% if request.user == comment.post.author %}
-            <a class="btn blog-button float-right pt-3 pb-2 mb-3 ml-2" href="{% url 'comment_edit' comment_id=comment.id %}">Edit Comment</a>
-            <a class="btn blog-button float-right pt-3 pb-2 mb-3 mr-3" href="{% url 'comment_delete' comment_id=comment.id  %}">Delete Comment</a>
-            {% endif %}
+            {% if request.user.is_superuser %}
+              <a href="{% url 'post_delete' post.id %}">Delete Post</a>
+            {% endif %}  
+              {% if request.user == comment.post.author %}
+                <a class="btn blog-button float-right pt-3 pb-2 mb-3 ml-2" href="{% url 'comment_edit' comment_id=comment.id %}">Edit Comment</a>
+                <a class="btn blog-button float-right pt-3 pb-2 mb-3 mr-3" href="{% url 'comment_delete' comment_id=comment.id  %}">Delete Comment</a>
+              {% endif %}
           </div>
         </div>
       </div>

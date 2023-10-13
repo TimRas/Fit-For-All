@@ -79,7 +79,10 @@
                             <!-- <p class="card-text pl-3">{{ post.likes_post }} likes</p> -->                           
                         </div>
                         
-                        <div class="col-6 pt-2 pl-2">                        
+                        <div class="col-6 pt-2 pl-2">
+                            {% if request.user.is_superuser %}
+                                <a href="{% url 'post_delete' post.id %}">Delete Post</a>
+                            {% endif %}                         
                             <button class="btn blog-button float-right mr-3">
                                 <a href="{% url 'post_detail' post_id=post.id %}"
                                     class="anchor-links"><strong>Details</strong></a>

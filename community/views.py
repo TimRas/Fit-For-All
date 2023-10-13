@@ -139,19 +139,15 @@ def post_delete(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     category_title = post.post_category.title
 
-    # Delete the post
     post.delete()
 
-    # Determine the URL for the appropriate category
     if category_title == 'Lose Weight':
         category_url = reverse('blogs_category', args=['Lose Weight'])
     elif category_title == 'Gain Muscle':
         category_url = reverse('blogs_category', args=['Gain Muscle'])
     else:
-        # If the category is not recognized, you can redirect to the home page
         return redirect('home')
 
-    # Redirect to the appropriate category page
     return redirect(category_url)
 
 
