@@ -17,7 +17,7 @@
             <div class="table-responsive shopping-table">
                 <table class="table table-borderless table-striped">
                     <thead>
-                        <tr class="text-white">
+                        <tr>
                             <th scope="col"></th>
                             <th scope="col">Product Info</th>
                             <th scope="col">Price</th>
@@ -27,7 +27,7 @@
                     </thead>
 
                     {% for item in bag_items %}
-                    <tr class="shopping-containers">
+                    <tr>
                         <td class="p-3 w-25">
                             <img class="img-fluid rounded" src="{{ item.product.image.url }}">
                         </td>
@@ -73,17 +73,17 @@
                     </tr>
                     {% endfor %}
                     <tr>
-                        <td colspan="5" class="pt-5 text-right text-white">
+                        <td colspan="5" class="pt-5 text-right">
                             <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="5" class="text-right">
+                        <td colspan="5">
                             <a href="{% url 'products' %}"
-                                class="btn btn-outline-black rounded-0 btn-lg shopping-buttons">
+                                class="btn rounded-0 btn-lg shopping-buttons anchor-links mb-2">
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
-                            <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg shopping-buttons">
+                            <a href="{% url 'checkout' %}" class="btn rounded-0 btn-lg anchor-links shopping-buttons">
                                 <span class="text-uppercase">Secure Checkout</span>
                             </a>
                         </td>
@@ -99,7 +99,7 @@
                     <div class="row justify-content-center">
                         <button class="btn blog-button mb-3">
                             <a href="{% url 'products' %}">
-                                <p class="mt-2 shopping-text text-white">Go to Products page</p>
+                                <p class="mt-2 shopping-text">Go to Products page</p>
                             </a>
                         </button>
                     </div>

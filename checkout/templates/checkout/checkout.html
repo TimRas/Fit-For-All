@@ -19,13 +19,13 @@
 
     <div class="row">
         <div class="col-12 col-lg-6 order-lg-last mb-5">
-            <p class="text-white">Order Summary ({{ product_count }})</p>
+            <p>Order Summary ({{ product_count }})</p>
             <div class="row">
                 <div class="col-7 offset-2">
-                    <p class="mb-1 mt-0 small text-white">Item</p>
+                    <p class="mb-1 mt-0 small">Item</p>
                 </div>
                 <div class="col-3 text-right">
-                    <p class="mb-1 mt-0 small text-white">Subtotal</p>
+                    <p class="mb-1 mt-0 small">Subtotal</p>
                 </div>
             </div>
             {% for item in bag_items %}
@@ -41,7 +41,7 @@
                 </div>
                 <div class="col-7">
                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                    <p class="my-0 small text-white mt-1">Qty: {{ item.quantity }}</p>
+                    <p class="my-0 small mt-1">Qty: {{ item.quantity }}</p>
                 </div>
                 <div class="col-3 text-right">
                     <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
@@ -51,8 +51,8 @@
             <hr>
             <div class="row text-right mt-4">
                 <div class="col-7 offset-2">
-                    <p class="my-0 text-white">Order Total:</p>
-                    <p class="my-0 text-white">Grand Total:</p>
+                    <p class="my-0">Order Total:</p>
+                    <p class="my-0">Grand Total:</p>
                 </div>
                 <div class="col-3">
                     <p class="my-0">${{ total | floatformat:2 }}</p>
@@ -61,16 +61,16 @@
             </div>
         </div>
         <div class="col-12 col-lg-6">
-            <p class="text-white">Please fill out the form below to complete your order</p>
+            <p>Please fill out the form below to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
-                    <legend class="fieldset-label px-2 w-auto text-white">Details</legend>
+                    <legend class="fieldset-label px-2 w-auto">Details</legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                 </fieldset>
                 <fieldset class="rounded px-3 mb-5">
-                    <legend class="fieldset-label px-2 w-auto text-white">Delivery</legend>
+                    <legend class="fieldset-label px-2 w-auto">Delivery</legend>
                     {{ order_form.phone_number | as_crispy_field }}
                     {{ order_form.country | as_crispy_field }}
                     {{ order_form.postcode | as_crispy_field }}
@@ -84,7 +84,7 @@
                     </div>
                 </fieldset>
                 <fieldset class="px-3">
-                    <legend class="fieldset-label text-white px-2 w-auto">Payment</legend>
+                    <legend class="fieldset-label px-2 w-auto">Payment</legend>
                     <div class="mb-3" id="card-element"></div>                   
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>                  
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
