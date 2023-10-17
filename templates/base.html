@@ -216,6 +216,10 @@
 {% block postloadjs %}
 <script type="text/javascript">
     $('.toast').toast('show');
+
+    setTimeout(function() {
+        $('.toast').toast('hide');
+    }, 2000);
 </script>
 {% endblock %}
 
