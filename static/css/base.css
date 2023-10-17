@@ -786,6 +786,15 @@ select option[value=""] {
 
 /*------------------------------ Checkout */
 
+.checkout-container {
+    min-height: calc(100vh - 312px);
+}
+
+.coloured-border {
+    border: solid 5px #f15e5e;
+    padding: 1em;
+}
+
 #payment-form>fieldset {
     margin-bottom: 0;
 }
