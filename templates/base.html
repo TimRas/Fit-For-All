@@ -21,10 +21,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
-    <link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
-    <link rel="manifest" href="media/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -57,7 +57,7 @@
         <header class="header-container">
             <nav class="navbar navbar-expand-lg mx-auto">
                 <div class="favi-container mb-1">
-                    <img src="/media/android-chrome-512x512.png" alt="Main Logo" class="favi-icon">
+                    <img src="{% static 'favicon/android-chrome-512x512.png' %}" alt="Main Logo" class="favi-icon">
                 </div>
                 <a class="nav-link main-logo-link" href="{% url 'home' %}">
                     <h2 class="text-black my-0 mr-2 main-logo-text"><strong>Fit For All</strong>
