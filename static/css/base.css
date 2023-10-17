@@ -316,8 +316,7 @@ hr {
 /*------------------------------ Products Details Page */
 
 .product-details-content {
-    position: relative;
-    min-height: calc(100vh - 376px);
+    min-height: calc(100vh - 326px);
 }
 
 .product-description {

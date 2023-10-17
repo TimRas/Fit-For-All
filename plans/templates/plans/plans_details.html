@@ -112,10 +112,14 @@
         <div class="row">
             <div class="col-12">
                 {% if request.user.is_superuser %}
-                    <a href="{% url 'edit_challenge' challenge.id %}">Edit Challenge</a>
-                    <a href="{% url 'delete_challenge' challenge.id %}">Delete Challenge</a>
+                <button class="blog-button">
+                    <a href="{% url 'edit_challenge' challenge.id %}" class="nav-link">Edit Challenge</a>
+                </button>
+                <button class="blog-button">        
+                    <a href="{% url 'delete_challenge' challenge.id %}" class="nav-link">Delete Challenge</a>
+                </button>
                 {% endif %}           
-                <button class="btn button-links-index">
+                <button class="blog-button">
                     <a href="{% url 'plans_main' %}" class="nav-link">All plans</a>
                 </button>
             </div>

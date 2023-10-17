@@ -46,6 +46,11 @@
             </div>
 
             <div class="col-6 pt-2 pl-2">
+              {% if request.user.is_superuser %}
+                <button class="btn blog-button mr-3 float-right">
+                    <a href="{% url 'post_delete' post.id %}" class="anchor-links"><strong>Delete Post</strong></a>
+                </button>                              
+              {% endif %}    
               {% if request.user == post.author %}
               <button class="btn blog-button float-right mr-3">
                 <a class="pt-3 pb-2 mb-3 ml-2 anchor-links" href="{% url 'post_edit' post_id=post.id %}">Edit Post</a>
@@ -76,12 +81,12 @@
           </div>     
           <div class="col-8">
             {% if request.user.is_superuser %}
-              <a href="{% url 'post_delete' post.id %}">Delete Post</a>
+            <a class="btn blog-button float-right pt-3 pb-2 mb-3 mr-3" href="{% url 'comment_delete' comment_id=comment.id  %}">Delete Comment</a>
             {% endif %}  
-              {% if request.user == comment.post.author %}
-                <a class="btn blog-button float-right pt-3 pb-2 mb-3 ml-2" href="{% url 'comment_edit' comment_id=comment.id %}">Edit Comment</a>
-                <a class="btn blog-button float-right pt-3 pb-2 mb-3 mr-3" href="{% url 'comment_delete' comment_id=comment.id  %}">Delete Comment</a>
-              {% endif %}
+            {% if request.user == comment.post.author %}
+              <a class="btn blog-button float-right pt-3 pb-2 mb-3 ml-2" href="{% url 'comment_edit' comment_id=comment.id %}">Edit Comment</a>
+              <a class="btn blog-button float-right pt-3 pb-2 mb-3 mr-3" href="{% url 'comment_delete' comment_id=comment.id  %}">Delete Comment</a>
+            {% endif %}
           </div>
         </div>
       </div>
