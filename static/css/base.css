@@ -100,8 +100,6 @@ hr {
 
 .show {
     background-color: #f15e5e;
-    display: flex;
-    justify-content: space-between;
     border-radius: 5px;
 }
 
@@ -244,7 +242,7 @@ hr {
 }
 
 .image-container {
-    position: relative; /* Ensure the container acts as the positioning context */
+    /* position: relative; Ensure the container acts as the positioning context */
     width: 100%; /* Set the container width to 100% */
     height: 0; /* Height is set to 0, as it will be determined by the padding-bottom percentage */
     padding-bottom: 100%; /* Maintain a 1:1 aspect ratio (height is 100% of width) */
@@ -850,4 +848,24 @@ select option[value=""] {
     .shopping-text {
         font-size: x-small;
     }
+}
+
+
+#loading-overlay {
+	display: none;
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f15e5e;
+    z-index: 9999;
+}
+
+.loading-spinner {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
 }
