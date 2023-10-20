@@ -20,8 +20,8 @@
 
 {% block content %}
 <section class="main-content mt-4">
-    <div class="row d-flex flex-nowrap align-items-center justify-content-around">
-        <div class="row content-containers w-50">        
+    <div class="row d-flex flex-nowrap align-items-center justify-content-around full-flex-wrap">
+        <div class="row content-containers full-width-container w-50">        
             <div class="col-12">
                 <div class="row pt-2 pl-2">
                     <h2 class="coloured-text">{{ challenge.title }}</h2>
@@ -35,34 +35,34 @@
             </div>
         </div>
         <div class="row w-50 d-flex justify-content-center">
-            <div class="col-7">
+            <div class="col-lg-7 col-md-8 col-sm-10">
                 {% if challenge.image1 %}
-                <div class="image-container">
-                    <img class="card-img-top" src="{{ challenge.image1.url }}" alt="{{ category.name }}">
+                <div class="image-container plans-details-image-container">
+                    <img class="fit-img" src="{{ challenge.image1.url }}" alt="{{ category.name }}">
                 </div>
                 {% else %}
-                <div class="image-container">
-                    <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.name }}">
+                <div class="image-container plans-details-image-container">
+                    <img class="fit-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.name }}">
                 </div>
                 {% endif %}
             </div>
         </div>
     </div>
-    <div class="row d-flex flex-nowrap w-100">
+    <div class="row d-flex flex-nowrap w-100 full-flex-wrap">
         <div class="row w-50 d-flex align-items-center justify-content-center">
-            <div class="col-7">
+            <div class="col-lg-7 col-md-8 col-sm-10">
                 {% if challenge.image2 %}
-                <div class="image-container">
-                    <img class="card-img-top" src="{{ challenge.image2.url }}" alt="{{ category.name }}">
+                <div class="image-container plans-details-image-container">
+                    <img class="fit-img" src="{{ challenge.image2.url }}" alt="{{ category.name }}">
                 </div>
                 {% else %}
-                <div class="image-container">
-                    <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.name }}">
+                <div class="image-container plans-details-image-container">
+                    <img class="fit-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.name }}">
                 </div>
                 {% endif %}
             </div>
         </div>
-        <div class="row content-containers">
+        <div class="row content-containers full-width-container">
             <div class="col-12">
                 <h3 class="coloured-text pt-2 pl-2">Steps:</h3>
                 <hr class="my-0">
@@ -72,8 +72,8 @@
             </div>
         </div>
     </div>
-    <div class="row d-flex flex-nowrap align-items-center justify-content-around w-100">
-        <div class="row content-containers">
+    <div class="row d-flex flex-nowrap align-items-center justify-content-around full-flex-wrap w-100">
+        <div class="row content-containers full-width-container">
             <div class="col-12">
                 <h3 class="coloured-text pt-2 pl-2">Tips:</h3>
                 <hr class="my-0">
@@ -86,20 +86,20 @@
         <div class="row w-50 d-flex align-items-center justify-content-center">
             <div class="col-7">
                 {% if challenge.image3 %}
-                <div class="image-container">
-                    <img class="card-img-top" src="{{ challenge.image3.url }}" alt="{{ category.name }}">
+                <div class="image-container plans-details-image-container">
+                    <img class="fit-img" src="{{ challenge.image3.url }}" alt="{{ category.name }}">
                 </div>
                 {% else %}
-                <div class="image-container">
-                    <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.name }}">
+                <div class="image-container plans-details-image-container">
+                    <img class="fit-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.name }}">
                 </div>
                 {% endif %}
             </div>
         </div>
     </div>
-    <div class="row d-flex flex-nowrap align-items-center justify-content-around">
-        <div class="row w-50">
-            <div class="col-12 content-containers mx-0">
+    <div class="row d-flex flex-nowrap align-items-center justify-content-around full-flex-wrap">
+        <div class="row w-50 full-width-container content-containers">
+            <div class="col-12 mx-0">
                 <div class="row">
                     <h3 class="coloured-text pt-2 pl-2">Outro:</h3>
                     <hr class="my-0">
