@@ -12,7 +12,7 @@
     <div class="col-12 col-md-9 my-auto d-flex">
         <h2>Products</h2>
         {% for c in current_categories %}
-        <a href="{% url 'products' %}?category={{ c.name }}">
+        <a href="{% url 'products' %}?category={{ c.name }}" class="text-dark anchor-links">
             <p>{{ c.friendly_name }} | {{ products|length }} Products</p>
         </a>
         {% endfor %}
@@ -69,10 +69,10 @@
                         </div>
                         <div class="card-footer bg-white pt-0 border-0 text-left">
                             <div class="row">
-                                <div class="col-6">
-                                    <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                <div class="col-lg-6 col-md-6 col-6-sm col-xsm-12 pr-md-0 price-container">
+                                    <p class="lead mb-0 text-left font-weight-bold product-price">${{ product.price }}</p>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-lg-6 col-md-6 col-6-sm col-xsm-12 pl-md-0 buy-button-container">
                                     <button class="btn product-buy-button">
                                         <a href="{% url 'buy_product' product.id %}" class="anchor-links">Buy</a>
                                     </button>

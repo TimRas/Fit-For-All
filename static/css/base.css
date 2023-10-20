@@ -330,6 +330,7 @@ hr {
 .desc-text {
     font-family: 'Roboto', sans-serif;
     font-size: large;
+    text-align: center;
 }
 
 .product-text {
@@ -940,6 +941,102 @@ select option[value=""] {
         flex-wrap: wrap !important;
     }
 }
+
+/*------------------------------ Products Media Queries */
+
+@media only screen and (max-width: 1750px) {
+    .product-buy-button {
+        width: 5em;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .product-buy-button {
+        width: 4em;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .product-buy-button {
+        width: 5em;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .product-buy-button {
+        width: 6.5em;
+    }
+}
+
+@media only screen and (max-width: 765px) {
+    .price-container {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 765px) {
+    .buy-button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 0.5em;
+    }
+}
+
+@media only screen and (max-width: 765px) {
+    .product-price {
+        font-size: large;
+    }
+}
+
+@media only screen and (max-width: 765px) {
+    .product-buy-button {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .product-price {
+        font-size: medium;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .product-price {
+        font-size: large;
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .product-details-button {
+        width: 8em;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    .product-details-button {
+        width: 5.5em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .product-name {
+        margin-top: 0.5em;
+        padding-left: 0.8em;
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 526px) {
+    .center-div {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+
+
 
 /*------------------------------ Shopping Bag Media Queries */
 
