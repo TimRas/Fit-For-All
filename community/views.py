@@ -53,7 +53,7 @@ def post_detail_create_comment(request, post_id):
             comment = comment_form.save(commit=False)  # Create a comment instance without saving it
             comment.post = post  # Set the post for the comment
             comment.email = request.user.email
-            comment.name = request.user.username
+            comment.author = request.user.username
             comment.save()  # Now save the comment with the correct post association
             return redirect("post_detail", post_id=post.id)
     else:
@@ -80,7 +80,6 @@ def auth_check_create_post(request, category_title):
     else:
         messages.error(request, 'You need to be logged in create a post')
         return redirect('account_signup')
-
 
 
 @login_required

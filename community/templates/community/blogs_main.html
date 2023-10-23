@@ -16,34 +16,33 @@
     </div>
 </div>
 {% endblock %}
+
 {% block content %}
-
 <section class="main-content">
-
     {% for category in all_categories %}
-    <div class="row content-containers w-75 mx-auto">
-        <div class="col-8 {% cycle 'pl-5 pr-3' 'pr-5 pl-3' %} {% cycle 'order-1' 'order-2' %}">
+    <div class="content-containers row w-75 mx-auto">
+        <div class="content-containers-text col-lg-8 col-md-6 col-sm-12 {% cycle 'order-1' 'order-2' %}">
             <div class="row {% cycle '' 'justify-content-end' %}">
-                <h2 class="pt-4 pb-3">{{ category.title }}</h2>
+                <h2 class="{% cycle 'pt-4 pl-2' 'pt-4 pr-2' %}">{{ category.title }}</h2>
             </div>
-            <div class="row {% cycle '' 'justify-content-end' %} pt-3 pb-5">
-                <p class="home-intro-text {% cycle '' 'text-right' %}">{{ category.excerpt }}</p>
+            <div class="row {% cycle '' 'justify-content-end' %} pt-3">
+                <p class="home-intro-text {% cycle 'pl-2 pr-1' 'pl-1 pr-2' %} {% cycle '' 'text-right' %}">{{ category.excerpt }}</p>
             </div>
-            <div class="row {% cycle '' 'justify-content-end' %} pt-5">
+            <div class="blogs-button-container row {% cycle 'pl-2' 'pr-2' %} {% cycle '' 'justify-content-end' %}">
                 <button class="btn button-links-index">
                     <a href="{% url 'blogs_category' category_title=category.title %}"
                         class="anchor-links"><strong>{{ category.title }} Blogs</strong></a>
                 </button>
             </div>
         </div>
-        <div class="col-4 px-0 py-0  {% cycle 'order-2' 'order-1' %}">
+        <div class="col-lg-4 col-md-6 col-sm-12 px-0 py-0 {% cycle 'order-2' 'order-1' %}">
             {% if category.image %}
             <div class="image-container">
-                <img class="card-img-top" src="{{ category.image.url }}" alt="{{ category.name }}">
+                <img class="fit-img" src="{{ category.image.url }}" alt="{{ category.name }}">
             </div>
             {% else %}
             <div class="image-container">
-                <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.name }}">
+                <img class="fit-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ category.name }}">
             </div>
             {% endif %}
         </div>
