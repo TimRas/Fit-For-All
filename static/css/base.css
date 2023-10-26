@@ -1211,6 +1211,48 @@ select option[value=""] {
 }
 
 
+/*------------------------------ Bag/Checkout Media Queries */
+
+@media only screen and (max-width: 860px) {
+    .bag-button {
+        width: 11em;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .bag-button {
+        width: 8em;
+        height: 4em;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .shopping-text {
+        font-size: 0.9em;
+        margin-top: 0.3em !important;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .checkout-img {
+        height: 7em;
+        width: 5em;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .form-group-bag {
+        width: 7em;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .minimal-padding {
+        padding: 0.1em;
+    }
+}
+
+
 /*------------------------------ Management Media Queries */
 
 @media only screen and (max-width: 1230px) {

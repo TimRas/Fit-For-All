@@ -30,20 +30,20 @@
             </div>
             {% for item in bag_items %}
             <div class="row">
-                <div class="col-2 mb-1">
+                <div class="col-2 mb-1 minimal-padding">
                     <a href="{% url 'product_detail' item.product.id %}">
                         {% if item.product.image %}
-                        <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                        <img class="w-100 checkout-img" src="{{ item.product.image.url }}" alt="{{ product.name }}">
                         {% else %}
-                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        <img class="w-100 checkout-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                         {% endif %}
                     </a>
                 </div>
-                <div class="col-7">
+                <div class="col-7 px-0 minimal-padding">
                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                     <p class="my-0 small mt-1">Qty: {{ item.quantity }}</p>
                 </div>
-                <div class="col-3 text-right">
+                <div class="col-3 text-right px-0 minimal-padding">
                     <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                 </div>
             </div>

@@ -4,7 +4,7 @@
 
 {% block page_header %}
 <div class="products-header">
-    <h2>Shopping Bag</h2>
+    <h2 class="coloured-text">Shopping Bag</h2>
     <hr class="mx-auto">
 </div>
 {% endblock %}
@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-12">
             {% if bag_items %}
-            <div class="table-responsive shopping-table">
+            <div class="table-responsive-sm shopping-table">
                 <table class="table table-borderless table-striped">
                     <thead>
                         <tr>
@@ -28,8 +28,8 @@
 
                     {% for item in bag_items %}
                     <tr>
-                        <td class="p-3 w-25">
-                            <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                        <td class="py-3 w-25">
+                            <img class="fit-img checkout-img" src="{{ item.product.image.url }}">
                         </td>
                         <td class="py-3">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
@@ -40,7 +40,7 @@
                         <td class="py-3 w-25">
                             <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                 {% csrf_token %}
-                                <div class="form-group">
+                                <div class="form-group form-group-bag">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty btn btn-sm btn-black rounded-0"
@@ -97,9 +97,9 @@
                         <p class="mb-5 pt-3">Your bag is empty.</p>
                     </div>
                     <div class="row justify-content-center">
-                        <button class="btn blog-button mb-3">
-                            <a href="{% url 'products' %}">
-                                <p class="mt-2 shopping-text">Go to Products page</p>
+                        <button class="btn blog-button bag-button mb-3">
+                            <a href="{% url 'products' %}" class="anchor-links">
+                                <p class="mt-2 shopping-text text-white">Go to Products page</p>
                             </a>
                         </button>
                     </div>
