@@ -192,9 +192,7 @@ hr {
 .home-banner {
     overflow: hidden;
     height: 28em;
-    background: url("/media/Home\ Landscape.png") no-repeat center center;
     background-size: cover;
-    background-color: grey;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -833,7 +831,6 @@ select option[value=""] {
 }
 
 .four-oh-four-image {
-    background-image: url("/media/ico_404_page.png");
     background-color: #f2f1f1;
     opacity: 0.7;
     height: 100%;
