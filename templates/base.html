@@ -17,6 +17,8 @@
     {% endblock %}
 
     {% block corecss %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -25,14 +27,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
 
     {% block corejs %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -42,7 +43,6 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/4fa053dcb7.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
@@ -55,28 +55,37 @@
 <body>
     <section class="page-container">
         <header class="header-container">
-            <nav class="navbar navbar-expand-lg mx-auto">
+            <nav class="navbar navbar-expand-lg mx-auto h-100">
                 <div class="favi-container mb-1">
                     <img src="{% static 'favicon/android-chrome-512x512.png' %}" alt="Main Logo" class="favi-icon">
                 </div>
                 <a class="nav-link main-logo-link" href="{% url 'home' %}">
-                    <h2 class="text-black my-0 mr-2 main-logo-text"><strong>Fit For All</strong>
+                    <h2 class="my-0 mr-2 main-logo-text"><strong>Fit For All</strong>
                     </h2>
                 </a>
-                <div class="collapse navbar-collapse justify-content-between navbar-index" id="navbarNav">                  
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <img src="data:image/svg+xml;charset=utf8,%3Csvg%20viewBox='0%200%2032%2032'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20stroke='rgba(255,255,255,%201)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-miterlimit='10'%20d='M4%208h24M4%2016h24M4%2024h24'%20/%3E%3C/svg%3E"
+                            alt="Burger Icon">
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between navbar-index" id="navbarText">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown my-auto">
                             <a href="{% url 'plans_main' %}" class="nav-link mr-4">Plans</a>
-                            <div class="dropdown-content">
-                                <a class="dropdown-item text-white" href="{% url 'plans_category' category_title='Diet' %}">Diet</a>
+                            <div class="dropdown-content dropdown-menu">
+                                <a class="dropdown-item text-white"
+                                    href="{% url 'plans_category' category_title='Diet' %}">Diet</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-white" href="{% url 'plans_category' category_title='Workout' %}">Workout</a>
+                                <a class="dropdown-item text-white"
+                                    href="{% url 'plans_category' category_title='Workout' %}">Workout</a>
                             </div>
                         </li>
 
                         <li class="nav-item dropdown my-auto">
                             <a href="{% url 'products' %}" class="nav-link mr-4">Products</a>
-                            <div class="dropdown-content">
+                            <div class="dropdown-content dropdown-menu">
                                 <a class="dropdown-item text-white" href="{% url 'products' %}?category=gear">Gear</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-white" href="{% url 'products' %}?category=woman">Woman</a>
@@ -87,10 +96,12 @@
 
                         <li class="nav-item dropdown my-auto">
                             <a href="{% url 'blogs_main' %}" class="nav-link mr-4">Blogs</a>
-                            <div class="dropdown-content">
-                                <a class="dropdown-item text-white" href="{% url 'blogs_category' category_title='Gain Muscle' %}">Gain Muscle</a>
+                            <div class="dropdown-content dropdown-menu">
+                                <a class="dropdown-item text-white"
+                                    href="{% url 'blogs_category' category_title='Gain Muscle' %}">Gain Muscle</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-white" href="{% url 'blogs_category' category_title='Lose Weight' %}">Lose Weight</a>
+                                <a class="dropdown-item text-white"
+                                    href="{% url 'blogs_category' category_title='Lose Weight' %}">Lose Weight</a>
                             </div>
                         </li>
                     </ul>
@@ -99,7 +110,7 @@
                         <form class="form my-auto" method="GET" action="{% url 'products' %}">
                             <div class="input-group w-100">
                                 <input class="form-control border" type="text" name="q" placeholder="Search">
-                                <div class="input-group-append mr-5">
+                                <div class="input-group-append mr-1">
                                     <button class="btn btn-black border border-black rounded-0" type="submit">
                                         <span class="icon">
                                             <i class="fas fa-search text-white"></i>
@@ -109,13 +120,13 @@
                             </div>
                         </form>
 
-                        <li class="dropdown nav-item my-auto">
-                            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                        <li class="dropdown nav-item my-auto ml-1">
+                            <a class="nav-icons nav-link" href="#" id="user-options" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 {% if request.user.is_authenticated %}
                                 <div class="text-center">
                                     <div><i class="fas fa-user fa-lg text-white"></i></div>
-                                    <p class="my-0 text-white">Logged-In</p>
+                                    <p class="my-0 text-white">{{ request.user.username }}</p>
                                 </div>
                                 {% else %}
                                 <div class="text-center">
@@ -126,21 +137,23 @@
                             </a>
                             <div class="dropdown-menu border-0 navbar-buttons" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser %}
-                                        <a href="{% url 'add_product' %}" class="dropdown-item text-white">Product Management</a>
-                                        <a href="{% url 'add_challenge' %}" class="dropdown-item text-white">Challenge Management</a>
-                                    {% endif %}
-                                    <a href="{% url 'profile' %}" class="dropdown-item text-white">My Profile</a>
-                                    <a href="{% url 'account_logout' %}" class="dropdown-item text-white">Logout</a>
+                                {% if request.user.is_superuser %}
+                                <a href="{% url 'add_product' %}" class="dropdown-item text-white">Product
+                                    Management</a>
+                                <a href="{% url 'add_challenge' %}" class="dropdown-item text-white">Challenge
+                                    Management</a>
+                                {% endif %}
+                                <a href="{% url 'profile' %}" class="dropdown-item text-white">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item text-white">Logout</a>
                                 {% else %}
-                                    <a href="{% url 'account_signup' %}" class="dropdown-item text-white">Register</a>
-                                    <a href="{% url 'account_login' %}" class="dropdown-item text-white">Login</a>
+                                <a href="{% url 'account_signup' %}" class="dropdown-item text-white">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item text-white">Login</a>
                                 {% endif %}
                             </div>
                         </li>
 
                         <li>
-                            <a class="{% if grand_total %}font-weight-bold{% else %}text-black{% endif %} nav-link"
+                            <a class="{% if grand_total %}font-weight-bold{% else %}{% endif %} nav-link"
                                 href="{% url 'show_bag' %}">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-bag fa-lg text-white"></i></div>
@@ -217,14 +230,27 @@
 <script type="text/javascript">
     $('.toast').toast('show');
 
-    setTimeout(function() {
+    setTimeout(function () {
         $('.toast').toast('hide');
     }, 2000);
 </script>
 {% endblock %}
 
+<script>
+    // Add a function to remove the .show class when the normal header is displayed
+    function removeShowClass() {
+        const collapsibleNavbar = document.getElementById("navbarText");
+        // Check if the collapsible navbar has the .show class
+        if (collapsibleNavbar.classList.contains("show")) {
+            collapsibleNavbar.classList.remove("show");
+        }
+    }
+    // Listen for a window resize event to trigger the removal of .show
+    window.addEventListener("resize", removeShowClass);
+</script>
 
 <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+
 <script type='text/javascript'>
     (function ($) {
         window.fnames = new Array();
@@ -244,7 +270,5 @@
     }(jQuery));
     var $mcj = jQuery.noConflict(true);
 </script>
-
-
 
 </html>
