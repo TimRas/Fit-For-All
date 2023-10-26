@@ -834,12 +834,19 @@ select option[value=""] {
 
 /*------------------------------ 404.html */
 
+.four-oh-four-container {
+    min-height: calc(100vh - 386px);
+}
+
 .four-oh-four-image {
     background-image: url("/media/ico_404_page.png");
     background-color: #f2f1f1;
     opacity: 0.7;
+    height: 100%;
+    width: 100%;
   }
 
+  
 /*------------------------------ Media Queries */
 
 /*------------------------------ Header Media Queries */

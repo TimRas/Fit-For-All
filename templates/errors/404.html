@@ -1,21 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-    <div class="container h-100 four-oh-four-image">
+    <div class="container four-oh-four-container four-oh-four-image">
         <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
+            <div class="col-7 col-md-6 my-auto mx-auto">
                 <h1 class="display-4 logo-font text-black">
                     The page you are looking for isn't available
                 </h1>
                 <div class="my-5">
                     <h4>
                         <a href="{% url 'home' %}" 
-                            class="btn blog-button text-uppercase py-3">
+                            class="btn blog-button py-3">
                                 Return to home page
                         </a>
                     </h4>
@@ -23,5 +18,4 @@
             </div>
         </div>
     </div>
-    <img src="/media/ico_404_page.png" class="overlay-image" alt="Overlay Image">
 {% endblock %}
