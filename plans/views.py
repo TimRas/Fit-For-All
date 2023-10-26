@@ -53,7 +53,7 @@ def add_challenge(request):
     if request.method == 'POST':
         form = ChallengeForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            challenge = form.save()
             messages.success(request, 'Successfully added a challenge!')
             return redirect(reverse('challenges', args=[challenge.id]))
         else:
