@@ -1129,20 +1129,6 @@ select option[value=""] {
     }
 }
 
-/* @media only screen and (max-width: 100vw) {
-    .comment-outer-container {
-        width: 100%;
-        margin: auto;
-    }
-} */
-
-/* @media only screen and (max-width: 650px) {
-    .blog-holder {
-        width: 90%;
-        margin: auto;
-    }
-} */
-
 @media only screen and (max-width: 1560px) {
     .blog-container-details {
         width: 45em;
@@ -1208,8 +1194,6 @@ select option[value=""] {
     }
 }
 
-
-
 @media only screen and (max-width: 768px) {
     .blogs-header {
         justify-content: center;
@@ -1227,6 +1211,19 @@ select option[value=""] {
 }
 
 
+/*------------------------------ Management Media Queries */
+
+@media only screen and (max-width: 1230px) {
+    .management-buttons {
+        width: 8.5em;
+    }
+}
+
+@media only screen and (max-width: 785px) {
+    .management-row {
+        float: none !important;
+    }
+}
 
 
 #loading-overlay {
