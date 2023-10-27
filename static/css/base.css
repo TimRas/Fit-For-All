@@ -189,13 +189,14 @@ hr {
     color: rgb(219 76 76);
 }
 
-.home-banner {
-    overflow: hidden;
+.home-container {
     height: 28em;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+}
+
+.home-banner {
+    height: 100%;
+    width: 100%;
 }
 
 .banner-box {  
@@ -827,11 +828,12 @@ select option[value=""] {
 /*------------------------------ 404.html */
 
 .four-container {
-    min-height: calc(100vh - 386px);
-    background-color: #f2f1f1;
-    opacity: 0.7;
+    min-height: calc(100vh - 386px); 
+}
+
+.four-image {
     height: 100%;
-    width: 100%;   
+    width: 100%;
 }
 
 
