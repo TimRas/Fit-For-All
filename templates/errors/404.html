@@ -1,21 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <div class="container four-container">
-        <div class="row h-100">
-            <div class="col-12 my-auto mx-auto">
-                <h1 class="display-4 logo-font text-black">
-                    The page you are looking for isn't available
-                </h1>
-                <div class="col-12 my-5 mx-auto">
-                    <h4>
-                        <a href="{% url 'home' %}" 
-                            class="btn blog-button py-3">
-                                Return to home page
-                        </a>
-                    </h4>
+    <section class="four-container">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 my-auto mx-auto">
+                    <h1 class="display-4 logo-font text-black">
+                        The page you are looking for isn't available
+                    </h1>
+                    <div class="col-12 my-5 mx-auto">
+                        <h4>
+                            <a href="{% url 'home' %}" 
+                                class="btn blog-button py-3">
+                                    Return to home page
+                            </a>
+                        </h4>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 {% endblock %}
