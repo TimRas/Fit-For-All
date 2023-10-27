@@ -829,6 +829,7 @@ select option[value=""] {
 
 .four-container {
     min-height: calc(100vh - 386px);
+    background-image: url('https://media.licdn.com/dms/image/C5112AQEw1fXuabCTyQ/article-inline_image-shrink_1500_2232/0/1581099611064?e=1703721600&v=beta&t=aF4mn1U5yLb1Ufq8mq4ej-m1IIw0POuqsmSkUT0kFDg');
     background-color: #f2f1f1;
     opacity: 0.7;
     height: 100%;
