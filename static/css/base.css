@@ -198,7 +198,7 @@ hr {
 }
 
 .home-banner {
-    height: 100%;
+    height: 28em;
     width: 100%;
     grid-area: 1/1;
     object-fit: cover;
@@ -210,7 +210,7 @@ hr {
     opacity: 0.9;
     border-radius: 5px;
     grid-area: 1/1;
-    padding: 1em 0;
+    margin: 2em;
 }
 
 .home-inner-content {
@@ -837,14 +837,20 @@ select option[value=""] {
 
 .four-container {
     min-height: calc(100vh - 386px); 
-    position: relative;
+    display: grid;
 }
 
 .four-image {
     height: 100%;
     width: 100%;
+    grid-area: 1/1;
+    opacity: 0.5;
 }
 
+.four-row {
+    grid-area: 1/1;
+    text-align: center;
+}
 
 /*------------------------------ Media Queries */
 

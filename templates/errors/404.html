@@ -2,24 +2,21 @@
 {% load static %}
 {% block content %}
 <section>
-    <div class="container">
-        <div class="four-container w-100">
-            <img src="{{ MEDIA_URL }}sports_clothing.png" alt="Products" class="four-image">
-                <div class="row h-100">
-                    <div class="col-12 my-auto mx-auto">
-                        <h1 class="display-4 logo-font text-black">
-                            The page you are looking for isn't available
-                        </h1>
-                        <div class="col-12 my-5 mx-auto">
-                            <h4>
-                                <a href="{% url 'home' %}" class="btn blog-button py-3">
-                                    Return to home page
-                                </a>
-                            </h4>
-                        </div>
-                    </div>
+    <div class="four-container container w-100">
+        <img src="{{ MEDIA_URL }}ico_404_page.png" alt="404 image" class="four-image">
+        <div class="four-row row h-100">
+            <div class="col-12 my-auto mx-auto">
+                <h1 class="display-4 logo-font text-black">
+                    The page you are looking for isn't available
+                </h1>
+                <div class="col-12 my-5 mx-auto">
+                    <h4>
+                        <a href="{% url 'home' %}" class="btn blog-button py-3">
+                            Return to home page
+                        </a>
+                    </h4>
                 </div>
-            </img>
+            </div>
         </div>
 </section>
 {% endblock %}
