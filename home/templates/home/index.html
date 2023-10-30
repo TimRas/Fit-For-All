@@ -2,45 +2,44 @@
 {% load static %}
 
 {% block content %}
-
 <div class="row home-title">
     <h1>Fit For All</h1>
 </div>
 
-<section class="main-content mb-4 mt-4">
+<section class="main-content mt-4 mb-4">
     <div class="home-container">
         <img src="{{ MEDIA_URL }}Home Landscape.png" alt="Products class" class="home-banner">
-            <div class="banner-box col-lg-6 mx-auto col-md-12 col-sm-12">
-                <div class="home-text-container col-12 pt-4 pb-3">
-                    <p class="home-text">Welcome to FitForAll – your ultimate destination for a fitter, stronger you! Dive
-                        into
-                        tailored workout plans and nourishing diet guides that put your goals front and center.
-                        Explore our virtual shop, where sportswear and cutting-edge fitness gear await to elevate
-                        your performance. Uncover expert blogs packed with tips on conquering weight loss and
-                        sculpting muscle. Join us on this exhilarating journey, where empowerment meets
-                        expertise, and every step you take brings you closer to your fitness zenith. Your
-                        transformation starts here – welcome to FitForAll!
-                    </p>
-                </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 banner-box mx-auto">
+            <div class="col-12 pt-4 pb-3 home-text-container">
+                <p class="home-text">Welcome to FitForAll – your ultimate destination for a fitter, stronger you! Dive
+                    into tailored workout plans and nourishing diet guides that put your goals front and center.
+                    Explore our virtual shop, where sportswear and cutting-edge fitness gear await to elevate
+                    your performance. Uncover expert blogs packed with tips on conquering weight loss and sculpting
+                    muscle.
+                    Join us on this exhilarating journey, where empowerment meets expertise, and every step you take
+                    brings
+                    you closer to your fitness zenith. Your transformation starts here – welcome to FitForAll!
+                </p>
             </div>
-        </img>
+        </div>
     </div>
     <hr class="gray-hr mt-4">
-    <div class="content-containers row w-75 mx-auto mt-3">
-        <div class="content-containers-text col-lg-8 col-md-6 col-sm-12 pt-3">
+    <div class="row w-75 content-containers mx-auto">
+        <div class="col-lg-8 col-md-6 col-sm-12 content-containers-text pt-3">
             <div class="row">
-                <h2 class="pt-4 pl-2">Products</h2>
+                <h2 class="pl-2 pt-4">Products</h2>
             </div>
             <div class="row pt-3">
-                <p class="home-intro-text pl-2 pr-1">Our Products page is filled with items that will be helpful no
-                    matter how far
+                <p class="intro-text pl-2 pr-1">Our Products page is filled with items that will be helpful no matter
+                    how far
                     you are in your health and fitness journey. Our workout gear section has a variety of items to help
                     you get started or for you to push to your endgoals. The supplements section contains all the items
                     for you to help stay sharp and focused on your fitness journey! Have a look and you'll surely find a
-                    product that suits your needs!</p>
+                    product that suits your needs!
+                </p>
             </div>
-            <div class="button-container row pt-3 pb-2 pl-2">
-                <button class="btn button-links-index">
+            <div class="row pt-3 pb-2 pl-2 button-container">
+                <button class="btn coloured-button">
                     <a href="{% url 'products' %}" class="anchor-links"><strong>All Products</strong></a>
                 </button>
             </div>
@@ -52,44 +51,46 @@
         </div>
     </div>
 
-    <div class="content-containers row w-75 mx-auto">
+    <div class="row w-75 content-containers">
         <div class="col-lg-4 col-md-6 col-sm-12 px-0 py-0">
             <div class="image-container">
                 <img src="{{ MEDIA_URL }}generic_workout_diet_3.png" alt="Plans" class="fit-img">
             </div>
         </div>
-        <div class="content-containers-text col-lg-8 col-md-6 col-sm-12 pt-3">
+        <div class="col-lg-8 col-md-6 col-sm-12 content-containers-text pt-3">
             <div class="row justify-content-end">
-                <h2 class="pt-4 pr-2">Plans</h2>
+                <h2 class="pr-2 pt-4">Plans</h2>
             </div>
             <div class="row justify-content-end pt-3 pb-3">
-                <p class="home-intro-text text-right pr-2 pl-1">The workout plans page is there for you to help you
-                    guide you through the
-                    steps of your journey. Wether it be your steps in fitness or as a veteran. They will give you a
+                <p class="intro-text pr-2 pl-1 text-right">The workout plans page is there for you to help you guide you
+                    through the
+                    steps of your journey. Whether it be your steps in fitness or as a veteran. They will give you a
                     proper challenge based on your personal level. The nutrition plans help to set you up with the
-                    proper diet. Be it to lose weight, gain muscle or a mixture of both!</p>
+                    proper diet. Be it to lose weight, gain muscle or a mixture of both!
+                </p>
             </div>
-            <div class="button-container row justify-content-end pt-3 pb-2 pr-2">
-                <button class="btn button-links-index">
+            <div class="row justify-content-end pt-3 pb-2 pr-2 button-container">
+                <button class="btn coloured-button">
                     <a href="{% url 'plans_main' %}" class="anchor-links"><strong>All Plans</strong></a>
                 </button>
             </div>
         </div>
     </div>
 
-    <div class="content-containers row w-75 mx-auto">
-        <div class="content-containers-text col-lg-8 col-md-6 col-sm-12 pt-3">
+    <div class="row w-75 content-containers">
+        <div class="col-lg-8 col-md-6 col-sm-12 content-containers-text pt-3">
             <div class="row">
-                <h2 class="pt-4 pl-2">Community</h2>
+                <h2 class="pl-2 pt-4">Community</h2>
             </div>
             <div class="row pt-3 pb-3">
-                <p class="home-intro-text pl-2 pr-1">Join our Fit For All community and find like-minded on all
-                    different topics!
+                <p class="intro-text pl-2 pr-1">Join our Fit For All community and find like-minded on all different
+                    topics!
                     The Fit For All admins keep a close look on each post to keep the community friendly and safe for
-                    anyone you wants to join. Go and make some new friends!</p>
+                    anyone you wants to join. Go and make some new friends!
+                </p>
             </div>
-            <div class="button-container pt-3 pb-2 pl-2">
-                <button class="btn button-links-index">
+            <div class="row pt-3 pb-2 pl-2 button-container">
+                <button class="btn coloured-button">
                     <a href="{% url 'blogs_main' %}" class="anchor-links"><strong>All Blogs</strong></a>
                 </button>
             </div>
@@ -102,42 +103,45 @@
     </div>
     <hr class="gray-hr w-75">
     <div class="row">
-        <div class="content-containers w-75 mx-auto">
-            <div id="mc_embed_signup">
-                <form
-                    action="https://herokuapp.us12.list-manage.com/subscribe/post?u=9a8574a6613d7ecb604d52c18&amp;id=9bfb1e1c38&amp;f_id=0054b0e0f0"
-                    method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
-                    target="_blank" novalidate>
-                    <div id="mc_embed_signup_scroll">
-                        <h2>Subscribe to our Newsletter!</h2>
-                        <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-                        <div class="mc-field-group">
-                            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
-                            </label>
-                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
-                        </div>
-                        <div id="mce-responses" class="clear foot">
-                            <div class="response" id="mce-error-response" style="display:none"></div>
-                            <div class="response" id="mce-success-response" style="display:none"></div>
-                        </div>
-
-                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
-                                name="b_9a8574a6613d7ecb604d52c18_9bfb1e1c38" tabindex="-1" value=""></div>
-                        <div class="optionalParent">
-                            <div class="clear foot">
-                                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"
-                                    class="button button-links-index">
-                                <p class="brandingLogo"><a href="http://eepurl.com/iinFjb"
-                                        title="Mailchimp - email marketing made easy and fun"><img
-                                            src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a>
-                                </p>
-                            </div>
+        <div class="w-75 content-containers mx-auto" id="mc_embed_signup">
+            <form
+                action="https://herokuapp.us12.list-manage.com/subscribe/post?u=9a8574a6613d7ecb604d52c18&amp;id=9bfb1e1c38&amp;f_id=0054b0e0f0"
+                method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+                target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                    <h2>Subscribe to our Newsletter!</h2>
+                    <div class="indicates-required">
+                        <span class="asterisk">*</span> indicates required
+                    </div>
+                    <div class="mc-field-group">
+                        <label for="mce-EMAIL">Email Address
+                            <span class="asterisk">*</span>
+                        </label>
+                        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
+                    </div>
+                    <div id="mce-responses" class="clear foot">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="text" name="b_9a8574a6613d7ecb604d52c18_9bfb1e1c38" tabindex="-1" value="">
+                    </div>
+                    <div class="optionalParent">
+                        <div class="clear foot">
+                            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"
+                                class="button coloured-button">
+                            <p class="brandingLogo">
+                                <a href="http://eepurl.com/iinFjb"
+                                    title="Mailchimp - email marketing made easy and fun">
+                                    <img
+                                        src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg">
+                                </a>
+                            </p>
                         </div>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </section>
-
 {% endblock %}
