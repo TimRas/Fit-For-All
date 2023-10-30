@@ -3,6 +3,8 @@ from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
+    """ A form for updating the user profile information. """
+
     class Meta:
         model = UserProfile
         exclude = ('user',)
@@ -21,7 +23,6 @@ class UserProfileForm(forms.ModelForm):
             'default_street_address2': 'Street Address 2',
             'default_county': 'County, State or Locality',
             'default_delivery_address': 'streetname, number'
-            
         }
 
         self.fields['default_phone_number'].widget.attrs['autofocus'] = True
