@@ -19,10 +19,10 @@ def bag_contents(request):
             'item_id': item_id,
             'quantity': quantity,
             'product': product,
-        })      
+        })
 
     grand_total = total
-    
+
     context = {
         'bag_items': bag_items,
         'total': total,

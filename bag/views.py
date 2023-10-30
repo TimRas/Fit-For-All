@@ -1,18 +1,20 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, HttpResponse, \
+    get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-
 from products.models import Product
 
 
 @login_required
 def show_bag(request):
+    """ Renders the shopping bag page."""
 
     return render(request, 'bag/bag.html')
 
 
 @login_required
 def add_to_bag(request, item_id):
+    """ Add a product to the shopping bag. """
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
@@ -33,6 +35,7 @@ def add_to_bag(request, item_id):
 
 @login_required
 def adjust_bag(request, item_id):
+    """ Adjust the quantity of aproduct to the shopping bag. """
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
@@ -49,6 +52,7 @@ def adjust_bag(request, item_id):
 
 @login_required
 def remove_from_bag(request, item_id):
+    """ Remove a product from the shopping bag. """
 
     try:
         product = get_object_or_404(Product, pk=item_id)
