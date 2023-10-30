@@ -8,7 +8,7 @@
         <li class="breadcrumb-item"><a href="{% url 'blogs_main' %}">All Blogs</a></li>
     </ol>
 </nav>
-<div class="row products-header">
+<div class="row text-header">
     <div class="col-11">
         <div class="pb-3 pt-3 pl-5">
             <h2 class="coloured-text text-center pl-5">All Blogs</h2>
@@ -20,16 +20,17 @@
 {% block content %}
 <section class="main-content">
     {% for category in all_categories %}
-    <div class="content-containers row w-75 mx-auto">
+    <div class="row content-containers w-75 mx-auto">
         <div class="content-containers-text col-lg-8 col-md-6 col-sm-12 {% cycle 'order-1' 'order-2' %}">
             <div class="row {% cycle '' 'justify-content-end' %}">
                 <h2 class="{% cycle 'pt-4 pl-2' 'pt-4 pr-2' %}">{{ category.title }}</h2>
             </div>
             <div class="row {% cycle '' 'justify-content-end' %} pt-3">
-                <p class="home-intro-text {% cycle 'pl-2 pr-1' 'pl-1 pr-2' %} {% cycle '' 'text-right' %}">{{ category.excerpt }}</p>
+                <p class="intro-text {% cycle 'pl-2 pr-1' 'pl-1 pr-2' %} {% cycle '' 'text-right' %}">
+                    {{ category.excerpt }}</p>
             </div>
             <div class="blogs-button-container row {% cycle 'pl-2' 'pr-2' %} {% cycle '' 'justify-content-end' %}">
-                <button class="btn button-links-index">
+                <button class="btn coloured-button">
                     <a href="{% url 'blogs_category' category_title=category.title %}"
                         class="anchor-links"><strong>{{ category.title }} Blogs</strong></a>
                 </button>

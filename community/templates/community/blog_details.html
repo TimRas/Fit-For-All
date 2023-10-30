@@ -3,164 +3,155 @@
 {% load crispy_forms_tags %}
 
 {% block page_header %}
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb breadcrumb-container">
-    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-    <li class="breadcrumb-item"><a href="{% url 'blogs_main' %}">All Blogs</a></li>
-    <li class="breadcrumb-item"><a
-        href="{% url 'blogs_category' category_title=post.post_category.title %}">{{ post.post_category.title }}</a>
-    </li>
-    <li class="breadcrumb-item"><a href="{% url 'post_detail' post_id=post.id %}">{{ post.title }}</a></li>
-  </ol>
-</nav>
-<div class="products-header pb-3">
-  <h2 class="coloured-text">{{ post.title }}</h2>
-</div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-container">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'blogs_main' %}">All Blogs</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'blogs_category' category_title=post.post_category.title %}">{{ post.post_category.title }}</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'post_detail' post_id=post.id %}">{{ post.title }}</a></li>
+        </ol>
+    </nav>
+    <div class="text-header pb-3">
+        <h2 class="coloured-text">{{ post.title }}</h2>
+    </div>
 {% endblock %}
 
 {% block content %}
-<section class="row blog-content-details">
-  <div class="blog-holder">
-    <div class="row">
-      <div class="outer-container">
-        <div class="blog-container-details">
-          <div class="row mx-auto">
-            <div class="col-6">
-              <h4 class="pt-2"><strong>{{ post.title }}</strong></h4>
+    <section class="row blog-content-details">
+        <div class="blog-holder">
+            <div class="row">
+                <div class="outer-container">
+                    <div class="blog-container-details">
+                        <div class="row mx-auto">
+                            <div class="col-6">
+                                <h4 class="pt-2"><strong>{{ post.title }}</strong></h4>
+                            </div>
+                            <div class="col-6">
+                                <h6 class="pt-2 float-right"><strong>{{ post.author }}</strong></h6>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row mx-auto">
+                            <div class="col-12 pl-2 blog-content-container">
+                                {{ post.content|safe }}
+                            </div>
+                        </div>
+                        <hr class="mb-0">
+                        <div class="row mx-auto">
+                            <div class="col-5 pt-2 pr-1 align-self-end">
+                                <p class="my-0">{{ post.created_on }}</p>
+                            </div>
+                            <div class="col-7 pt-2 pl-1 d-flex justify-content-end">
+                                {% if request.user.is_superuser and request.user == post.author %}
+                                <button class="btn coloured-button mr-1 float-right">
+                                    <a href="{% url 'post_delete' post.id %}" class="anchor-links"><strong>Delete Post</strong></a>
+                                </button>
+                                <button class="btn coloured-button float-right">
+                                    <a class="pt-3 pb-2 mb-3 anchor-links" href="{% url 'post_edit' post_id=post.id %}">Edit Post</a>
+                                </button>
+                                {% endif %}
+                                {% if request.user.is_superuser and not request.user == post.author %}
+                                <button class="btn coloured-button mr-1 float-right">
+                                    <a href="{% url 'post_delete' post.id %}" class="anchor-links"><strong>Delete Post</strong></a>
+                                </button>
+                                {% endif %}
+                                {% if request.user == post.author and not request.user.is_superuser %}
+                                <button class="btn coloured-button float-right">
+                                    <a class="pt-3 pb-2 mb-3 anchor-links" href="{% url 'post_edit' post_id=post.id %}">Edit Post</a>
+                                </button>
+                                <button class="btn coloured-button float-right">
+                                    <a class="pt-3 pb-2 mb-3 anchor-links" href="{% url 'post_delete' post_id=post.id %}">Delete Post</a>
+                                </button>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-6">
-              <h6 class="pt-2 float-right"><strong>{{ post.author }}</strong></h6>
-            </div>
-          </div>
-          <hr>
-          <div class="row mx-auto">
-            <div class="col-12 pl-2 blog-content-container">
-              {{ post.content|safe }}
-            </div>
-          </div>
-          <hr class="mb-0">
-          <div class="row mx-auto">
-            <div class="col-5 pt-2 pr-1 align-self-end">
-              <p class="my-0">{{ post.created_on }}</p>
-            </div>
+        </div>
 
-            <div class="col-7 pt-2 pl-1 d-flex justify-content-end">
-              {% if request.user.is_superuser and request.user == post.author %}
-              <button class="btn blog-button mr-1 float-right">
-                <a href="{% url 'post_delete' post.id %}" class="anchor-links"><strong>Delete Post</strong></a>
-              </button>
-              <button class="btn blog-button float-right">
-                <a class="pt-3 pb-2 mb-3 anchor-links" href="{% url 'post_edit' post_id=post.id %}">Edit Post</a>
-              </button>
-              {% endif %}
-              {% if request.user.is_superuser and not request.user == post.author %}
-              <button class="btn blog-button mr-1 float-right">
-                <a href="{% url 'post_delete' post.id %}" class="anchor-links"><strong>Delete Post</strong></a>
-              </button>
-              {% endif %}
-              {% if request.user == post.author and not request.user.is_superuser %}
-              <button class="btn blog-button float-right">
-                <a class="pt-3 pb-2 mb-3 anchor-links" href="{% url 'post_edit' post_id=post.id %}">Edit Post</a>
-              </button>
-              <button class="btn blog-button float-right">
-                <a class="pt-3 pb-2 mb-3 anchor-links" href="{% url 'post_delete' post_id=post.id %}">Delete
-                  Post</a>
-              </button>
-              {% endif %}
+        {% for comment in comments %}
+        <div class="outer-container comment-outer-container my-auto">
+            <div class="row comment-container-user">
+                <div class="col-12">
+                    <div class="row pt-3 pl-2 pr-2">
+                        <p class="comment-body">{{ comment.body }}</p>
+                    </div>
+                    <hr class="mt-0">
+                    <div class="row">
+                        <div class="col-4 mb-1 align-self-end">
+                            <p>{{ comment.author }}</p>
+                        </div>
+                        <div class="col-8 mb-1 d-flex justify-content-around">
+                            {% if request.user.is_superuser and request.user == comment.author %}
+                            <button class="btn coloured-button mr-1 float-right">
+                                <a href="{% url 'comment_delete' comment_id=comment.id %}" class="anchor-links"><strong>Delete Comment</strong></a>
+                            </button>
+                            <button class="btn coloured-button float-right">
+                                <a class="pt-3 pb-2 mb-3 anchor-links" href="{% url 'comment_edit' comment_id=comment.id %}">Edit Comment</a>
+                            </button>
+                            {% endif %}
+                            {% if request.user.is_superuser and not request.user == comment.author %}
+                            <button class="btn coloured-button mr-3 float-right">
+                                <a href="{% url 'comment_delete' comment_id=comment.id %}" class="anchor-links"><strong>Delete Comment</strong></a>
+                            </button>
+                            {% endif %}
+                            {% if request.user == comment.author and not request.user.is_superuser %}
+                            <button class="btn coloured-button mr-1 float-right">
+                                <a class="pt-3 pb-2 mb-3 anchor-links" href="{% url 'comment_edit' comment_id=comment.id %}">Edit Comment</a>
+                            </button>
+                            <button class="btn coloured-button float-right">
+                                <a class="pt-3 pb-2 mb-3 anchor-links" href="{% url 'comment_delete' comment_id=comment.id %}">Delete Comment</a>
+                            </button>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
+        {% endfor %}
 
-  {% for comment in comments %}
-  <div class="outer-container comment-outer-container my-auto">
-    <div class="row comment-container-user">
-      <div class="col-12">
-        <div class="row pt-3 pl-2 pr-2">
-          <p class="comment-excerpt">{{ comment.body }}</p>
+        {% if user.is_authenticated %}
+        <div class="outer-container my-auto">
+            <div class="row comment-container">
+                <div class="col-10 mx-auto">
+                    <div class="row">
+                        <h3 class="coloured-text">Leave a comment:</h3>
+                    </div>
+                </div>
+                <div class="col-10 mx-auto">
+                    <div class="row">
+                        <p>Posting as: {{ user.username }}</p>
+                    </div>
+                </div>
+                <div class="col-10 mx-auto">
+                    <div class="row-12">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ comment_form | crispy }}
+                            <button type="submit" class="btn submit-buttons mb-4 float-right">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <hr class="mt-0">
-        <div class="row">
-          <div class="col-4 mb-1 align-self-end">
-            <p>{{ comment.author }}</p>
-          </div>
-          <div class="col-8 mb-1 d-flex justify-content-around">
-            {% if request.user.is_superuser and request.user == comment.author %}
-            <button class="btn blog-button mr-1 float-right">
-              <a href="{% url 'comment_delete' comment_id=comment.id %}" class="anchor-links"><strong>Delete
-                  Comment</strong></a>
-            </button>
-            <button class="btn blog-button float-right">
-              <a class="pt-3 pb-2 mb-3 anchor-links" href="{% url 'comment_edit' comment_id=comment.id %}">Edit
-                Comment</a>
-            </button>
-            {% endif %}
-            {% if request.user.is_superuser and not request.user == comment.author %}
-            <button class="btn blog-button mr-3 float-right">
-              <a href="{% url 'comment_delete' comment_id=comment.id %}" class="anchor-links"><strong>Delete
-                  Comment</strong></a>
-            </button>
-            {% endif %}
-            {% if request.user == comment.author and not request.user.is_superuser %}
-            <button class="btn blog-button mr-1 float-right">
-              <a class="pt-3 pb-2 mb-3 anchor-links" href="{% url 'comment_edit' comment_id=comment.id %}">Edit
-                Comment</a>
-            </button>
-            <button class="btn blog-button float-right">
-              <a class="pt-3 pb-2 mb-3 anchor-links" href="{% url 'comment_delete' comment_id=comment.id %}">Delete
-                Comment</a>
-            </button>
-            {% endif %}
-          </div>
+        {% else %}
+        <div class="comment-outer-container my-auto">
+            <div class="row comment-container">
+                <div class="col-8 mx-auto">
+                    <div class="row">
+                        <P>You need to register in order to create your own Comments. Sign up here!</P>
+                    </div>
+                </div>
+                <div class="col-8 mx-auto">
+                    <div class="row justify-content-center">
+                        <button class="btn coloured-button">
+                            <a href="{% url 'account_signup' %}" class="text-white">Register</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-  {% endfor %}
-
-  {% if user.is_authenticated %}
-  <div class="outer-container my-auto">
-    <div class="row post-comment-container">
-      <div class="col-10 mx-auto">
-        <div class="row">
-          <h3 class="coloured-text">Leave a comment:</h3>
-        </div>
-      </div>
-      <div class="col-10 mx-auto">
-        <div class="row">
-          <p>Posting as: {{ user.username }}</p>
-        </div>
-      </div>
-      <div class="col-10 mx-auto">
-        <div class="row-12">
-          <form method="post">
-            {% csrf_token %}
-            {{ comment_form | crispy }}
-            <button type="submit" class="btn submit-buttons mb-4 float-right">Submit</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  {% else %}
-  <div class="comment-outer-container my-auto">
-    <div class="row post-comment-container">
-      <div class="col-8 mx-auto">
-        <div class="row">
-          <P>You need to register in order to create your own Comments. Sign up here!</P>
-        </div>
-      </div>
-      <div class="col-8 mx-auto">
-        <div class="row justify-content-center">
-          <button class="btn blog-button">
-            <a href="{% url 'account_signup' %}" class="text-white">Register</a>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  {% endif %}
-</section>
+        {% endif %}
+    </section>
 {% endblock %}

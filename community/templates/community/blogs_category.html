@@ -46,7 +46,8 @@
                         <hr>
                         <div class="row">
                             <div class="col-12 pt-2 pl-2">
-                                <a href="#" onclick="location.href='{% url 'check_post' category_title=category.title %}'"
+                                <a href="#"
+                                    onclick="location.href='{% url 'check_post' category_title=category.title %}'"
                                     class="btn submit-buttons float-right px-3">Create Post</a>
                             </div>
                         </div>
@@ -56,7 +57,7 @@
             {% endif %}
 
             {% for post in posts %}
-            <div class="outer-container">               
+            <div class="outer-container">
                 <div class="blog-container">
                     <div class="row mx-auto">
                         <div class="col-6">
@@ -64,7 +65,7 @@
                         </div>
                         <div class="col-6">
                             <h6 class="pt-2 float-right"><strong>{{ post.author }}</strong></h6>
-                        </div>                            
+                        </div>
                     </div>
                     <hr>
                     <div class="row mx-auto">
@@ -74,21 +75,21 @@
                     </div>
                     <hr>
                     <div class="row mx-auto">
-                        <div class="col-5 pt-2 pr-1 align-self-end">                           
-                            <p class="my-0">{{ post.created_on }}</p>                         
+                        <div class="col-5 pt-2 pr-1 align-self-end">
+                            <p class="my-0">{{ post.created_on }}</p>
                         </div>
-                        
                         <div class="col-7 pt-2 pl-1 d-flex justify-content-around">
                             {% if request.user.is_superuser %}
-                            <button class="btn blog-button mr-1">
-                                <a href="{% url 'post_delete' post.id %}" class="anchor-links"><strong>Delete Post</strong></a>
-                            </button>                              
-                            {% endif %}                         
-                            <button class="btn blog-button float-right">
+                            <button class="btn coloured-button mr-1">
+                                <a href="{% url 'post_delete' post.id %}" class="anchor-links"><strong>Delete
+                                        Post</strong></a>
+                            </button>
+                            {% endif %}
+                            <button class="btn coloured-button float-right">
                                 <a href="{% url 'post_detail' post_id=post.id %}"
                                     class="anchor-links"><strong>Details</strong></a>
                             </button>
-                        </div>  
+                        </div>
                     </div>
                 </div>
             </div>
