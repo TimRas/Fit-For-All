@@ -13,7 +13,7 @@
         </li>
     </ol>
 </nav>
-<div class="products-header">
+<div class="text-header">
     <h2 class="coloured-text">{{ challenge.category }}</h2>
 </div>
 {% endblock %}
@@ -21,17 +21,17 @@
 {% block content %}
 <section class="main-content mt-4">
     <div class="row d-flex flex-nowrap align-items-center justify-content-around full-flex-wrap">
-        <div class="row content-containers full-width-container w-50">        
+        <div class="row content-containers full-width-container w-50">
             <div class="col-12">
                 <div class="row pt-2 pl-2">
                     <h2 class="coloured-text">{{ challenge.title }}</h2>
                 </div>
                 <hr class="my-0">
                 <div class="row align-items-center h-75 pl-2">
-                    <p class="intro-text">
+                    <p class="intro-text-plans">
                         {{ challenge.intro }}
                     </p>
-                </div>            
+                </div>
             </div>
         </div>
         <div class="row w-50 d-flex justify-content-center">
@@ -48,6 +48,7 @@
             </div>
         </div>
     </div>
+
     <div class="row d-flex flex-nowrap w-100 full-flex-wrap">
         <div class="row w-50 d-flex align-items-center justify-content-center">
             <div class="col-lg-7 col-md-8 col-sm-10">
@@ -72,6 +73,7 @@
             </div>
         </div>
     </div>
+
     <div class="row d-flex flex-nowrap align-items-center justify-content-around full-flex-wrap w-100">
         <div class="row content-containers full-width-container">
             <div class="col-12">
@@ -82,7 +84,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="row w-50 d-flex align-items-center justify-content-center">
             <div class="col-7">
                 {% if challenge.image3 %}
@@ -97,6 +98,7 @@
             </div>
         </div>
     </div>
+
     <div class="row d-flex flex-nowrap align-items-center justify-content-around full-flex-wrap">
         <div class="row w-50 full-width-container content-containers">
             <div class="col-12 mx-0">
@@ -112,14 +114,14 @@
         <div class="row">
             <div class="col-12">
                 {% if request.user.is_superuser %}
-                <button class="blog-button">
+                <button class="coloured-button">
                     <a href="{% url 'edit_challenge' challenge.id %}" class="nav-link">Edit Challenge</a>
                 </button>
-                <button class="blog-button">        
+                <button class="coloured-button">
                     <a href="{% url 'delete_challenge' challenge.id %}" class="nav-link">Delete Challenge</a>
                 </button>
-                {% endif %}           
-                <button class="blog-button">
+                {% endif %}
+                <button class="coloured-button">
                     <a href="{% url 'plans_main' %}" class="nav-link">All plans</a>
                 </button>
             </div>
@@ -127,4 +129,3 @@
     </div>
 </section>
 {% endblock %}
-

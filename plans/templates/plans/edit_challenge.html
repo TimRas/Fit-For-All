@@ -5,32 +5,33 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6">
-                <hr>
-                <h2 class="logo-font mb-4">Challenge Management</h2>
-                <h5 class="text-muted">Edit a Challenge</h5>
-                <hr>
-            </div>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'edit_challenge' challenge.id %}" class="form mb-2" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form | crispy }}
-                    <div class="row float-right management-row">
-                        <div class="col-6 padding-none">
-                            <a class="btn btn-outline-black rounded-0" href="{% url 'plans_main' %}">Cancel</a>
-                        </div>
-                        <div class="col-6 padding-none">
-                            <button class="blog-button management-buttons" type="submit">Edit Challenge</button>
-                        </div>
-                    </div>
-                </form>
-            </div>            
+<div class="overlay"></div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <hr>
+            <h2 class="logo-font mb-4">Challenge Management</h2>
+            <h5 class="text-muted">Edit a Challenge</h5>
+            <hr>
         </div>
     </div>
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <form method="POST" action="{% url 'edit_challenge' challenge.id %}" class="form mb-2"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="row float-right management-row">
+                    <div class="col-6 padding-none">
+                        <a class="btn btn-outline-black rounded-0" href="{% url 'plans_main' %}">Cancel</a>
+                    </div>
+                    <div class="col-6 padding-none">
+                        <button class="coloured-button management-buttons" type="submit">Edit Challenge</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
