@@ -8,7 +8,7 @@
         <li class="breadcrumb-item"><a href="{% url 'products' %}">Products</a></li>
     </ol>
 </nav>
-<div class="products-header row">
+<div class="row text-header">
     <div class="col-12 col-md-9 my-auto d-flex">
         <h2>Products</h2>
         {% for c in current_categories %}
@@ -35,7 +35,6 @@
     </div>
 </div>
 <hr class="mx-auto">
-
 {% endblock %}
 
 {% block content %}
@@ -46,7 +45,7 @@
             <p class="text-center">Sorry, No items found.</p>
         </div>
         <div class="col-12 d-flex justify-content-center">
-            <button class="blog-button">
+            <button class="coloured-button">
                 <a href="{% url 'products' %}" class="anchor-links">To Products Page</a>
             </button>
         </div>
@@ -61,8 +60,7 @@
                         {% if product.image %}
                         <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                         {% else %}
-                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
-                            alt="{{ product.name }}">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                         {% endif %}
                         <div class="card-body pb-0">
                             <p class="mb-0">{{ product.name }}</p>
@@ -70,14 +68,15 @@
                         <div class="card-footer bg-white pt-0 border-0 text-left">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-6-sm col-xsm-12 pr-md-0 price-container">
-                                    <p class="lead mb-0 text-left font-weight-bold product-price">${{ product.price }}</p>
+                                    <p class="lead mb-0 text-left font-weight-bold product-price">${{ product.price }}
+                                    </p>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-6-sm col-xsm-12 pl-md-0 buy-button-container">
                                     <button class="btn product-buy-button">
                                         <a href="{% url 'buy_product' product.id %}" class="anchor-links">Buy</a>
                                     </button>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -103,30 +102,40 @@
     </div>
     {% endif %}
 </section>
-
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
-
 <script type="text/javascript">
+    // Listen for changes in the "#sort-selector" element
     $('#sort-selector').change(function () {
+        // Get the selector element
         var selector = $(this);
+        
+        // Get the URL of web page
         var currentUrl = new URL(window.location);
 
+        // Get value from the selector
         var selectedVal = selector.val();
+
+        // Check if the value is not "reset"
         if (selectedVal != "reset") {
+            // Split the selected value into "sort" and "direction"
             var sort = selectedVal.split("_")[0];
             var direction = selectedVal.split("_")[1];
 
+            // Update the URL's search parameters with the sort and direction
             currentUrl.searchParams.set("sort", sort);
             currentUrl.searchParams.set("direction", direction);
 
+            // Redirect to the updated URL
             window.location.replace(currentUrl);
         } else {
+            // If "reset" is selected, remove the "sort" and "direction" search parameters
             currentUrl.searchParams.delete("sort");
             currentUrl.searchParams.delete("direction");
 
+            // Redirect to the updated URL without sorting parameters
             window.location.replace(currentUrl);
         }
     })
