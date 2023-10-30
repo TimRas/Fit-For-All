@@ -1,22 +1,19 @@
 {% extends "account/base.html" %}
-
 {% load i18n %}
 {% load account socialaccount %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block inner_content %}
-
 <h2>{% trans "Sign In" %}</h2>
 <hr>
-
 <form class="login form-allauth" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
   {{ form.as_p }}
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <button class="primaryAction blog-button" type="submit">{% trans "Sign In" %}</button>
+  <button class="primaryAction coloured-button" type="submit">{% trans "Sign In" %}</button>
   <hr>
 </form>
 
@@ -24,17 +21,14 @@
 
 {% if socialaccount_providers %}
 <p>{% blocktrans with site.name as site_name %}Please sign in with one
-  of your existing third party accounts. Or, <a href="{{ signup_url }}" >sign up</a>
+  of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
   for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
 <div class="socialaccount_ballot">
-
   <ul class="socialaccount_providers">
     {% include "socialaccount/snippets/provider_list.html" with process="login" %}
   </ul>
-
   <div class="login-or">{% trans 'or' %}</div>
-
 </div>
 
 {% include "socialaccount/snippets/login_extra.html" %}
@@ -44,5 +38,4 @@
   <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
 </p>
 {% endif %}
-
 {% endblock %}
