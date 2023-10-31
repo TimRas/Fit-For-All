@@ -740,6 +740,12 @@ select option[value=""] {
     }
 }
 
+@media only screen and (max-width: 465px) {
+    .banner-box {
+        margin: 0 !important;
+    }
+}
+
 @media only screen and (max-width: 995px) {
     .home-text-container {
         height: 100%;
