@@ -464,6 +464,10 @@ These were used to ensure proper responsiveness for desktops, tablets, and mobil
 
 **Dropdown Menu Header:** When header is adjust to mobile view width. The dropdown menu won't show the dropdown items when hovered over.
 
+**Post placement:** The posts in the post category post dont render use they were intended This is very unappealing for the user experience. Priority in fixing.
+
+**Comments placement:** The comments on the post details page dont want to stack underneath each other. This is very unappealing for the user experience. Priority in fixing.
+
 ### Manual Testing
 
 Iv'e have tried to manual test as much as I possibly could and tried to keep the descriptions of the tests as simple and clear as possible.

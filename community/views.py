@@ -52,7 +52,7 @@ def post_detail_create_comment(request, post_id):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.email = request.user.email
-            comment.author = request.user.username
+            comment.author = request.user
             comment.save()
             return redirect("post_detail", post_id=post.id)
     else:
