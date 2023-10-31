@@ -758,7 +758,7 @@ The main source code I used from boutique ado is:
 
 - I haven't added any "nofollow" or "sponsored" rel attributes to any links because none of my links come from any paid links or any distrusted content as all links refer to my own contant or facebook/mailchimp which is a trusted source. Also, none of my links are sponsored or compensated.
 
-- Due to a lack of time I haven't been able to run all my code through all validators(html,css,js) but I have tried to reduce as many python errors using flake8. Will run all code through all validators in the future.
+- Due to a lack of time I haven't been able to run all my code through all validators(html,css,js) but I have tried to reduce as many python errors using flake8 and keep my code as semantically as possible. Will run all code through all validators in the future.
 
 - These are images of my Facebook page for Fit For All:
 

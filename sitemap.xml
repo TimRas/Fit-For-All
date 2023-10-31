@@ -4,237 +4,558 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
 <url>
   <loc>https://fit-for-all.herokuapp.com/</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/plans/workout</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/plans/plans_main</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/plans/diet</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/plans/plans_category/Diet/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/plans/plans_category/Workout/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://fit-for-all.herokuapp.com/products/</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://fit-for-all.herokuapp.com/products/?category=gear</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://fit-for-all.herokuapp.com/products/?category=woman</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://fit-for-all.herokuapp.com/products/?category=men</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/community/gain_muscle</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/community/blogs_main</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/community/lose_weight</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/community/blogs_category/Gain%20Muscle/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/community/blogs_category/Lose%20Weight/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://fit-for-all.herokuapp.com/accounts/signup/</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://fit-for-all.herokuapp.com/accounts/login/</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/bag/</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/bag/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/plans/3/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/plans/details/2/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/plans/2/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/plans/details/7/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/1/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/plans/details/4/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/2/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/plans/details/5/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/3/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/plans/details/3/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/4/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/14/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/5/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/23/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/7/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/21/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/6/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/18/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/8/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/11/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/9/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/15/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/10/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/7/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/11/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/10/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/12/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/19/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/13/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/6/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/14/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/26/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/15/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/17/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/16/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/27/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/17/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/13/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/18/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/9/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/19/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/25/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/20/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/12/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/21/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/24/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/22/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/20/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/23/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/3/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/24/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/16/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/25/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/8/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/26/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/2/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/products/27/details</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/5/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/community/20</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/4/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/community/create_post</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/1/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/community/22</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/products/buy/22/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/community/18</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/community/check_post/Gain%2520Muscle/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://fit-for-all.herokuapp.com/accounts/password/reset/</loc>
-  <lastmod>2023-04-10T01:35:56+00:00</lastmod>
+  <loc>https://fit-for-all.herokuapp.com/community/68</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
   <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/community/67</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=/community/check_post/Lose%2520Weight/</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fbag%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F14%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F23%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F21%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F18%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F11%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F15%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F7%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F10%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F19%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F6%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F26%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F17%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F27%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F13%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F9%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F25%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F12%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F24%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F20%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F3%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F16%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F8%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F2%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F5%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F4%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F1%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fbuy%2F22%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fcommunity%2Fcheck_post%2FGain%2520Muscle%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/signup/?next=%2Fcommunity%2Fcheck_post%2FLose%2520Weight%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fbag%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F14%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F23%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F21%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F18%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F11%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F15%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F7%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F10%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F19%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F6%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F26%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F17%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F27%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F13%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F9%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F25%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F12%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F24%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F20%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F3%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F16%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F8%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F2%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F5%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F4%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F1%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fproducts%2Fbuy%2F22%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fcommunity%2Fcheck_post%2FGain%2520Muscle%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://fit-for-all.herokuapp.com/accounts/login/?next=%2Fcommunity%2Fcheck_post%2FLose%2520Weight%2F</loc>
+  <lastmod>2023-10-31T10:29:49+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 
 
