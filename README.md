@@ -460,6 +460,8 @@ These were used to ensure proper responsiveness for desktops, tablets, and mobil
 
 **Allauth Indention:** Couldn't properly indent allauth templates like the other templates.
 
+**Messages General:** Difficulty triggering authorization messages for instance when buy button on products page.
+
 **Dropdown Menu Header:** When header is adjust to mobile view width. The dropdown menu won't show the dropdown items when hovered over.
 
 ### Manual Testing
