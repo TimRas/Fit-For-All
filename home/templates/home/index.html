@@ -3,12 +3,12 @@
 
 {% block content %}
 <div class="row home-title">
-    <h1>Fit For All</h1>
+    <h1>Fit For All | {% block extra_title %}Home{% endblock %}</h1>
 </div>
 
 <section class="main-content mt-4 mb-4">
     <div class="home-container">
-        <img src="{{ MEDIA_URL }}Home Landscape.png" alt="Products class" class="home-banner">
+        <img src="{{ MEDIA_URL }}home_landscape.png" alt="Home Intro Image" class="home-banner">
         <div class="col-lg-6 col-md-12 col-sm-12 banner-box mx-auto">
             <div class="col-12 pt-4 pb-3 home-text-container">
                 <p class="home-text">Welcome to FitForAll – your ultimate destination for a fitter, stronger you! Dive

@@ -2,6 +2,10 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+{% block extra_title %}
+Edit Blogs
+{% endblock %}
+
 {% block content %}
 {% if user.is_authenticated %}
 <div class="card content-containers-community mt-4 mb-4">
